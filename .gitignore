@@ -1,0 +1,10 @@
+# IDE
+.idea
+
+# kicad
+kicad/#auto_saved_files#
+kicad/fp-info-cache
+kicad/manufactoring/
+kicad/*-backups/
+kicad/*.csv
+kicad/*.xml

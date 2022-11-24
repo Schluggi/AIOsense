@@ -1,5 +1,5 @@
 substitutions:
-  name: all-in-one-bathroom
+  name: AIOsense-bathroom
 
 esphome:
   name: ${name}
@@ -29,6 +29,8 @@ wifi:
     password: "a4FX19p4KtNy"
 
 captive_portal:
+
+bluetooth_proxy:
 
 i2c:
   sda: 4

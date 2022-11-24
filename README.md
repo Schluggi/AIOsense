@@ -1,13 +1,13 @@
-# all-in-one-sensor
+# AIOsense
 <a href="https://www.buymeacoffee.com/schluggi" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-[![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/Schluggi/all-in-one-sensor/blob/master/LICENSE.txt)
+[![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/Schluggi/AIOsense/blob/master/LICENSE.txt)
 
 
 ## Description
 Based on the idea of the [Presence One](https://shop.everythingsmart.io/en-de/products/everything-presence-one-kit?variant=41708846022853) I made my own, 
 less expensive open-source version of it.  
 
-The all-in-one-sensor covers all the features of the original one plus these extras:
+The AIOsense covers all the features of the original one plus these extras:
 - swappable microcontroller
 - open-source
 - additional sensors
@@ -27,9 +27,11 @@ Supported sensors (all sensors are optional):
 > ¹ You have to choose either the BME280 or the BME680 or neither. It's not possible to use both sensors.    
 
 ## Images
-[<img src="images/v1.0/pcb_3d.jpg" width="495"/>](images/v1.0/pcb_3d.jpg)
-[<img src="images/v1.0/pcb.jpg" width="400"/>](images/v1.0/pcb.jpg)
+[<img src="images/v2.0/pcb_3d.jpg" width="495"/>](images/v2.0/pcb_3d.jpg)
+[<img src="images/v2.0/pcb.jpg" width="400"/>](images/v2.0/pcb.jpg)
 
+# Schematic
+You can find the schematic of the current version [here](schematic/v2.0/AIOsense.pdf).
 
 ## Components & Prices
 | Name             | Description                                          | Price per unit | Links                                                                                                                                                                                                                                                                                                                                                          |
@@ -81,8 +83,12 @@ After all you got 5 PCBs for less than 10€.
 ## Questions
 Just open an issue :)
 
-## Credits 
-Created and maintained by Lukas Schulte-Tickmann / Schluggi.<br>
-Special thanks to [jankae](https://github.com/jankae) for reviewing my design.
+## Credits & Special thanks
+Created and maintained by Lukas Schulte-Tickmann / Schluggi.
+
+Special thanks:
+- My dad for some electricity advice
+- [MeisterGig](https://github.com/MeisterGig) for some general discussions about the board
+- [jankae](https://github.com/jankae) for PCB reviewing
 
 Inspired by [EverythingSmartHome](https://everythingsmarthome.co.uk/). 

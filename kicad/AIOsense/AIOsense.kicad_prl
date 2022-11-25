@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 31,
+    "active_layer": 37,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_nets": [],
@@ -66,7 +66,7 @@
     "zone_display_mode": 1
   },
   "meta": {
-    "filename": "all-in-one-sensor.kicad_prl",
+    "filename": "AIOsense.kicad_prl",
     "version": 3
   },
   "project": {

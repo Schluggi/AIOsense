@@ -366,7 +366,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "all-in-one-sensor.kicad_pro",
+    "filename": "AIOsense.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -400,7 +400,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "AIOsense.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

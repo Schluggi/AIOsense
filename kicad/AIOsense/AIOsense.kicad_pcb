@@ -7,7 +7,7 @@
   (paper "A4")
   (title_block
     (title "AIOsense")
-    (date "2022-11-24")
+    (date "2022-11-25")
     (rev "2.0")
     (company "https://github.com/Schluggi/AIOsense")
   )

@@ -6,7 +6,7 @@
 
   (title_block
     (title "AIOsense")
-    (date "2022-11-24")
+    (date "2022-11-25")
     (rev "2.0")
     (company "https://github.com/Schluggi/AIOsense")
   )
@@ -1068,7 +1068,6 @@
       )
     )
   )
-
 
   (junction (at 161.798 121.412) (diameter 0) (color 0 0 0 0)
     (uuid 01628cbe-1433-41af-9c62-f58381dd1cf4)
@@ -2518,7 +2517,7 @@
     (property "Reference" "J4" (id 0) (at 224.028 27.432 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (property "Value" "mmWave2" (id 1) (at 223.52 28.448 0)
+    (property "Value" "SEN0395:alt" (id 1) (at 223.52 28.448 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" (id 2) (at 225.552 36.322 0)
@@ -2592,7 +2591,7 @@
     (property "Reference" "J8" (id 0) (at 211.074 57.658 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (property "Value" "mmWaveSmall1" (id 1) (at 206.502 51.562 0)
+    (property "Value" "HLK-LD2410" (id 1) (at 206.502 51.562 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical" (id 2) (at 209.55 59.436 0)
@@ -2630,7 +2629,7 @@
     (property "Reference" "J3" (id 0) (at 198.501 28.448 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (property "Value" "mmWave1" (id 1) (at 196.596 28.448 0)
+    (property "Value" "SEN0395" (id 1) (at 196.596 28.448 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" (id 2) (at 199.644 36.576 0)
@@ -2979,10 +2978,10 @@
       (reference "J2") (unit 1) (value "Generic I²C") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
     )
     (path "/d2d369e5-00d8-4af5-8486-583687fc0760"
-      (reference "J3") (unit 1) (value "mmWave1") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
+      (reference "J3") (unit 1) (value "SEN0395") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
     )
     (path "/b87c8814-0a83-4cc1-8703-af1da6801772"
-      (reference "J4") (unit 1) (value "mmWave2") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
+      (reference "J4") (unit 1) (value "SEN0395:alt") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
     )
     (path "/93119a4d-10d6-4912-828e-bbc29d625d86"
       (reference "J5") (unit 1) (value "external power") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal")
@@ -2994,7 +2993,7 @@
       (reference "J7") (unit 1) (value "Generic I²C") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
     )
     (path "/d033608a-f389-4b80-b045-951c5d243891"
-      (reference "J8") (unit 1) (value "mmWaveSmall1") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical")
+      (reference "J8") (unit 1) (value "HLK-LD2410") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical")
     )
     (path "/5f615f21-3e2c-4f6f-a7ce-9e5829cd3178"
       (reference "R1") (unit 1) (value "4K7") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")

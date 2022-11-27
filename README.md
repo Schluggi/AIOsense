@@ -44,5 +44,6 @@ Special thanks:
 - My dad for some electrical engineering advice and PCB reviewing
 - [MeisterGig](https://github.com/MeisterGig) for some general discussions about the board
 - [jankae](https://github.com/jankae) for PCB reviewing
+- [reschandreas](https://github.com/reschandreas) for spelling checks
 
 Inspired by [EverythingSmartHome](https://everythingsmarthome.co.uk/).

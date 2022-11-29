@@ -1,0 +1,210 @@
+substitutions:
+  name: aiosense-s2
+
+esphome:
+  name: "${name}"
+
+esp32:
+  board: esp32-s2-saola-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+  baud_rate: 0 # disable logging via UART
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "oD+WmtgSPqbrb1ckiUK2Ks3NB1saCnGvVxRAFjZhxWY="
+
+ota:
+  password: "9babb2defabe26aec624b36be61d4e0e"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  output_power: 8.5dBm
+
+i2c:
+  sda: GPIO33
+  scl: GPIO35
+  scan: true
+
+uart:
+  id: uart_bus
+  tx_pin: GPIO39
+  rx_pin: GPIO37
+  baud_rate: 115200
+  debug:
+    direction: BOTH
+    dummy_receiver: true
+    after:
+      delimiter: "\n"
+    sequence:
+      - lambda: UARTDebug::log_string(direction, bytes);
+
+binary_sensor:
+  - platform: gpio
+    name: ${name} PIR
+    id: motion_pir
+    pin: GPIO11
+    device_class: motion
+    filters:
+      - invert:
+
+  - platform: gpio
+    name: ${name} mmWave
+    id: motion_mmwave
+    device_class: occupancy
+    pin:
+      number: GPIO3
+      mode: INPUT_PULLDOWN
+
+  - platform: template
+    name: ${name} Occupancy
+    id: occupancy
+    device_class: occupancy
+    lambda: |-
+      if (id(motion_mmwave).state or id(motion_pir).state) {
+        return true;
+      } 
+      else if (id(motion_mmwave).state == 0 and id(motion_pir).state == 0) {
+        return false;
+      } 
+      else {
+        return id(occupancy).state;
+      }
+sensor:
+  - platform: bme280 # or bme680
+    address: 0x76
+    update_interval: 60s
+    temperature:
+      name: "${name} Temperature"
+    pressure:
+      name: "${name} Pressure"
+    humidity:
+      name: "${name} Humidity"
+  #   gas_resistance: # bme680 only
+  #     name: "${name} Gas Resistance"
+
+
+  - platform: bh1750
+    name: ${name} Illuminance
+    address: 0x23
+    update_interval: 10s
+  
+switch:
+  - platform: template
+    name: "${name} mmWave Sensor"
+    id: "mmwave_sensor"
+    optimistic: true
+    restore_state: true
+    assumed_state: true
+    turn_on_action:
+      - uart.write: "sensorStart"
+      - delay: 1s
+    turn_off_action:
+      - uart.write: "sensorStop"
+      - delay: 1s
+
+  - platform: template
+    name: "${name} mmWave LED"
+    id: "mmwave_led"
+    optimistic: true
+    restore_state: true
+    assumed_state: true
+    turn_on_action:
+      - switch.turn_off: mmwave_sensor
+      - delay: 1s
+      - uart.write: "setLedMode 1 0"
+      - delay: 1s
+      - uart.write: "saveConfig"
+      - delay: 3s
+      - switch.turn_on: mmwave_sensor
+    turn_off_action:
+      - switch.turn_off: mmwave_sensor
+      - delay: 1s
+      - uart.write: "setLedMode 1 1"
+      - delay: 1s
+      - uart.write: "saveConfig"
+      - delay: 3s
+      - switch.turn_on: mmwave_sensor
+
+number:
+  - platform: template
+    name: ${name} mmWave Distance
+    id: mmwave_distance
+    min_value: 0
+    max_value: 800
+    initial_value: 315
+    optimistic: true
+    step: 15
+    restore_value: true
+    unit_of_measurement: cm
+    mode: box
+    set_action:
+      - switch.turn_off: mmwave_sensor
+      - delay: 1s
+      - uart.write: !lambda int cm = (int)ceil(x / 15.0);
+          std::string cms = "detRangeCfg -1 0 " + to_string(cm);
+          return std::vector<unsigned char>(cms.begin(), cms.end());
+      - delay: 1s
+      - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
+      - delay: 1s
+      - switch.turn_on: mmwave_sensor
+
+  - platform: template
+    name: ${name} mmWave Off Latency
+    id: mmwave_latency
+    min_value: 0
+    max_value: 65000
+    initial_value: 12500
+    optimistic: true
+    step: 25
+    restore_value: true
+    unit_of_measurement: ms
+    mode: box
+    set_action:
+      - switch.turn_off: mmwave_sensor
+      - delay: 1s
+      - uart.write: !lambda int ms = (int)ceil(x / 25.0);
+          std::string mss = "outputLatency -1 0 " + to_string(ms);
+          return std::vector<unsigned char>(mss.begin(), mss.end());
+      - delay: 1s
+      - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
+      - delay: 1s
+      - switch.turn_on: mmwave_sensor
+
+  - platform: template
+    name: ${name} mmWave Sensitivity
+    id: mmwave_sensitivity
+    min_value: 0
+    max_value: 9
+    initial_value: 7
+    optimistic: true
+    step: 1
+    restore_value: true
+    set_action:
+      - switch.turn_off: mmwave_sensor
+      - delay: 1s
+      - uart.write:
+          !lambda std::string mss = "setSensitivity " + to_string((int)x);
+          return std::vector<unsigned char>(mss.begin(), mss.end());
+      - delay: 1s
+      - uart.write: "saveConfig"
+      - delay: 1s
+      - switch.turn_on: mmwave_sensor
+
+button:
+  - platform: restart
+    name: ${name} Restart
+
+  - platform: template
+    name: "${name} Factory Reset mmWave"
+    on_press:
+      - switch.turn_off: mmwave_sensor
+      - delay: 1s
+      - uart.write: "resetCfg"
+      - delay: 3s
+      - switch.turn_on: mmwave_sensor

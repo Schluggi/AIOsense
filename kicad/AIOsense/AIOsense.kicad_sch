@@ -2233,7 +2233,7 @@
     (uuid 5f615f21-3e2c-4f6f-a7ce-9e5829cd3178)
     (property "Reference" "R1" (id 0) (at 98.806 67.056 90))
     (property "Value" "4K7" (id 1) (at 98.806 69.088 90))
-    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 98.806 70.866 90)
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" (id 2) (at 98.806 70.866 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 98.806 69.088 0)
@@ -2446,7 +2446,7 @@
     (uuid b024df84-de23-468d-988e-947ff8c6240c)
     (property "Reference" "R2" (id 0) (at 98.806 73.406 90))
     (property "Value" "4K7" (id 1) (at 98.806 75.692 90))
-    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (id 2) (at 98.806 77.47 90)
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" (id 2) (at 98.806 77.47 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 98.806 75.692 0)
@@ -2881,10 +2881,10 @@
       (reference "J8") (unit 1) (value "HLK-LD2410") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical")
     )
     (path "/5f615f21-3e2c-4f6f-a7ce-9e5829cd3178"
-      (reference "R1") (unit 1) (value "4K7") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R1") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/b024df84-de23-468d-988e-947ff8c6240c"
-      (reference "R2") (unit 1) (value "4K7") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R2") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/01a47ff8-5d91-406e-a226-38b875e5a384"
       (reference "U1") (unit 1) (value "EKMC1603111") (footprint "KiCad:EKMB1193111")

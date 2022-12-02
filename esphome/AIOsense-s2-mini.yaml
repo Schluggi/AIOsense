@@ -49,7 +49,7 @@ binary_sensor:
   - platform: gpio
     name: "${name} PIR"
     id: motion_pir
-    pin: GPIO11
+    pin: GPIO16
     device_class: motion
     filters:
       - invert:

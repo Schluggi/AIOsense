@@ -1,5 +1,5 @@
 substitutions:
-  name: aiosense-bathroom
+  name: aiosense-c3-mini  # name of this device
 
 esphome:
   name: "${name}"
@@ -18,15 +18,17 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "oD+WmtgSPqbrb1ckiUK2Ks3NB1saCnGvVxRAFjZhxWY="
+    key: "<secret>"
 
 ota:
-  password: "9babb2defabe26aec624b36be61d4e0e"
+  password: "<secret>"
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   output_power: 8.5dBm
+
+bluetooth_proxy:
 
 i2c:
   sda: GPIO8
@@ -38,17 +40,17 @@ uart:
   tx_pin: GPIO21
   rx_pin: GPIO20
   baud_rate: 115200
-  debug:
-    direction: BOTH
-    dummy_receiver: true
-    after:
-      delimiter: "\n"
-    sequence:
-      - lambda: UARTDebug::log_string(direction, bytes);
+#  debug:
+#    direction: BOTH
+#    dummy_receiver: true
+#    after:
+#      delimiter: "\n"
+#    sequence:
+#      - lambda: UARTDebug::log_string(direction, bytes);
 
 binary_sensor:
   - platform: gpio
-    name: ${name} PIR
+    name: "${name} PIR"
     id: motion_pir
     pin: GPIO6
     device_class: motion
@@ -56,7 +58,7 @@ binary_sensor:
       - invert:
 
   - platform: gpio
-    name: ${name} mmWave
+    name: "${name} mmWave"
     id: motion_mmwave
     device_class: occupancy
     pin:
@@ -79,11 +81,18 @@ binary_sensor:
       }
 
 sensor:
+  - platform: bh1750
+      name: "${name} Illuminance"
+      address: 0x23
+      update_interval: 10s
+
   - platform: bme280 # or bme680
     address: 0x76
     update_interval: 60s
     temperature:
       name: "${name} Temperature"
+      filters:
+        offset: -2.5
     pressure:
       name: "${name} Pressure"
     humidity:
@@ -91,12 +100,6 @@ sensor:
   #   gas_resistance: # bme680 only
   #     name: "${name} Gas Resistance"
 
-
-  - platform: bh1750
-    name: ${name} Illuminance
-    address: 0x23
-    update_interval: 10s
-  
 switch:
   - platform: template
     name: "${name} mmWave Sensor"
@@ -136,7 +139,7 @@ switch:
 
 number:
   - platform: template
-    name: ${name} mmWave Distance
+    name: "${name} mmWave Distance"
     id: mmwave_distance
     min_value: 0
     max_value: 800
@@ -158,7 +161,7 @@ number:
       - switch.turn_on: mmwave_sensor
 
   - platform: template
-    name: ${name} mmWave Off Latency
+    name: "${name} mmWave Off Latency"
     id: mmwave_latency
     min_value: 0
     max_value: 65000
@@ -180,7 +183,7 @@ number:
       - switch.turn_on: mmwave_sensor
 
   - platform: template
-    name: ${name} mmWave Sensitivity
+    name: "${name} mmWave Sensitivity"
     id: mmwave_sensitivity
     min_value: 0
     max_value: 9
@@ -201,7 +204,7 @@ number:
 
 button:
   - platform: restart
-    name: ${name} Restart
+    name: "${name} Restart"
 
   - platform: template
     name: "${name} Factory Reset mmWave"

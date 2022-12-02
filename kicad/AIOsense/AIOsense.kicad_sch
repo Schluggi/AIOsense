@@ -6,7 +6,7 @@
 
   (title_block
     (title "AIOsense")
-    (date "2022-12-01")
+    (date "2022-12-02")
     (rev "2.0")
     (company "https://github.com/Schluggi/AIOsense")
   )
@@ -1068,7 +1068,6 @@
       )
     )
   )
-
 
   (junction (at 192.786 106.934) (diameter 0) (color 0 0 0 0)
     (uuid 1bc72b7a-cd40-4913-be3b-d1fa4a80381f)

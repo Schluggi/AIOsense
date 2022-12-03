@@ -83,11 +83,11 @@ binary_sensor:
 
 sensor:
   - platform: bh1750
-      name: "${name} Illuminance"
+    name: "${name} Illuminance"
     address: 0x23
     update_interval: 10s
 
-   - platform: bme280 # or bme680
+  - platform: bme280 # or bme680
     address: 0x76
     update_interval: 60s
     temperature:

@@ -55,8 +55,6 @@ binary_sensor:
     id: motion_pir
     pin: GPIO16
     device_class: motion
-    filters:
-      - invert:
 
   - platform: gpio
     name: "${name} mmWave"

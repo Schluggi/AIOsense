@@ -57,10 +57,8 @@ binary_sensor:
   - platform: gpio
     name: "${name} PIR"
     id: motion_pir
-    pin: D4
+    pin: GPIO0
     device_class: motion
-    filters:
-      - invert:
 
   - platform: gpio
     name: "${name} mmWave"

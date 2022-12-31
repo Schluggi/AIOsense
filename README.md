@@ -17,7 +17,7 @@ This board covers all the features of the original, plus these extras:
 - less expensive
 - customizable
 
-Supported sensors are listed in the documentation: [Sensor Modules](https://github.com/Schluggi/AIOsense/wiki/How-to-start-%3F#3-sensor-modules)
+Supported sensors are listed in the documentation: [Sensor Modules](https://github.com/Schluggi/AIOsense/wiki/How-to-start%3F#3-sensor-modules)
 
 ## What does it look like?
 | Without lid                        | With lid                             |

@@ -30,13 +30,13 @@ Supported sensors are listed in the documentation: [Sensor Modules](https://gith
 |-----------------------------|--------------------------|
 | ![image](images/pcb_3d.jpg) | ![image](images/pcb.jpg) |
 
+### Schematic
 You can find the schematic [here](schematic/AIOsense.pdf).
 
 
-## Interested?
-You want to make your own AIOsense?
-
-Let's jump right into the documentation: [How to start?](https://github.com/Schluggi/AIOsense/wiki/How-to-start-%3F)
+## How to start
+You want to make your own AIOsense?<br>
+Let's jump right into the [documentation](https://github.com/Schluggi/AIOsense/wiki/How-to-start-%3F).
 
 
 ## Questions?

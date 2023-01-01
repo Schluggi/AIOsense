@@ -3,7 +3,7 @@
 [![stars](https://img.shields.io/github/stars/schluggi/AIOsense?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/stargazers)
 [![donate](https://img.shields.io/badge/donate-Buy_Me_A_Coffee-green.svg?style=for-the-badge&logo=appveyor)](https://www.buymeacoffee.com/schluggi)
 
-## What is this?
+## Description
 This project is based on the idea of the [Presence One](https://shop.everythingsmart.io/en-de/products/everything-presence-one-kit). 
 I made my own, less expensive, modular & open-source version of it.
 
@@ -19,11 +19,11 @@ This board covers all the features of the original, plus these extras:
 
 Supported sensors are listed in the documentation: [Sensor Modules](https://github.com/Schluggi/AIOsense/wiki/How-to-start%3F#3-sensor-modules)
 
-## What does it look like?
+## What does it look like? 👀
 | Without lid                        | With lid                             |
 |------------------------------------|--------------------------------------|
 | ![image](images/aiosense_open.JPG) | ![image](images/aiosense_closed.JPG) |
-> **Note:** The PCB in this image is not fully equipped, either is this is final case design ([issue](https://github.com/Schluggi/AIOsense/issues/9)).
+> **Note:** The PCB in this image is not fully equipped either is this the final case design ([issue](https://github.com/Schluggi/AIOsense/issues/9)).
 
 ### Rendered images
 | 3D                          | 2D                       |

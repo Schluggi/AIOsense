@@ -83,7 +83,7 @@ sensor:
   - platform: bh1750
     name: "${name} Illuminance"
     address: 0x23
-    update_interval: 10s
+    update_interval: 5s
 
   - platform: bme280 # or bme680
     address: 0x76

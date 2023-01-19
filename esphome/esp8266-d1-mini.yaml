@@ -156,10 +156,10 @@ number:
     max_value: 800
     initial_value: 315
     optimistic: true
-    step: 15
+    step: 50
     restore_value: true
     unit_of_measurement: cm
-    mode: box
+    mode: slider
     set_action:
       - switch.turn_off: mmwave_sensor
       - delay: 1s

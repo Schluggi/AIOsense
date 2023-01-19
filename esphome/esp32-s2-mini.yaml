@@ -1,11 +1,18 @@
 substitutions:
-  name: aiosense-d1-mini  # name of this device
+  name: "aiosense-s2-mini"
+  project_name: "Schluggi.AIOsense"
+  project_version: "2.0"
 
 esphome:
   name: "${name}"
+  project:
+    name: "${project_name}"
+    version: "${project_version}"
 
-esp8266:
-  board: d1_mini
+esp32:
+  board: esp32-s2-saola-1
+  framework:
+    type: esp-idf
 
 # Enable logging
 logger:
@@ -27,37 +34,31 @@ wifi:
 #    subnet: 255.255.255.0
 #    gateway: 192.168.1.1
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "${name}"
-    password: "a4FX19p4KtNy"
-
-captive_portal:
+bluetooth_proxy:
 
 i2c:
-  sda: 4
-  scl: 5
+  sda: GPIO33
+  scl: GPIO35
   scan: true
 
 uart:
   id: uart_bus
-  tx_pin: GPIO1
-  rx_pin: GPIO3
+  tx_pin: GPIO39
+  rx_pin: GPIO37
   baud_rate: 115200
-  # debug:
-  #   direction: BOTH
-  #   dummy_receiver: true
-  #   after:
-  #     delimiter: "\n"
-  #   sequence:
-  #     - lambda: UARTDebug::log_string(direction, bytes);
-
+#  debug:
+#    direction: BOTH
+#    dummy_receiver: true
+#    after:
+#      delimiter: "\n"
+#    sequence:
+#      - lambda: UARTDebug::log_string(direction, bytes);
 
 binary_sensor:
   - platform: gpio
     name: "${name} PIR"
     id: motion_pir
-    pin: GPIO0
+    pin: GPIO16
     device_class: motion
 
   - platform: gpio
@@ -65,7 +66,7 @@ binary_sensor:
     id: motion_mmwave
     device_class: occupancy
     pin:
-      number: GPIO16
+      number: GPIO3
       mode: INPUT_PULLDOWN
 
   - platform: template
@@ -82,7 +83,6 @@ binary_sensor:
       else {
         return id(occupancy).state;
       }
-
 
 sensor:
   - platform: bh1750

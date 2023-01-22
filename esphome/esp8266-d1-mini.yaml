@@ -66,6 +66,9 @@ binary_sensor:
     id: motion_pir
     pin: GPIO0
     device_class: motion
+    filters:
+      - delayed_off:
+          seconds: 1
 
   - platform: gpio
     name: "${name} mmWave"

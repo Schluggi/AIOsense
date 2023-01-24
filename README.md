@@ -2,6 +2,7 @@
 <a href="https://www.buymeacoffee.com/schluggi" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/white_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 [![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/Schluggi/all-in-one-sensor/blob/master/LICENSE.txt)
 
+> Please wait for the final release of v2.0! v1.0 has some problems...
 
 ## Description
 Based on the idea of the [Presence One](https://shop.everythingsmart.io/en-de/products/everything-presence-one-kit?variant=41708846022853) I made my own, 

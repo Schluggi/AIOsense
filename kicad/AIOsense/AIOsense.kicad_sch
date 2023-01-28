@@ -6,7 +6,7 @@
 
   (title_block
     (title "AIOsense")
-    (date "2023-01-21")
+    (date "2023-01-28")
     (rev "2.0")
     (company "https://github.com/Schluggi/AIOsense")
   )
@@ -2548,7 +2548,7 @@
     (property "Value" "HLK-LD2410" (id 1) (at 206.502 51.562 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical" (id 2) (at 209.55 59.436 0)
+    (property "Footprint" "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical" (id 2) (at 209.55 59.436 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 209.55 59.436 0)
@@ -2937,7 +2937,7 @@
       (reference "J7") (unit 1) (value "Generic I²C") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
     )
     (path "/d033608a-f389-4b80-b045-951c5d243891"
-      (reference "J8") (unit 1) (value "HLK-LD2410") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical")
+      (reference "J8") (unit 1) (value "HLK-LD2410") (footprint "Connector_PinSocket_1.27mm:PinSocket_1x05_P1.27mm_Vertical")
     )
     (path "/88361389-4afa-403b-97ee-7c9bca4a3c47"
       (reference "R1") (unit 1) (value "4K7") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")

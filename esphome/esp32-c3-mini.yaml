@@ -16,10 +16,6 @@ esphome:
     then:
       - light.turn_on:
           id: led
-          transition_length: 0.1s
-      - light.addressable_set:
-          id: led
-          green: 100%
       - delay: 3s
       - light.turn_off: led
 

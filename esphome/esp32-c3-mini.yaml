@@ -14,8 +14,7 @@ esphome:
     board_build.flash_mode: dio
   on_boot:
     then:
-      - light.turn_on:
-          id: led
+      - light.turn_on: led
       - delay: 3s
       - light.turn_off: led
 

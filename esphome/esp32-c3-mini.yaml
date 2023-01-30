@@ -72,6 +72,15 @@ uart:
 #    sequence:
 #      - lambda: UARTDebug::log_string(direction, bytes);
 
+light:
+  - platform: neopixelbus
+    name: "${name} LED"
+    type: GRB
+    variant: WS2812X
+    num_leds: 1
+    pin: GPIO7
+    icon: "mdi:led-outline"
+
 binary_sensor:
   - platform: gpio
     name: "${name} PIR"

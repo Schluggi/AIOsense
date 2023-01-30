@@ -85,7 +85,7 @@ binary_sensor:
   - platform: gpio
     name: "${name} PIR"
     id: motion_pir
-    pin: GPIO6
+    pin: GPIO4
     device_class: motion
     filters:
       - delayed_off:

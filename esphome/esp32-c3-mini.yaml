@@ -9,14 +9,18 @@ esphome:
     name: "${project_name}"
     version: "${project_version}"
   platformio_options:
+    board_build.extra_flags:
+      - "-DARDUINO_USB_CDC_ON_BOOT=0"
     board_build.flash_mode: dio
 
 esp32:
-  board: esp32-c3-devkitm-1
-  framework:
-    type: esp-idf
-    sdkconfig_options:
-      CONFIG_BT_BLE_42_FEATURES_SUPPORTED: y
+  board: lolin_c3_mini
+  variant: ESP32C3
+
+external_components:
+  - source: github://Schluggi/esphome@bsec2
+    components:
+      - bme680_bsec
 
 # Enable logging
 logger:
@@ -34,10 +38,19 @@ wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   output_power: 8.5dBm
-#  manual_ip:
-#    static_ip: 192.168.1.111
-#    subnet: 255.255.255.0
-#    gateway: 192.168.1.1
+  #  manual_ip:
+  #    static_ip: 192.168.1.111
+  #    subnet: 255.255.255.0
+  #    gateway: 192.168.1.1
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${name}"
+
+captive_portal:
+
+web_server:
+  port: 80
 
 bluetooth_proxy:
 
@@ -98,19 +111,81 @@ sensor:
     address: 0x23
     update_interval: 5s
 
-  - platform: bme280 # or bme680
-    address: 0x76
-    update_interval: 60s
+#  - platform: bme280 # disable for bme680
+#    address: 0x76
+#    update_interval: 60s
+#    temperature:
+#      name: "${name} Temperature"
+#      filters:
+#        offset: -2.5
+#    pressure:
+#      name: "${name} Pressure"
+#    humidity:
+#      name: "${name} Humidity"
+
+  - platform: bme680_bsec # disable for bme280
     temperature:
       name: "${name} Temperature"
+      sample_rate: lp
       filters:
-        offset: -2.5
+        - median
     pressure:
       name: "${name} Pressure"
+      sample_rate: lp
+      filters:
+        - median
     humidity:
       name: "${name} Humidity"
-  #   gas_resistance: # bme680 only
-  #     name: "${name} Gas Resistance"
+      sample_rate: lp
+      filters:
+        - median
+    iaq:
+      name: "${name} IAQ"
+      id: iaq
+      filters:
+        - median
+    co2_equivalent:
+      name: "${name} CO2 Equivalent"
+      filters:
+        - median
+    breath_voc_equivalent:
+      name: "${name} Breath VOC Equivalent"
+      filters:
+        - median
+
+text_sensor:
+  - platform: bme680_bsec # disable for bme280
+    iaq_accuracy:
+      name: "${name} IAQ Accuracy"
+
+  - platform: template # disable for bme280
+    name: "${name} IAQ Class"
+    icon: "mdi:checkbox-marked-circle-outline"
+    lambda: |-
+      if ( int(id(iaq).state) <= 50) {
+        return {"Excellent"};
+      }
+      else if (int(id(iaq).state) >= 51 && int(id(iaq).state) <= 100) {
+        return {"Good"};
+      }
+      else if (int(id(iaq).state) >= 101 && int(id(iaq).state) <= 150) {
+        return {"Lightly polluted"};
+      }
+      else if (int(id(iaq).state) >= 151 && int(id(iaq).state) <= 200) {
+        return {"Moderately pulluted"};
+      }
+      else if (int(id(iaq).state) >= 201 && int(id(iaq).state) <= 250) {
+        return {"Heavily Pulluted"};
+      }
+      else if (int(id(iaq).state) >= 251 && int(id(iaq).state) <= 350) {
+        return {"Severely pulluted"};
+      }
+      else if (int(id(iaq).state) >= 351) {
+        return {"Extremely pulluted"};
+      }
+      else {
+        return {"error"};
+      }
 
 switch:
   - platform: template

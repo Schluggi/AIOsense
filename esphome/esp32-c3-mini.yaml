@@ -12,6 +12,16 @@ esphome:
     board_build.extra_flags:
       - "-DARDUINO_USB_CDC_ON_BOOT=0"
     board_build.flash_mode: dio
+  on_boot:
+    then:
+      - light.turn_on:
+          id: led
+          transition_length: 0.1s
+      - light.addressable_set:
+          id: led
+          green: 100%
+      - delay: 3s
+      - light.turn_off: led
 
 esp32:
   board: lolin_c3_mini
@@ -75,6 +85,7 @@ uart:
 light:
   - platform: neopixelbus
     name: "${name} LED"
+    id: led
     type: GRB
     variant: WS2812X
     num_leds: 1

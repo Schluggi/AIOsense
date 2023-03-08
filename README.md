@@ -19,6 +19,7 @@ This board covers all the features of the original, plus these extras:
     - air quality (IAQ)
     - CO² equivalent
     - breath VOC equivalent
+
 - modular
 - less expensive
 - customizable

@@ -1,8 +1,9 @@
 # AIOsense (All-In-One Sensor)
 
-[![license](https://img.shields.io/badge/license-MIT-yellow.svg?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/blob/master/LICENSE.txt)
+[![license](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/blob/master/LICENSE.txt)
 [![stars](https://img.shields.io/github/stars/schluggi/AIOsense?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/stargazers)
 [![donate](https://img.shields.io/badge/donate-Buy_Me_A_Coffee-green.svg?style=for-the-badge&logo=appveyor)](https://www.buymeacoffee.com/schluggi)
+[![docs](https://img.shields.io/badge/Docs-READ_The_Docs-lightblue.svg?style=for-the-badge&logo=appveyor)](https://aiosense.readthedocs.io/en/latest/)
 
 ## Description
 

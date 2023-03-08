@@ -22,7 +22,7 @@ mkdocs==1.4.2
 mkdocs-autorefs==0.4.1
 mkdocs-awesome-pages-plugin==2.8.0
 mkdocstrings==0.20.0
-myst-parser==0.19.2
+myst-parser==1.0.0
 natsort==8.3.1
 packaging==23.0
 Pygments==2.14.0

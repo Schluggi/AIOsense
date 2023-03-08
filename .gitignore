@@ -10,3 +10,6 @@ kicad/AIOsense/*.xml
 kicad/AIOsense/*_sch-bak
 kicad/AIOsense/fp-info-cache
 kicad/AIOsense/manufactoring/
+
+# other
+venv/

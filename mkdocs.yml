@@ -10,13 +10,6 @@ theme:
 
 plugins:
   - search
-  - mkdocstrings:
-      handlers:
-        # See: https://mkdocstrings.github.io/python/usage/
-        python:
-          options:
-            docstring_style: sphinx
-
   - awesome-pages:
       filename: nav.yml
 

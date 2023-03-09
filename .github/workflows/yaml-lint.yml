@@ -25,7 +25,5 @@ jobs:
                 level: warning
               trailing-spaces:
                 level: warning
-              document-end:
-                present: false
-              document-start:
-                preset: false
+              document-end: disable
+              document-start: disable

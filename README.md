@@ -65,13 +65,19 @@ Just open an [issue](https://github.com/Schluggi/AIOsense/issues/new) :)
 
 ## Credits & Special thanks
 
-Created and maintained by Lukas Schulte-Tickmann / Schluggi.
+Created and maintained by Lukas Schulte-Tickmann / [Schluggi](https://github.com/Schluggi).
 
-Special thanks:
-
+### Special thanks
 - My dad for some electrical engineering advice and PCB reviewing
 - [MeisterGig](https://github.com/MeisterGig) for some general discussions about the board and the case design
 - [jankae](https://github.com/jankae) for PCB reviewing
-- [reschandreas](https://github.com/reschandreas) for spelling checks
+- [reschandreas](https://github.com/reschandreas) for general repo work
+
+### Contributors
+<a href="https://github.com/Schluggi/AIOsense/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=schluggi/aiosense" />
+</a>
+
+<br>
 
 Inspired by [EverythingSmartHome](https://everythingsmarthome.co.uk/).

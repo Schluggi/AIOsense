@@ -1,7 +1,13 @@
 site_name: AIOsense
+
+site_url: https://aiosense.readthedocs.io/en/latest/
+repo_url: https://github.com/Schluggi/AIOsense
+edit_uri: https://github.com/Schluggi/AIOsense/edit/main/docs
+
 theme:
   name: readthedocs
   highlightjs: true
+
 plugins:
   - search
   - mkdocstrings:
@@ -10,7 +16,12 @@ plugins:
         python:
           options:
             docstring_style: sphinx
+
+  - awesome-pages:
+      filename: nav.yml
+
 markdown_extensions:
-  - markdown_include.include:
-      base_path: .
+  - attr_list # Needed to scale images
+  - pymdownx.emoji: # Emoji support
+      emoji_generator: !!python/name:pymdownx.emoji.to_alt
   - admonition

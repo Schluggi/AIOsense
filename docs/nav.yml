@@ -1,0 +1,20 @@
+nav:
+  # List all files in the expected order
+  - Getting Started:
+      - How-to-start.md
+
+  - Hardware:
+      - sensors
+      - cpu.md
+
+  - Software:
+      - (none): none
+
+  - 🌍 External Links:
+      - Releases: https://github.com/Schluggi/AIOsense/releases
+
+  - ☕ Donate:
+      - Buy Me A Coffee: https://www.buymeacoffee.com/schluggi
+
+#  - Assorted Pages:
+#      - ...

@@ -1,7 +1,7 @@
 ---
 name: Documentation
 about: Help to improve the docs
-title: "[DOCS] "
+title: ''
 labels: documentation
 assignees: Schluggi
 

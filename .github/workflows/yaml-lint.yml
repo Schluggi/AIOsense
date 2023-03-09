@@ -18,6 +18,7 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
+          file_or_dir: esphome/
           config_data: |
             extends: default
             rules:

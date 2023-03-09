@@ -1,4 +1,3 @@
-> This is only related to v2.0
 
 # 1. PCB
 First of all you need the PCB. We recommend PCBWay because its the most straight forward experience. Just click on the link and take your order (you can also use [this link³](https://pcbway.com/g/DFb536) for register to get 5$ off on your first order). But you can actually choose any PCB manufacturer.
@@ -22,7 +21,7 @@ Your board in full of sensors, and you need more I²C pins? You can use the exte
 ### SPI
 > **Note**: Please read [this note](https://github.com/Schluggi/AIOsense/wiki/How-to-start-%3F#microphone-does-not-work-for-now)!
 
-SPI is not used by the board so you can use it via the external IO pins (MISO, MOSI, SCK, CS):
+SPI is not used by the board, so you can use it via the external IO pins (MISO, MOSI, SCK, CS):
 <br><img src="https://user-images.githubusercontent.com/43608073/204273762-27b1be06-36c0-450d-b37c-bb5408cde0f4.jpg" width="200" />
 
 

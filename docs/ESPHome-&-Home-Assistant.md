@@ -1,8 +1,8 @@
 # ESPHome Dashboard
 First of all you need an ESPHome Dashboard. 
 
-If you using Home Assisant you can install it as an add-on by following [these instructions](https://esphome.io/guides/getting_started_hassio.html).
-Otherwise you can also install the dashboard [via pip](https://esphome.io/guides/installing_esphome.html) or by using the [docker container](https://esphome.io/guides/getting_started_command_line.html#installation).
+If you're using Home Assisant you can install it as an add-on by following [these instructions](https://esphome.io/guides/getting_started_hassio.html).
+Otherwise, you can also install the dashboard [via pip](https://esphome.io/guides/installing_esphome.html) or by using the [docker container](https://esphome.io/guides/getting_started_command_line.html#installation).
 
 # Config
 Dashboard up and running? Great! Now you have to pick the ESPHome config for your chosen ESP/CPU. You can find a list of all available configurations [here](https://github.com/Schluggi/AIOsense/tree/main/esphome). 

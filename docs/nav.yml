@@ -1,20 +1,23 @@
 nav:
-  # List all files in the expected order
-  - Getting Started:
-      - How-to-start.md
+  - Quickstart:
+      - Quickstart: index.md
 
   - Hardware:
-      - sensors
+      - pcb.md
       - cpu.md
+      - sensors
 
   - Software:
-      - (none): none
+      - ESPHome: none
+      - Home Assistant: none
 
   - 🌍 External Links:
       - Releases: https://github.com/Schluggi/AIOsense/releases
+      - Issues: https://github.com/Schluggi/AIOsense/issues
 
   - ☕ Donate:
       - Buy Me A Coffee: https://www.buymeacoffee.com/schluggi
+      - PayPal: https://www.paypal.com/donate/?hosted_button_id=KPG2MY37LCC24
 
 #  - Assorted Pages:
 #      - ...

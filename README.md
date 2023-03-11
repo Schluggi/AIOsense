@@ -2,7 +2,8 @@
 
 [![license](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/blob/master/LICENSE.txt)
 [![stars](https://img.shields.io/github/stars/schluggi/AIOsense?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/stargazers)
-[![donate](https://img.shields.io/badge/donate-Buy_Me_A_Coffee-green.svg?style=for-the-badge&logo=appveyor)](https://www.buymeacoffee.com/schluggi)
+[![donate-coffee](https://img.shields.io/badge/donate-Buy_Me_A_Coffee-yellow.svg?style=for-the-badge&logo=appveyor)](https://www.buymeacoffee.com/schluggi)
+[![donate-paypal](https://img.shields.io/badge/donate-PayPal-blue.svg?style=for-the-badge&logo=appveyor)](https://www.paypal.com/donate/?hosted_button_id=KPG2MY37LCC24)
 [![docs](https://img.shields.io/badge/Docs-READ_The_Docs-lightblue.svg?style=for-the-badge&logo=appveyor)](https://aiosense.readthedocs.io/en/latest/)
 
 ## Description

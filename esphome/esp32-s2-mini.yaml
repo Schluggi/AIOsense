@@ -52,6 +52,10 @@ uart:
 #    sequence:
 #      - lambda: UARTDebug::log_string(direction, bytes);
 
+bme680_bsec:  # disable for bme280
+  temperature_offset: "5.8"
+  state_save_interval: "1h"
+
 binary_sensor:
   - platform: gpio
     name: "${name} PIR"

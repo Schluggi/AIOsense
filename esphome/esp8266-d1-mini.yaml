@@ -2,6 +2,9 @@ substitutions:
   name: "aiosense-d1-mini"
   project_name: "Schluggi.AIOsense"
   project_version: "2.0"
+  mmwave_max_distance_move: 4.5m
+  mmwave_max_distance_still: 4.5m
+  mmwave_timeout: 5s
 
 esphome:
   name: "${name}"
@@ -70,6 +73,7 @@ binary_sensor:
       - delayed_off:
           seconds: 1
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: gpio
     name: "${name} mmWave"
     id: motion_mmwave
@@ -77,6 +81,16 @@ binary_sensor:
     pin:
       number: GPIO16
       mode: INPUT_PULLDOWN
+
+  # enable for HLK-LD2410, disable for SEN0395
+  # - platform: ld2410
+  #   has_target:
+  #     name: ${name} mmWave
+  #     id: motion_mmwave
+  #   has_moving_target:
+  #     name: ${name} Moving Target
+  #   has_still_target:
+  #     name: ${name} Still Target
 
   - platform: template
     name: ${name} Occupancy
@@ -180,6 +194,7 @@ text_sensor:
       }
 
 switch:
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Sensor"
     id: "mmwave_sensor"
@@ -193,6 +208,7 @@ switch:
       - uart.write: "sensorStop"
       - delay: 1s
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave LED"
     id: "mmwave_led"
@@ -217,6 +233,7 @@ switch:
       - switch.turn_on: mmwave_sensor
 
 number:
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Distance"
     id: mmwave_distance
@@ -239,6 +256,7 @@ number:
       - delay: 1s
       - switch.turn_on: mmwave_sensor
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Off Latency"
     id: mmwave_latency
@@ -261,6 +279,7 @@ number:
       - delay: 1s
       - switch.turn_on: mmwave_sensor
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Sensitivity"
     id: mmwave_sensitivity
@@ -281,10 +300,35 @@ number:
       - delay: 1s
       - switch.turn_on: mmwave_sensor
 
+# enable for HLK-LD2410, disable for SEN0395
+ld2410:
+  timeout: ${mmwave_timeout}
+  max_move_distance: ${mmwave_max_distance_move}
+  max_still_distance: ${mmwave_max_distance_still}
+  g0_move_threshold: 50
+  g0_still_threshold: 0
+  g1_move_threshold: 50
+  g1_still_threshold: 0
+  g2_move_threshold: 40
+  g2_still_threshold: 40
+  g3_move_threshold: 40
+  g3_still_threshold: 40
+  g4_move_threshold: 40
+  g4_still_threshold: 40
+  g5_move_threshold: 40
+  g5_still_threshold: 40
+  g6_move_threshold: 30
+  g6_still_threshold: 15
+  g7_move_threshold: 30
+  g7_still_threshold: 15
+  g8_move_threshold: 30
+  g8_still_threshold: 15
+
 button:
   - platform: restart
     name: "${name} Restart"
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} Factory Reset mmWave"
     on_press:

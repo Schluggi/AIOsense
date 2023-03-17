@@ -109,7 +109,7 @@ binary_sensor:
       - delayed_off:
           seconds: 1
 
-  # enable for SEN0395
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: gpio
     name: "${name} mmWave"
     id: motion_mmwave
@@ -118,7 +118,7 @@ binary_sensor:
       number: GPIO2
       mode: INPUT_PULLDOWN
 
-  # enable for HLK-LD2410
+  # enable for HLK-LD2410, disable for SEN0395
   # - platform: ld2410
   #   has_target:
   #     name: ${name} mmWave
@@ -227,6 +227,7 @@ text_sensor:
       }
 
 switch:
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Sensor"
     id: "mmwave_sensor"
@@ -240,6 +241,7 @@ switch:
       - uart.write: "sensorStop"
       - delay: 1s
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave LED"
     id: "mmwave_led"
@@ -264,6 +266,7 @@ switch:
       - switch.turn_on: mmwave_sensor
 
 number:
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Distance"
     id: mmwave_distance
@@ -286,6 +289,7 @@ number:
       - delay: 1s
       - switch.turn_on: mmwave_sensor
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Off Latency"
     id: mmwave_latency
@@ -308,6 +312,7 @@ number:
       - delay: 1s
       - switch.turn_on: mmwave_sensor
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} mmWave Sensitivity"
     id: mmwave_sensitivity
@@ -328,6 +333,7 @@ number:
       - delay: 1s
       - switch.turn_on: mmwave_sensor
 
+# enable for HLK-LD2410, disable for SEN0395
 ld2410:
   timeout: ${mmwave_timeout}
   max_move_distance: ${mmwave_max_distance_move}
@@ -355,6 +361,7 @@ button:
   - platform: restart
     name: "${name} Restart"
 
+  # enable for SEN0395, disable for HLK-LD2410
   - platform: template
     name: "${name} Factory Reset mmWave"
     on_press:

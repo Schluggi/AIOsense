@@ -2,9 +2,14 @@
 .idea
 
 # kicad
-kicad/#auto_saved_files#
-kicad/fp-info-cache
-kicad/manufactoring/
-kicad/*-backups/
-kicad/*.csv
-kicad/*.xml
+kicad/AIOsense/#auto_saved_files#
+kicad/AIOsense/*-backups
+kicad/AIOsense/*.csv
+kicad/AIOsense/*.step
+kicad/AIOsense/*.xml
+kicad/AIOsense/*_sch-bak
+kicad/AIOsense/fp-info-cache
+kicad/AIOsense/manufactoring/
+
+# other
+venv/

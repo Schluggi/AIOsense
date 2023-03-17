@@ -1,0 +1,23 @@
+nav:
+  - Quickstart:
+      - Quickstart: quickstart.md
+
+  - Hardware:
+      # - pcb.md
+      - CPU: cpu.md
+      - Sensors: sensors.md
+
+  - Software:
+      - Flashing ESPHome: flashing.md
+      - Home Assistant: homeassistant.md
+
+  - 🌍 External Links:
+      - Releases: https://github.com/Schluggi/AIOsense/releases
+      - Issues: https://github.com/Schluggi/AIOsense/issues
+
+  - ☕ Donate:
+      - Buy Me A Coffee: https://www.buymeacoffee.com/schluggi
+      - PayPal: https://www.paypal.com/donate/?hosted_button_id=KPG2MY37LCC24
+
+#  - Assorted Pages:
+#      - ...

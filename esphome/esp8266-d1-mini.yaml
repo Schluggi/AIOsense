@@ -53,14 +53,19 @@ uart:
   id: uart_bus
   tx_pin: GPIO1
   rx_pin: GPIO3
+#  debug:
+#    direction: BOTH
+#    dummy_receiver: true
+#    after:
+#      delimiter: "\n"
+#    sequence:
+#      - lambda: UARTDebug::log_string(direction, bytes);
+# --- Enable this block for SEN0395
   baud_rate: 115200
-  # debug:
-  #   direction: BOTH
-  #   dummy_receiver: true
-  #   after:
-  #     delimiter: "\n"
-  #   sequence:
-  #     - lambda: UARTDebug::log_string(direction, bytes);
+# --- OR Enable this block for HLK-LD2410
+# baud_rate: 256000
+# parity: NONE
+# stop_bits: 1
 
 
 binary_sensor:

@@ -46,7 +46,6 @@ uart:
   id: uart_bus
   tx_pin: GPIO39
   rx_pin: GPIO37
-  baud_rate: 115200
 #  debug:
 #    direction: BOTH
 #    dummy_receiver: true

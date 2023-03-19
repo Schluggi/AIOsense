@@ -8,6 +8,11 @@ esphome:
   project:
     name: "${project_name}"
     version: "${project_version}"
+  on_boot:
+    then:
+      - light.turn_on: led
+      - delay: 3s
+      - light.turn_off: led
 
 esp32:
   board: wemos_d1_mini32
@@ -60,6 +65,17 @@ uart:
   #   sequence:
   #     - lambda: UARTDebug::log_string(direction, bytes);
 
+light:
+  - id: led
+    platform: binary
+    name: "${name} LED"
+    output: led_output
+    icon: "mdi:led-outline"
+
+output:
+  - id: led_output
+    platform: gpio
+    pin: GPIO2
 
 binary_sensor:
   - platform: gpio

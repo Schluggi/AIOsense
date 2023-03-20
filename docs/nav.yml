@@ -7,8 +7,6 @@ nav:
       - CPU: cpu.md
       - Sensors: sensors.md
 
-
-
   - Software:
       - Flashing ESPHome: flashing.md
       - Home Assistant: homeassistant.md

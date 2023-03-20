@@ -12,7 +12,7 @@ nav:
       - Home Assistant: homeassistant.md
 
   - Other:
-    - 🐞 Debugging: debugging.md
+      - 🐞 Debugging: debugging.md
 
   - 🌍 External Links:
       - Releases: https://github.com/Schluggi/AIOsense/releases

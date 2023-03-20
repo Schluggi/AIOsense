@@ -15,25 +15,33 @@ For all other manufacturer (like [JLCPCB](https://jlcpcb.com/)) please upload th
 the [release](https://github.com/Schluggi/AIOsense/releases/latest) page.
 
 ## Order CPU
-Next up you need a [CPU](cpu.md) to drive the board. We recommend an [ESP32-C3](https://de.aliexpress.com/item/1005004740051202.html?gatewayAdapt=glo2deu).
+
+Next up you need a [CPU](cpu.md) to drive the board. We recommend
+an [ESP32-C3](https://de.aliexpress.com/item/1005004740051202.html?gatewayAdapt=glo2deu).
 
 ## Order sensors
+
 Take a look at the [sensors](sensors.md) page and pick what you want.
 
 ## Other parts
-For a fully assembled board you will also need some pin headers (female and male) and two 4K7 Ohm resistors.
+
+For a fully assembled board you will also need some pin headers.
+
+You also need two 4K7 Ohm resistors if you want to use the SMD version of the BME
+modules ([and only then](../debugging))!
 
 ## Assembly
+
 Should be easy and self explainable.
 
 ## Flash ESPHome
+
 [Click here](flashing.md).
 
 ## Further steps (optional)
 
 - [Integrate Home Assistant](homeassistant.md).
 - Print a case (wip)
-
 
 <hr>
 ³ Affiliate link

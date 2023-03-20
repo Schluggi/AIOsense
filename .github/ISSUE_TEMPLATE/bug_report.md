@@ -11,5 +11,8 @@ assignees: Schluggi
 - [ ] Hardware / PCB
 - [ ] Software / ESPHome
 
+**Version of ESPHome / AIOsense**
+...
+
 **Describe the bug**
 ...

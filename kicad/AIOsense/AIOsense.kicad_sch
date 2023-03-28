@@ -6,8 +6,8 @@
 
   (title_block
     (title "AIOsense")
-    (date "2023-02-05")
-    (rev "2.0-RC4")
+    (date "2023-03-28")
+    (rev "2.0.0")
     (company "https://github.com/Schluggi/AIOsense")
   )
 
@@ -1743,7 +1743,7 @@
     (property "Mouser Part #" "262-BME280" (at 91.186 46.482 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C92489" (id 9) (at 91.186 46.482 90)
+    (property "LCSC" "C92489" (at 91.186 46.482 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 1299bdb1-f593-4e32-88b0-f8aaf97ff6bd))
@@ -3121,7 +3121,7 @@
     (property "Mouser Part #" "262-BME680" (at 43.18 46.482 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C125972" (id 9) (at 43.18 46.482 90)
+    (property "LCSC" "C125972" (at 43.18 46.482 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 81cecc50-bc66-4e37-8c80-e5fa2065ddaa))

@@ -27,7 +27,7 @@ This board covers all the features of the original, plus these extras:
 - customizable
 
 Supported sensors are listed in the documentation:
-[Sensor Modules](https://github.com/Schluggi/AIOsense/wiki/How-to-start%3F#3-sensor-modules)
+[Sensor Modules](https://aiosense.readthedocs.io/en/latest/sensors/)
 
 ## What does it look like? 👀
 
@@ -58,7 +58,7 @@ Without a mmWave sensor the idle power consumption is around **0.11W / 0.02A** a
 ## How to start
 
 You want to make your own AIOsense?<br>
-Let's jump right into the [documentation](https://github.com/Schluggi/AIOsense/wiki/How-to-start-%3F).
+Let's jump right into the [documentation](https://aiosense.readthedocs.io/en/latest/quickstart/).
 
 ## Questions?
 

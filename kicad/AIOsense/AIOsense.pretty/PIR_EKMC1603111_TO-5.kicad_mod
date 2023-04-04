@@ -1,5 +1,7 @@
 (footprint "PIR_EKMC1603111_TO-5" (version 20221018) (generator pcbnew)
   (layer "F.Cu")
+  (descr "Panasonic PIR EKMC1603111 in TO-5 socket")
+  (tags "Motion sensor TO5")
   (attr through_hole)
   (fp_text reference "REF**" (at 0 -6.5024 unlocked) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))

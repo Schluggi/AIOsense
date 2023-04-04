@@ -4,6 +4,7 @@
 # kicad
 kicad/AIOsense/#auto_saved_files#
 kicad/AIOsense/*-backups
+kicad/AIOsense/*.bak
 kicad/AIOsense/*.csv
 kicad/AIOsense/*.step
 kicad/AIOsense/*.xml

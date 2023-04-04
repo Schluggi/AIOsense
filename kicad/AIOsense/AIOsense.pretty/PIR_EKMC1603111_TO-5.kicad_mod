@@ -22,4 +22,9 @@
   (pad "1" thru_hole rect (at -1.778 -1.778) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask") (tstamp 45b51ea2-dc84-41d0-9395-3b0b8933c417))
   (pad "2" thru_hole circle (at -1.778 1.778) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask") (tstamp 67da8d61-465f-4282-b317-957737268dfc))
   (pad "3" thru_hole circle (at 1.778 1.778) (size 1.524 1.524) (drill 0.762) (layers "*.Cu" "*.Mask") (tstamp 1639ae1f-bf1c-411f-a01c-4ca1ed444781))
+  (model "${KIPRJMOD}/AIOsense.pretty/PIR_EKMC1603111_TO-5.step"
+    (offset (xyz 1.6 -11.5 26.8))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 45))
+  )
 )

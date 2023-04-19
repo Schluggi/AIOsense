@@ -64,7 +64,9 @@ binary_sensor:
   - platform: gpio
     name: "${name} PIR"
     id: motion_pir
-    pin: GPIO13
+    pin:
+      number: GPIO13
+      mode: INPUT_PULLDOWN
     device_class: motion
     filters:
       - delayed_off:

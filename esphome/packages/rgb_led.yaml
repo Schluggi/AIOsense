@@ -7,3 +7,10 @@ light:
     num_leds: 1
     pin: GPIO7
     icon: "mdi:led-outline"
+
+esphome:
+  on_boot:
+    then:
+      - light.turn_on: led
+      - delay: 3s
+      - light.turn_off: led

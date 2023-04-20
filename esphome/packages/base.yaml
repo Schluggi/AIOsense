@@ -3,9 +3,9 @@ esphome:
   project:
     name: "Schluggi.AIOsense"
     version: "2.0.0-pack"
-#
-#logger:
-#  baud_rate: 0 # disable logging via UART
+
+logger:
+  baud_rate: 0 # disable logging via UART
 
 captive_portal:
 

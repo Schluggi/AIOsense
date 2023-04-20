@@ -1,0 +1,12 @@
+sensor:
+  - platform: bme680
+    address: 0x76
+    update_interval: 30s
+    temperature:
+      name: "${name} Temperature"
+    pressure:
+      name: "${name} Pressure"
+    humidity:
+      name: "${name} Humidity"
+    gas_resistance:
+      name: "${name} Gas Resistance"

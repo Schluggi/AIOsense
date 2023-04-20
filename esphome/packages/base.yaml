@@ -2,4 +2,13 @@ esphome:
   name: "${name}"
   project:
     name: "Schluggi.AIOsense"
-    version: "2.0.0"
+    version: "2.0.0-pack"
+
+logger:
+  baud_rate: 0 # disable logging via UART
+
+captive_portal:
+
+button:
+  - platform: restart
+    name: "${name} Restart"

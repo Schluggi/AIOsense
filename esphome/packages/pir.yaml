@@ -1,0 +1,11 @@
+binary_sensor:
+  - platform: gpio
+    name: "${name} PIR"
+    id: motion_pir
+    pin:
+      number: GPIO4
+      mode: INPUT_PULLDOWN
+    device_class: motion
+    filters:
+      - delayed_off:
+          seconds: 1

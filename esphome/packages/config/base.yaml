@@ -13,7 +13,7 @@ i2c:
   scan: true
 
 wifi:
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  # Fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "${name}"
 

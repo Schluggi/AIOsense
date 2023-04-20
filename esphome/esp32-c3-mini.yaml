@@ -4,7 +4,7 @@ substitutions:
 packages:
   remote_package:
     url: https://github.com/schluggi/AIOsense
-    ref: packages/sensors
+    ref: packages
     files:
       - esphome/packages/config/base.yaml
       - esphome/packages/config/esp32-c3-mini.yaml

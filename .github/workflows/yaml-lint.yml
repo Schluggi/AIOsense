@@ -3,12 +3,12 @@ name: YAML lint
 on:
   push:
     branches: ["main"]
-    paths: 
+    paths:
       - '**.yaml'
       - '**.yml'
   pull_request:
     branches: ["main"]
-    paths: 
+    paths:
       - '**.yaml'
       - '**.yml'
 
@@ -27,9 +27,11 @@ jobs:
           config_data: |
             extends: default
             rules:
-              comments: 
+              comments:
                 level: error
               comments-indentation:
                 level: error
               document-end: disable
               document-start: disable
+              truthy:
+                allowed-values: ['true', 'false', 'on']

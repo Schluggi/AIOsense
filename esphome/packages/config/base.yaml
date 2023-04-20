@@ -2,10 +2,10 @@ esphome:
   name: "${name}"
   project:
     name: "Schluggi.AIOsense"
-    version: "3" # is different to the AIOsense version
+    version: "3"  # is different to the AIOsense version
 
 logger:
-  baud_rate: 0 # disable logging via UART
+  baud_rate: 0  # disable logging via UART
 
 captive_portal:
 

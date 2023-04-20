@@ -1,7 +1,10 @@
+substitutions:
+  bmex80_update_interval: 30s
+
 sensor:
   - platform: bme280
     address: 0x76
-    update_interval: 30s
+    update_interval: "${bmex80_update_interval}"
     temperature:
       name: "${name} Temperature"
     pressure:

@@ -14,6 +14,6 @@ sensor:
     humidity:
       name: "${name} Humidity"
       filters:
-        - offset: $bmex80_offset_humidity
+        - offset: "${bmex80_offset_humidity}"
     pressure:
       name: "${name} Pressure"

@@ -1,5 +1,5 @@
 substitutions:
-  name: "aiosense-c3-mini"
+  name: "aiosense"
 # bh1750_update_interval: 5s
 
 # bmex80_offset_humidity: 0
@@ -12,22 +12,26 @@ substitutions:
 # pir_delayed_off: 1
 # pir_delayed_on: 0
 
-# sen0395_
-
 packages:
   remote_package:
     url: https://github.com/schluggi/AIOsense
     ref: packages
     files:
       - esphome/packages/config/base.yaml
+
+      # select your board
       - esphome/packages/config/esp32-c3-mini.yaml
+      #- esphome/packages/config/esp32-d1-mini.yaml
+      #- esphome/packages/config/esp32-s2-mini.yaml
+      #- esphome/packages/config/esp8266-d1-mini.yaml
+
       - esphome/packages/sensors/bh1750.yaml
     # - esphome/packages/sensors/bme280.yaml # enable for bme280
       - esphome/packages/sensors/bme680.yaml # disable for bme280
     # - esphome/packages/sensors/bme680_bsec.yaml # does not work at the moment
       - esphome/packages/sensors/occupancy.yaml # only works if pir & mmWave is activated
       - esphome/packages/sensors/pir.yaml
-      - esphome/packages/sensors/rgb_led.yaml
+      - esphome/packages/sensors/rgb_led.yaml # esp32-c3-mini only
       - esphome/packages/sensors/sen0395.yaml
     refresh: 1d
 

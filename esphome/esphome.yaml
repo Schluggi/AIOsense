@@ -34,8 +34,8 @@ packages:
       - esphome/packages/sensors/bh1750.yaml
       # - esphome/packages/sensors/bme280.yaml  # enable for bme280
       - esphome/packages/sensors/bme680.yaml  # disable for bme280
-      # - esphome/packages/sensors/bme680_bsec.yaml  # does not work at the moment
-      - esphome/packages/sensors/occupancy.yaml  # only works if pir & mmWave is activated
+      # - esphome/packages/sensors/bme680_bsec.yaml  # does not work yet
+      - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are on
       - esphome/packages/sensors/pir.yaml
       - esphome/packages/sensors/rgb_led.yaml  # esp32-c3-mini only
       # - esphome/packages/sensors/led.yaml  # d1-mini only

@@ -27,9 +27,9 @@ jobs:
           config_data: |
             extends: default
             rules:
-              new-line-at-end-of-file:
-                level: warning
-              trailing-spaces:
-                level: warning
+              comments: 
+                level: error
+              comments-indentation:
+                level: error
               document-end: disable
               document-start: disable

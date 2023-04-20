@@ -2,15 +2,15 @@ substitutions:
   name: "aiosense" # lowercase only
 # bh1750_update_interval: 5s
 
-# bmex80_offset_humidity: 0
-# bmex80_offset_temperature: 0
+# bmex80_offset_humidity: "0"
+# bmex80_offset_temperature: "0"
 # bmex80_update_interval: 30s
 
 # bme680_bsec_sample_rate: lp # lp -> 3s, ulp ->5min
-# bme680_bsec_temperature_offset: 0
+# bme680_bsec_temperature_offset: "0"
 
-# pir_delayed_off: 1
-# pir_delayed_on: 0
+# pir_delayed_off: 1s
+# pir_delayed_on: 0s
 
 packages:
   remote_package:

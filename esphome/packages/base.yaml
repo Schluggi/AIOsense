@@ -1,0 +1,5 @@
+esphome:
+  name: "${name}"
+  project:
+    name: "Schluggi.AIOsense"
+    version: "2.0.0"

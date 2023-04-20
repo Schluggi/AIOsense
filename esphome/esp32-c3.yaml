@@ -1,0 +1,18 @@
+substitutions:
+  name: "aiosense-c3-mini"
+
+packages:
+  remote_package:
+    url: https://github.com/schluggi/AIOsense
+    ref: packages
+    files:
+      - esphome/packages/base.yaml
+      - esphome/packages/bh1750.yaml
+    refresh: 1min # optional
+
+#esphome:
+#  on_boot:
+#    then:
+#      - light.turn_on: led
+#      - delay: 3s
+#      - light.turn_off: led

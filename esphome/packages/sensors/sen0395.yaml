@@ -1,7 +1,7 @@
 uart:
   id: uart_bus
-  tx_pin: "${sen0395_tx_pin}"
-  rx_pin: "${sen0395_rx_pin}"
+  tx_pin: "${uart_tx_pin}"
+  rx_pin: "${uart_rx_pin}"
   baud_rate: 115200
 
 binary_sensor:

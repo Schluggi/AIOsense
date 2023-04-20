@@ -1,8 +1,8 @@
 substitutions:
   pir_pin: GPIO13
   sen0395_io_pin: GPIO16
-  sen0395_tx_pin: GPIO1
-  sen0395_rx_pin: GPIO3
+  uart_rx_pin: GPIO3
+  uart_tx_pin: GPIO1
 
 esp8266:
   board: d1_mini

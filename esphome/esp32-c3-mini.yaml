@@ -6,7 +6,13 @@ substitutions:
 # bmex80_offset_temperature: 0
 # bmex80_update_interval: 30s
 
+# bme680_bsec_sample_rate: lp # lp -> 3s, ulp ->5min
+# bme680_bsec_temperature_offset: 0
 
+# pir_delayed_off: 1
+# pir_delayed_on: 0
+
+# sen0395_
 
 packages:
   remote_package:
@@ -18,7 +24,8 @@ packages:
       - esphome/packages/sensors/bh1750.yaml
     # - esphome/packages/sensors/bme280.yaml # enable for bme280
       - esphome/packages/sensors/bme680.yaml # disable for bme280
-      - esphome/packages/sensors/occupancy.yaml
+    # - esphome/packages/sensors/bme680_bsec.yaml # does not work at the moment
+      - esphome/packages/sensors/occupancy.yaml # only works if pir & mmWave is activated
       - esphome/packages/sensors/pir.yaml
       - esphome/packages/sensors/rgb_led.yaml
       - esphome/packages/sensors/sen0395.yaml

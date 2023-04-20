@@ -2,7 +2,7 @@ esphome:
   name: "${name}"
   project:
     name: "Schluggi.AIOsense"
-    version: "2.0.0"
+    version: "3" # is different to the AIOsense version
 
 logger:
   baud_rate: 0 # disable logging via UART

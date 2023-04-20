@@ -8,7 +8,7 @@ binary_sensor:
     id: motion_mmwave
     device_class: occupancy
     pin:
-      number: GPIO2
+      number: "${sen0395_pin}"
       mode: INPUT_PULLDOWN
 
 switch:

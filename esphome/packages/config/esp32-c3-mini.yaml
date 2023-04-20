@@ -1,3 +1,8 @@
+substitutions:
+  pir_pin: GPIO4
+  rgb_led_pin: GPIO7
+  sen0395_pin: GPIO2
+
 esphome:
   platformio_options:
     board_build.extra_flags:
@@ -18,4 +23,3 @@ i2c:
 uart:
   tx_pin: GPIO21
   rx_pin: GPIO20
-

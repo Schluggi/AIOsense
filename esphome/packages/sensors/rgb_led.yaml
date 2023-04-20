@@ -1,3 +1,4 @@
+# https://esphome.io/components/light/neopixelbus.html
 light:
   - platform: neopixelbus
     name: "${name} LED"

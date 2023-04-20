@@ -1,3 +1,5 @@
+# https://esphome.io/components/sensor/bme680_bsec.html
+
 substitutions:
   bme680_bsec_sample_rate: lp
   bme680_bsec_temperature_offset: 0

@@ -1,3 +1,5 @@
+# https://esphome.io/components/sensor/bme680.html
+
 substitutions:
   bmex80_offset_humidity: "0"
   bmex80_offset_temperature: "0"

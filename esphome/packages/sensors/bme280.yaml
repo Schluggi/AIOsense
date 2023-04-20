@@ -1,3 +1,5 @@
+# https://esphome.io/cookbook/bme280_environment.html
+
 substitutions:
   bmex80_offset_humidity: "0"
   bmex80_offset_temperature: "0"

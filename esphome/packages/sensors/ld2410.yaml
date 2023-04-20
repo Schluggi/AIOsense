@@ -1,0 +1,46 @@
+# https://esphome.io/components/sensor/ld2410.html
+
+substitutions:
+  ld2410_max_distance_move: 4.5m
+  ld2410_max_distance_still: 4.5m
+  ld2410_timeout: 5s
+
+uart:
+  tx_pin: "${uart_tx_pin}"
+  rx_pin: "${uart_rx_pin}"
+  baud_rate: 256000
+  parity: NONE
+  stop_bits: 1
+
+ld2410:
+  timeout: "${ld2410_timeout}"
+  max_move_distance: "${ld2410_max_distance_move}"
+  max_still_distance: "${ld2410_max_distance_still}"
+  g0_move_threshold: 50
+  g0_still_threshold: 0
+  g1_move_threshold: 50
+  g1_still_threshold: 0
+  g2_move_threshold: 40
+  g2_still_threshold: 40
+  g3_move_threshold: 40
+  g3_still_threshold: 40
+  g4_move_threshold: 40
+  g4_still_threshold: 40
+  g5_move_threshold: 40
+  g5_still_threshold: 40
+  g6_move_threshold: 30
+  g6_still_threshold: 15
+  g7_move_threshold: 30
+  g7_still_threshold: 15
+  g8_move_threshold: 30
+  g8_still_threshold: 15
+
+binary_sensor:
+  - platform: ld2410
+    has_target:
+      name: "${name} mmWave"
+      id: motion_ld2410
+    has_moving_target:
+      name: "${name} Moving Target"
+    has_still_target:
+      name: "${name} Still Target"

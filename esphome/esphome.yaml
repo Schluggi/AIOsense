@@ -9,6 +9,10 @@ substitutions:
 # bme680_bsec_sample_rate: lp # lp -> 3s, ulp ->5min
 # bme680_bsec_temperature_offset: "0"
 
+# ld2410_max_distance_move: 4.5m
+# ld2410_max_distance_still: 4.5m
+# ld2410_timeout: 5s
+
 # pir_delayed_off: 1s
 # pir_delayed_on: 0s
 
@@ -32,7 +36,10 @@ packages:
       - esphome/packages/sensors/occupancy.yaml # only works if pir & mmWave is activated
       - esphome/packages/sensors/pir.yaml
       - esphome/packages/sensors/rgb_led.yaml # esp32-c3-mini only
-    #  - esphome/packages/sensors/led.yaml # d1-mini only
+      # - esphome/packages/sensors/led.yaml # d1-mini only
+
+      # --- select your radar sensor ---
+      # - esphome/packages/sensors/ld2410.yaml
       - esphome/packages/sensors/sen0395.yaml
     refresh: 1d
 

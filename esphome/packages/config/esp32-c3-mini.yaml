@@ -1,0 +1,21 @@
+esphome:
+  platformio_options:
+    board_build.extra_flags:
+      - "-DARDUINO_USB_CDC_ON_BOOT=0"
+    board_build.flash_mode: dio
+
+esp32:
+  board: lolin_c3_mini
+  variant: ESP32C3
+
+wifi:
+  output_power: 8.5dBm
+
+i2c:
+  sda: GPIO8
+  scl: GPIO10
+
+uart:
+  tx_pin: GPIO21
+  rx_pin: GPIO20
+

@@ -2,7 +2,7 @@ esphome:
   name: "${name}"
   project:
     name: "Schluggi.AIOsense"
-    version: "2.0.0-pack"
+    version: "2.0.0"
 
 logger:
   baud_rate: 0 # disable logging via UART
@@ -11,6 +11,11 @@ captive_portal:
 
 i2c:
   scan: true
+
+wifi:
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${name}"
 
 button:
   - platform: restart

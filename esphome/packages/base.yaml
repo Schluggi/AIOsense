@@ -9,6 +9,9 @@ esphome:
 
 captive_portal:
 
+i2c:
+  scan: true
+
 button:
   - platform: restart
     name: "${name} Restart"

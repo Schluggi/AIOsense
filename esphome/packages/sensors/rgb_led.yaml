@@ -1,6 +1,3 @@
-substitutions:
-  rgb_led_pin: 0
-
 light:
   - platform: neopixelbus
     name: "${name} LED"

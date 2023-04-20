@@ -1,4 +1,6 @@
 substitutions:
+  bmex80_offset_humidity: 0
+  bmex80_offset_temperature: 0
   bmex80_update_interval: 30s
 
 sensor:
@@ -7,9 +9,13 @@ sensor:
     update_interval: "${bmex80_update_interval}"
     temperature:
       name: "${name} Temperature"
-    pressure:
-      name: "${name} Pressure"
+      filters:
+        - offset: "${bmex80_offset_temperature}"
     humidity:
       name: "${name} Humidity"
+      filters:
+        - offset: "${bmex80_offset_humidity}"
+    pressure:
+      name: "${name} Pressure"
     gas_resistance:
       name: "${name} Gas Resistance"

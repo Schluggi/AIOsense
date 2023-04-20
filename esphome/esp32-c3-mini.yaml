@@ -1,5 +1,12 @@
 substitutions:
   name: "aiosense-c3-mini"
+# bh1750_update_interval: 5s
+
+# bmex80_offset_humidity: 0
+# bmex80_offset_temperature: 0
+# bmex80_update_interval: 30s
+
+
 
 packages:
   remote_package:
@@ -9,8 +16,9 @@ packages:
       - esphome/packages/config/base.yaml
       - esphome/packages/config/esp32-c3-mini.yaml
       - esphome/packages/sensors/bh1750.yaml
-      #- esphome/packages/sensors/bme280.yaml # enable for bme280
+    # - esphome/packages/sensors/bme280.yaml # enable for bme280
       - esphome/packages/sensors/bme680.yaml # disable for bme280
+      - esphome/packages/sensors/occupancy.yaml
       - esphome/packages/sensors/pir.yaml
       - esphome/packages/sensors/rgb_led.yaml
       - esphome/packages/sensors/sen0395.yaml
@@ -27,12 +35,9 @@ ota:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-  #  manual_ip:
-  #    static_ip: 192.168.1.111
-  #    subnet: 255.255.255.0
-  #    gateway: 192.168.1.1
-
-#web_server:
-#  port: 80
+# manual_ip:
+#   static_ip: 192.168.1.111
+#   subnet: 255.255.255.0
+#   gateway: 192.168.1.1
 
 bluetooth_proxy:

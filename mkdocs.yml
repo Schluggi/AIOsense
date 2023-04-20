@@ -12,9 +12,4 @@ plugins:
   - search
   - awesome-pages:
       filename: nav.yml
-
-markdown_extensions:
-  - attr_list # Needed to scale images
-  - pymdownx.emoji: # Emoji support
-      emoji_generator: !!python/name:pymdownx.emoji.to_alt
-  - admonition
+      strict: false

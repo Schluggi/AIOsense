@@ -3,11 +3,11 @@ name: Python Requirements
 on:
   push:
     branches: ["main"]
-    paths: 
+    paths:
       - docs/requirements.txt
   pull_request:
     branches: ["main"]
-    paths: 
+    paths:
       - docs/requirements.txt
 
   # Allows you to run this workflow manually from the Actions tab

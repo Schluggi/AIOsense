@@ -1,5 +1,5 @@
 substitutions:
-  name: "aiosense" # lowercase only
+  name: "aiosense"  # lowercase only
   # bh1750_update_interval: 5s
 
   # bmex80_offset_humidity: "0"
@@ -32,13 +32,13 @@ packages:
 
       # --- select your sensors ---
       - esphome/packages/sensors/bh1750.yaml
-      # - esphome/packages/sensors/bme280.yaml # enable for bme280
-      - esphome/packages/sensors/bme680.yaml # disable for bme280
-      # - esphome/packages/sensors/bme680_bsec.yaml # does not work at the moment
-      - esphome/packages/sensors/occupancy.yaml # only works if pir & mmWave is activated
+      # - esphome/packages/sensors/bme280.yaml  # enable for bme280
+      - esphome/packages/sensors/bme680.yaml  # disable for bme280
+      # - esphome/packages/sensors/bme680_bsec.yaml  # does not work at the moment
+      - esphome/packages/sensors/occupancy.yaml  # only works if pir & mmWave is activated
       - esphome/packages/sensors/pir.yaml
-      - esphome/packages/sensors/rgb_led.yaml # esp32-c3-mini only
-      # - esphome/packages/sensors/led.yaml # d1-mini only
+      - esphome/packages/sensors/rgb_led.yaml  # esp32-c3-mini only
+      # - esphome/packages/sensors/led.yaml  # d1-mini only
 
       # --- select your radar sensor ---
       # - esphome/packages/sensors/ld2410.yaml

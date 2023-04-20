@@ -1,0 +1,11 @@
+output:
+  - id: led_output
+    platform: gpio
+    pin: "${led_pin}"
+
+light:
+  - id: led
+    platform: binary
+    name: "${name} LED"
+    output: led_output
+    icon: "mdi:led-outline"

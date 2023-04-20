@@ -1,0 +1,13 @@
+substitutions:
+  pir_pin: GPIO23
+  led_pin: GPIO2
+  sen0395_io_pin: GPIO26
+  sen0395_tx_pin: GPIO1
+  sen0395_rx_pin: GPIO3
+
+esp32:
+  board: wemos_d1_mini32
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22

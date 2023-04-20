@@ -32,6 +32,7 @@ packages:
       - esphome/packages/sensors/occupancy.yaml # only works if pir & mmWave is activated
       - esphome/packages/sensors/pir.yaml
       - esphome/packages/sensors/rgb_led.yaml # esp32-c3-mini only
+    #  - esphome/packages/sensors/led.yaml # d1-mini only
       - esphome/packages/sensors/sen0395.yaml
     refresh: 1d
 

@@ -1,4 +1,5 @@
 substitutions:
+  buzzer_pin: GPIO0
   pir_pin: GPIO4
   rgb_led_pin: GPIO7
   sen0395_io_pin: GPIO2

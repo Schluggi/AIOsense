@@ -1,4 +1,5 @@
 substitutions:
+  buzzer_pin: GPIO9  # untested
   pir_pin: GPIO11
   sen0395_io_pin: GPIO3
   uart_rx_pin: GPIO37

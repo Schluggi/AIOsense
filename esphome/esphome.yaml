@@ -34,6 +34,7 @@ packages:
 
       # --- select your sensors ---
       - esphome/packages/sensors/bh1750.yaml
+      # - esphome/packages/sensors/buzzer.yaml  # AIOsense >= 2.1.x only
       # - esphome/packages/sensors/bme280.yaml  # enable for bme280
       - esphome/packages/sensors/bme680.yaml  # disable for bme280
       # - esphome/packages/sensors/bme680_bsec.yaml  # does not work yet

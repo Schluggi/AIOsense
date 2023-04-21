@@ -1,6 +1,6 @@
 binary_sensor:
   - platform: template
-    name: ${name} Occupancy
+    name: "${name} Occupancy"
     id: occupancy
     device_class: occupancy
     lambda: |-

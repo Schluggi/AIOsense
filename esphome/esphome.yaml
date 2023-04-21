@@ -1,6 +1,6 @@
 substitutions:
-  name: "aiosense"  # lowercase only, have to be unique
-  friendly_name: "AIOsense"  # device name and entity prefix
+  name: "aiosense-bedroom"  # lowercase only, have to be unique
+  friendly_name: "AIOsense Bedroom"  # device name and entity prefix
 
   # bh1750_update_interval: 5s
 

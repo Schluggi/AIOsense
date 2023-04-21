@@ -38,9 +38,9 @@ ld2410:
 binary_sensor:
   - platform: ld2410
     has_target:
-      name: "${name} mmWave"
+      name: "mmWave"
       id: motion_mmwave
     has_moving_target:
-      name: "${name} Moving Target"
+      name: "Moving Target"
     has_still_target:
-      name: "${name} Still Target"
+      name: "Still Target"

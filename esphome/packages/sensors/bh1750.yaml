@@ -5,6 +5,6 @@ substitutions:
 
 sensor:
   - platform: bh1750
-    name: "${name} Illuminance"
+    name: "Illuminance"
     address: 0x23
     update_interval: "${bh1750_update_interval}"

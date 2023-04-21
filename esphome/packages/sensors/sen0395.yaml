@@ -6,7 +6,7 @@ uart:
 
 binary_sensor:
   - platform: gpio
-    name: "${name} mmWave"
+    name: "mmWave"
     id: motion_mmwave
     device_class: occupancy
     pin:
@@ -15,7 +15,7 @@ binary_sensor:
 
 switch:
   - platform: template
-    name: "${name} mmWave Sensor"
+    name: "mmWave Sensor"
     id: "mmwave_sensor"
     optimistic: true
     restore_state: true
@@ -28,7 +28,7 @@ switch:
       - delay: 1s
 
   - platform: template
-    name: "${name} mmWave LED"
+    name: "mmWave LED"
     id: "mmwave_led"
     optimistic: true
     restore_state: true
@@ -52,7 +52,7 @@ switch:
 
 number:
   - platform: template
-    name: "${name} mmWave Distance"
+    name: "mmWave Distance"
     id: mmwave_distance
     min_value: 0
     max_value: 800
@@ -74,7 +74,7 @@ number:
       - switch.turn_on: mmwave_sensor
 
   - platform: template
-    name: "${name} mmWave Off Latency"
+    name: "mmWave Off Latency"
     id: mmwave_latency
     min_value: 0
     max_value: 65000
@@ -96,7 +96,7 @@ number:
       - switch.turn_on: mmwave_sensor
 
   - platform: template
-    name: "${name} mmWave Sensitivity"
+    name: "mmWave Sensitivity"
     id: mmwave_sensitivity
     min_value: 0
     max_value: 9
@@ -117,7 +117,7 @@ number:
 
 button:
   - platform: template
-    name: "${name} Factory Reset mmWave"
+    name: "Factory Reset mmWave"
     on_press:
       - switch.turn_off: mmwave_sensor
       - delay: 1s

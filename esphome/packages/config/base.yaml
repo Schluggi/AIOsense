@@ -1,5 +1,7 @@
 esphome:
   name: "${name}"
+  friendly_name: "${friendly_name}"
+
   project:
     name: "Schluggi.AIOsense"
     version: "3"  # is different to the AIOsense version
@@ -19,4 +21,4 @@ wifi:
 
 button:
   - platform: restart
-    name: "${name} Restart"
+    name: "Restart"

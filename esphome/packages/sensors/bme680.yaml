@@ -10,14 +10,14 @@ sensor:
     address: 0x76
     update_interval: "${bmex80_update_interval}"
     temperature:
-      name: "${name} Temperature"
+      name: "Temperature"
       filters:
         - offset: "${bmex80_offset_temperature}"
     humidity:
-      name: "${name} Humidity"
+      name: "Humidity"
       filters:
         - offset: "${bmex80_offset_humidity}"
     pressure:
-      name: "${name} Pressure"
+      name: "Pressure"
     gas_resistance:
-      name: "${name} Gas Resistance"
+      name: "Gas Resistance"

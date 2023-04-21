@@ -1,5 +1,7 @@
 substitutions:
-  name: "aiosense"  # lowercase only
+  name: "aiosense"  # lowercase only, have to be unique
+  friendly_name: "AIOsense"  # device name and entity prefix
+
   # bh1750_update_interval: 5s
 
   # bmex80_offset_humidity: "0"

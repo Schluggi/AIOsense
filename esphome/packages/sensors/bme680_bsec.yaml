@@ -12,26 +12,26 @@ bme680_bsec:
 sensor:
   - platform: bme680_bsec
     temperature:
-      name: "${name} Temperature"
+      name: "Temperature"
     pressure:
-      name: "${name} Pressure"
+      name: "Pressure"
     humidity:
-      name: "${name} Humidity"
+      name: "Humidity"
     iaq:
-      name: "${name} IAQ"
+      name: "IAQ"
       id: iaq
     co2_equivalent:
-      name: "${name} CO2 Equivalent"
+      name: "CO2 Equivalent"
     breath_voc_equivalent:
-      name: "${name} Breath VOC Equivalent"
+      name: "Breath VOC Equivalent"
 
 text_sensor:
   - platform: bme680_bsec
     iaq_accuracy:
-      name: "${name} IAQ Accuracy"
+      name: "IAQ Accuracy"
 
   - platform: template
-    name: "${name} IAQ Classification"
+    name: "IAQ Classification"
     icon: "mdi:checkbox-marked-circle-outline"
     lambda: |-
       if ( int(id(iaq).state) <= 50) {

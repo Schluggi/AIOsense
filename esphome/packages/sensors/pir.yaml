@@ -4,7 +4,7 @@ substitutions:
 
 binary_sensor:
   - platform: gpio
-    name: "${name} PIR"
+    name: "PIR"
     id: motion_pir
     pin:
       number: "${pir_pin}"

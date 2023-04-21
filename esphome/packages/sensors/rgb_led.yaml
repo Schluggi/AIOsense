@@ -1,7 +1,7 @@
 # https://esphome.io/components/light/neopixelbus.html
 light:
   - platform: neopixelbus
-    name: "${name} LED"
+    name: "LED"
     id: led
     type: GRB
     variant: WS2812X

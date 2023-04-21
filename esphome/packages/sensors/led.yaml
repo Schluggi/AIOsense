@@ -6,6 +6,6 @@ output:
 light:
   - id: led
     platform: binary
-    name: "${name} LED"
+    name: "LED"
     output: led_output
     icon: "mdi:led-outline"

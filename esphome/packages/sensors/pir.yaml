@@ -11,5 +11,5 @@ binary_sensor:
       mode: INPUT_PULLDOWN
     device_class: motion
     filters:
-      - delayed_on: "${pir_delayed_off}"
+      - delayed_on: "${pir_delayed_on}"
       - delayed_off: "${pir_delayed_off}"

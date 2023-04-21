@@ -9,3 +9,10 @@ light:
     name: "LED"
     output: led_output
     icon: "mdi:led-outline"
+
+esphome:
+  on_boot:
+    then:
+      - light.turn_on: led
+      - delay: 3s
+      - light.turn_off: led

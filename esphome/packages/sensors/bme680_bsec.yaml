@@ -2,7 +2,7 @@
 
 substitutions:
   bme680_bsec_sample_rate: lp
-  bme680_bsec_temperature_offset: 0
+  bme680_bsec_temperature_offset: "0"
 
 bme680_bsec:
   sample_rate: "${bme680_bsec_sample_rate}"

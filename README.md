@@ -70,9 +70,10 @@ Created and maintained by Lukas Schulte-Tickmann / [Schluggi](https://github.com
 
 ### Special thanks
 - My dad for some electrical engineering advice and PCB reviewing
-- [MeisterGig](https://github.com/MeisterGig) for some general discussions about the board and the case design
+- [MeisterGig](https://github.com/MeisterGig) for the case design and some general discussions about the board
 - [jankae](https://github.com/jankae) for PCB reviewing
 - [reschandreas](https://github.com/reschandreas) for general repo work
+- [PCBWay³](https://pcbway.com/g/DFb536) for sponsoring the PCB prototypes
 
 ### Contributors
 <a href="https://github.com/Schluggi/AIOsense/graphs/contributors">
@@ -82,3 +83,6 @@ Created and maintained by Lukas Schulte-Tickmann / [Schluggi](https://github.com
 <br>
 
 Inspired by [EverythingSmartHome](https://everythingsmarthome.co.uk/).
+
+<hr>
+³ Affiliate link

@@ -22,9 +22,9 @@ You can use a BME PCB module instead.
 
 | Part                | Shops                                                                                                                                                                                                                                                                                                   |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BME280 (PCB module) | [Amazon DE³](https://amzn.to/3XPo7DV), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127130157&SearchText=BME280+&spm=a2g0o.home.1000002.0&dida=y)                                                                                                                     |
+| BME280 (PCB module) | [Amazon DE³](https://amzn.to/3KXklmd), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127130157&SearchText=BME280+&spm=a2g0o.home.1000002.0&dida=y)                                                                                                                     |
 | BME280 (SMD)        | [Reichelt](https://www.reichelt.de/kombo-sensor-luftdruck-luftfeuchtigkeit-temp--bme-280-p159825.html), [Mouser](https://www.mouser.de/ProductDetail/Bosch-Sensortec/BME280?qs=2OnyuXx6vpj2fK9HX7qb3g%3D%3D), [Digi-Key](https://www.digikey.de/de/products/detail/bosch-sensortec/BME280/6136306)      |
-| BME680 (PCB module) | [Amazon DE³](https://amzn.to/3VrcK2E), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127130036&SearchText=BME680+&spm=a2g0o.home.1000002.0&dida=y)                                                                                                                     |
+| BME680 (PCB module) | [Amazon DE³](https://amzn.to/41y0XmS), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127130036&SearchText=BME680+&spm=a2g0o.home.1000002.0&dida=y)                                                                                                                     |
 | BME680 (SMD)        | [Reichelt](https://www.reichelt.de/kombo-sensor-luftdruck-luftfeuchtigkeit-temp-gas-bme-680-p159835.html), [Mouser](https://www.mouser.de/ProductDetail/Bosch-Sensortec/BME680?qs=v271MhAjFHjo0yA%2FC4OnDQ%3D%3D), [Digi-Key](https://www.digikey.de/de/products/detail/bosch-sensortec/BME680/7401317) |
 
 ### Compatibility
@@ -44,7 +44,7 @@ recommend the really cheap GY-302 BH1750 PCB.
 
 | Part   | Shops                                                                                                                                                                                     |
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BH1750 | [Amazon DE³](https://amzn.to/3FVbLmP), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127121631&SearchText=BH1750&spm=a2g0o.productlist.1000002.0&dida=y) |
+| BH1750 | [Amazon DE³](https://amzn.to/3oAc6Vy), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127121631&SearchText=BH1750&spm=a2g0o.productlist.1000002.0&dida=y) |
 
 ### Compatibility
 
@@ -71,7 +71,7 @@ The AIOsense PCB is designed to work only with INMP441-modules which are known f
 
 | Part    | Shops                                                                                                                                                                                      |
 |---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| INMP441 | [Amazon DE³](https://amzn.to/3u2kRY3), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127114658&SearchText=inmp441&spm=a2g0o.tm800107193.1000002.0&dida=y) |
+| INMP441 | [Amazon DE³](https://amzn.to/40y8twJ), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127114658&SearchText=inmp441&spm=a2g0o.tm800107193.1000002.0&dida=y) |
 
 ### Compatibility
 

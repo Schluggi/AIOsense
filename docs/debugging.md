@@ -1,4 +1,4 @@
-# 🐞 Debugging
+# Debugging
 
 ## Inconsistent I²C readings
 
@@ -9,8 +9,6 @@ readings. You can do this by tweaking your yaml file and add a `frequency`.
 
 ```yaml
 i2c:
-  sda: 21
-  scl: 22
   frequency: 10kHz  # (defaults to 50kHz)
 ```
 

@@ -1,5 +1,7 @@
 # Quickstart
 
+![pcbway.png](img/aiosense_closed.JPG){: style="height:80%;width:80%"}
+
 ## Order PCB
 
 [![pcbway.png](img/pcbway.png)](https://www.pcbway.com/project/shareproject/AIOsense_All_In_One_Sensor_132c1507.html)

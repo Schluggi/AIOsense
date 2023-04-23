@@ -1,5 +1,7 @@
 # AIOsense documentation
 
+![pcbway.png](img/aiosense_open.JPG)
+
 Welcome to the [AIOsense](https://github.com/Schluggi/AIOsense) documentation.
 
 If you miss some information or spot something wrong / outdatet feel free to create

@@ -7,9 +7,10 @@
   (paper "A4")
   (title_block
     (title "AIOsense")
-    (date "2023-03-28")
-    (rev "2.0.0")
-    (company "https://github.com/Schluggi/AIOsense")
+    (date "2023-04-23")
+    (rev "2.1.0-rc1")
+    (company "Schluggi")
+    (comment 1 "https://github.com/Schluggi/AIOsense")
   )
 
   (layers
@@ -3960,7 +3961,7 @@
   (gr_text "L/R" (at 188.86 106) (layer "F.SilkS") (tstamp f5fa7fa4-d26c-4b5c-9083-ce62724d17b6)
     (effects (font (size 0.6 0.6) (thickness 0.1)))
   )
-  (gr_text "v2.0.0 03/23" (at 188.6 85.3) (layer "F.SilkS") (tstamp f9aa52b8-a868-42d0-9b67-56b74f9bee30)
+  (gr_text "v2.1.0-rc1 04/23" (at 188.6 85.3) (layer "F.SilkS") (tstamp f9aa52b8-a868-42d0-9b67-56b74f9bee30)
     (effects (font (size 0.6 0.6) (thickness 0.1)))
   )
   (gr_text "GND" (at 188.86 95.5) (layer "F.SilkS") (tstamp fc16ee1a-28e5-4077-83ac-5ac4e6057cce)

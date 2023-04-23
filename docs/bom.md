@@ -1,6 +1,6 @@
 # BOM (Bill Of Materials)
 
-You can find the BOM [here](https://github.com/Schluggi/AIOsense/bom).
+You can find the BOM [here](https://github.com/Schluggi/AIOsense/tree/main/bom).
 
 You can get most parts from sellers
 like [Mouser](https://www2.mouser.com/), [Farnell](https://www.farnell.com/)

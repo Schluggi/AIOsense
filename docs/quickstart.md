@@ -20,7 +20,7 @@ the [release](https://github.com/Schluggi/AIOsense/releases/latest) page.
 ## Order parts
 
 Now that you have the PCB, we still need the remaining parts. There is a
-separate [BOM (Bill Of Materials)](https://github.com/Schluggi/AIOsense/bom) for
+separate [BOM (Bill Of Materials)](https://github.com/Schluggi/AIOsense/tree/main/bom) for
 each AIOsense version. Open the pdf file and order all green marked lines.
 
 You can get most parts from sellers

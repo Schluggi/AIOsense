@@ -1,0 +1,67 @@
+substitutions:
+  name: "aiosense-bedroom"  # lowercase only, have to be unique
+  friendly_name: "AIOsense Bedroom"  # device name and entity prefix
+
+  # bh1750_update_interval: 5s
+
+  # bmex80_offset_humidity: "0"
+  # bmex80_offset_temperature: "0"
+  # bmex80_update_interval: 30s
+
+  # bme680_bsec_sample_rate: lp # lp -> 3s, ulp ->5min
+  # bme680_bsec_temperature_offset: "0"
+
+  # ld2410_max_distance_move: 4.5m
+  # ld2410_max_distance_still: 4.5m
+  # ld2410_timeout: 5s
+
+  # pir_delayed_off: 1s
+  # pir_delayed_on: 0s
+
+packages:
+  remote_package:
+    url: https://github.com/schluggi/AIOsense
+    ref: packages
+    refresh: 1d
+    files:
+      - esphome/packages/config/base.yaml
+
+      # --- select your board ---
+      - esphome/packages/config/esp32-c3-mini.yaml
+      # - esphome/packages/config/esp32-d1-mini.yaml
+      # - esphome/packages/config/esp32-s2-mini.yaml
+      # - esphome/packages/config/esp8266-d1-mini.yaml
+
+      # --- select your sensors ---
+      - esphome/packages/sensors/bh1750.yaml
+      # - esphome/packages/sensors/buzzer.yaml  # AIOsense >= 2.1.x only
+      # - esphome/packages/sensors/bme280.yaml  # enable for bme280
+      - esphome/packages/sensors/bme680.yaml  # disable for bme280
+      # - esphome/packages/sensors/bme680_bsec.yaml  # does not work yet
+      - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are on
+      - esphome/packages/sensors/pir.yaml
+      - esphome/packages/sensors/rgb_led.yaml  # esp32-c3-mini only
+      # - esphome/packages/sensors/led.yaml  # d1-mini only
+
+      # --- select your radar sensor ---
+      # - esphome/packages/sensors/ld2410.yaml
+      - esphome/packages/sensors/sen0395.yaml
+
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "<secret>"
+
+ota:
+  password: "<secret>"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  # manual_ip:
+  #   static_ip: 192.168.1.111
+  #   subnet: 255.255.255.0
+  #   gateway: 192.168.1.1
+
+bluetooth_proxy:

@@ -1,0 +1,17 @@
+# https://esphome.io/components/light/neopixelbus.html
+light:
+  - platform: neopixelbus
+    name: "LED"
+    id: led
+    type: GRB
+    variant: WS2812X
+    num_leds: 1
+    pin: "${rgb_led_pin}"
+    icon: "mdi:led-outline"
+
+esphome:
+  on_boot:
+    then:
+      - light.turn_on: led
+      - delay: 3s
+      - light.turn_off: led

@@ -1,0 +1,25 @@
+# https://esphome.io/components/rtttl.html
+
+output:
+  - platform: ledc
+    pin: "${buzzer_pin}"
+    id: rtttl_out
+
+api:
+  services:
+    - service: play_rtttl
+      variables:
+        song_str: string
+      then:
+        - rtttl.play:
+            rtttl: !lambda 'return song_str;'
+
+rtttl:
+  output: rtttl_out
+  on_finished_playback:
+    - logger.log: 'Song ended!'
+
+esphome:
+  on_boot:
+    then:
+      - rtttl.play: "two short:d=4,o=5,b=100:16e6,16e6"

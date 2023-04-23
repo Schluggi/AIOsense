@@ -1,0 +1,14 @@
+substitutions:
+  buzzer_pin: GPIO19  # untested
+  led_pin: GPIO2
+  pir_pin: GPIO23
+  sen0395_io_pin: GPIO26
+  uart_rx_pin: GPIO3
+  uart_tx_pin: GPIO1
+
+esp32:
+  board: wemos_d1_mini32
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22

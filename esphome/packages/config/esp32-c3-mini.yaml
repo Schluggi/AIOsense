@@ -1,0 +1,24 @@
+substitutions:
+  buzzer_pin: GPIO0
+  pir_pin: GPIO4
+  rgb_led_pin: GPIO7
+  sen0395_io_pin: GPIO2
+  uart_rx_pin: GPIO20
+  uart_tx_pin: GPIO21
+
+esphome:
+  platformio_options:
+    board_build.extra_flags:
+      - "-DARDUINO_USB_CDC_ON_BOOT=0"
+    board_build.flash_mode: dio
+
+esp32:
+  board: lolin_c3_mini
+  variant: ESP32C3
+
+wifi:
+  output_power: 8.5dBm
+
+i2c:
+  sda: GPIO8
+  scl: GPIO10

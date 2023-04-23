@@ -1,0 +1,15 @@
+binary_sensor:
+  - platform: template
+    name: "Occupancy"
+    id: occupancy
+    device_class: occupancy
+    lambda: |-
+      if (id(motion_mmwave).state or id(motion_pir).state) {
+        return true;
+      }
+      else if (id(motion_mmwave).state == 0 and id(motion_pir).state == 0) {
+        return false;
+      }
+      else {
+        return id(occupancy).state;
+      }

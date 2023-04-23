@@ -1,0 +1,15 @@
+substitutions:
+  buzzer_pin: GPIO9  # untested
+  pir_pin: GPIO11
+  sen0395_io_pin: GPIO3
+  uart_rx_pin: GPIO37
+  uart_tx_pin: GPIO39
+
+esp32:
+  board: esp32-s2-saola-1
+  framework:
+    type: esp-idf
+
+i2c:
+  sda: GPIO33
+  scl: GPIO35

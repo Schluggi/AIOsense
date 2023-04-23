@@ -13,3 +13,6 @@ plugins:
   - awesome-pages:
       filename: nav.yml
       strict: false
+
+markdown_extensions:
+  - attr_list  # for image scale

@@ -1,6 +1,7 @@
 nav:
-  - Quickstart:
-      - Quickstart: quickstart.md
+  - Getting started:
+      - Quickstart guide: quickstart.md
+      - BOM (Bill Of Materials): bom.md
 
   - Hardware:
       # - pcb.md

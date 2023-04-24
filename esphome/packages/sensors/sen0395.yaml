@@ -17,6 +17,7 @@ switch:
   - platform: template
     name: "mmWave Sensor"
     id: "mmwave_sensor"
+    entity_category: config
     optimistic: true
     restore_state: true
     assumed_state: true
@@ -30,6 +31,7 @@ switch:
   - platform: template
     name: "mmWave LED"
     id: "mmwave_led"
+    entity_category: config
     optimistic: true
     restore_state: true
     assumed_state: true
@@ -54,6 +56,7 @@ number:
   - platform: template
     name: "mmWave Distance"
     id: mmwave_distance
+    entity_category: config
     min_value: 0
     max_value: 800
     initial_value: 315
@@ -76,6 +79,7 @@ number:
   - platform: template
     name: "mmWave Off Latency"
     id: mmwave_latency
+    entity_category: config
     min_value: 0
     max_value: 65000
     initial_value: 12500
@@ -98,6 +102,7 @@ number:
   - platform: template
     name: "mmWave Sensitivity"
     id: mmwave_sensitivity
+    entity_category: config
     min_value: 0
     max_value: 9
     initial_value: 7
@@ -118,6 +123,7 @@ number:
 button:
   - platform: template
     name: "mmWave Factory Reset"
+    entity_category: config
     on_press:
       - switch.turn_off: mmwave_sensor
       - delay: 1s

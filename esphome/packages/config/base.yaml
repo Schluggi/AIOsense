@@ -22,3 +22,11 @@ wifi:
 button:
   - platform: restart
     name: "Restart"
+
+binary_sensor:
+  - platform: status
+    name: "Status"
+
+sensor:
+  - platform: wifi_signal
+    name: "Wifi Signal"

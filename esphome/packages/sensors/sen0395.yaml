@@ -117,7 +117,7 @@ number:
 
 button:
   - platform: template
-    name: "Factory Reset mmWave"
+    name: "mmWave Factory Reset"
     on_press:
       - switch.turn_off: mmwave_sensor
       - delay: 1s

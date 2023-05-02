@@ -25,6 +25,14 @@ wifi:
 button:
   - platform: restart
     name: "Restart"
+    entity_category: diagnostic
+
+  - platform: restart
+    name: "Restart"
+    entity_category: diagnostic
+
+  - platform: safe_mode
+    name: "Restart (Safe Mode)"
 
 binary_sensor:
   - platform: status
@@ -33,3 +41,6 @@ binary_sensor:
 sensor:
   - platform: wifi_signal
     name: "Wifi Signal"
+
+  - platform: internal_temperature
+    name: "CPU Temperature"

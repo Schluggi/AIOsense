@@ -27,10 +27,6 @@ button:
     name: "Restart"
     entity_category: diagnostic
 
-  - platform: restart
-    name: "Restart"
-    entity_category: diagnostic
-
   - platform: safe_mode
     name: "Restart (Safe Mode)"
     entity_category: diagnostic

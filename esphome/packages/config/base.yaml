@@ -33,6 +33,7 @@ button:
 
   - platform: safe_mode
     name: "Restart (Safe Mode)"
+    entity_category: diagnostic
 
 binary_sensor:
   - platform: status

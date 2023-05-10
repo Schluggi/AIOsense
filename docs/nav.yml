@@ -14,6 +14,7 @@ nav:
 
   - Other:
       - 🐞 Debugging: debugging.md
+      - Case: case.md
 
   - 🌍 External Links:
       - Releases: https://github.com/Schluggi/AIOsense/releases

@@ -1,7 +1,9 @@
 output:
   - id: led_output
     platform: gpio
-    pin: "${led_pin}"
+    pin:
+      number: "${led_pin}"
+      inverted: true
 
 light:
   - id: led

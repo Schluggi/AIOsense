@@ -22,3 +22,7 @@ wifi:
 i2c:
   sda: GPIO8
   scl: GPIO10
+
+sensor:
+  - platform: internal_temperature
+    name: "CPU Temperature"

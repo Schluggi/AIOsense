@@ -12,3 +12,7 @@ esp32:
 i2c:
   sda: GPIO21
   scl: GPIO22
+
+sensor:
+  - platform: internal_temperature
+    name: "CPU Temperature"

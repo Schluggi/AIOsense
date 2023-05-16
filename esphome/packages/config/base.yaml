@@ -38,6 +38,3 @@ binary_sensor:
 sensor:
   - platform: wifi_signal
     name: "Wifi Signal"
-
-  - platform: internal_temperature
-    name: "CPU Temperature"

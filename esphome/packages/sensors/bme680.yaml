@@ -1,13 +1,14 @@
 # https://esphome.io/components/sensor/bme680.html
 
 substitutions:
+  bmex80_address: "0x76"
   bmex80_offset_humidity: "0"
   bmex80_offset_temperature: "0"
   bmex80_update_interval: 30s
 
 sensor:
   - platform: bme680
-    address: 0x76
+    address: "${bmex80_address}"
     update_interval: "${bmex80_update_interval}"
     temperature:
       name: "Temperature"

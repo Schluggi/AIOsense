@@ -1,10 +1,12 @@
 # https://esphome.io/components/sensor/bme680_bsec.html
 
 substitutions:
+  bmex80_address: "0x76"
   bme680_bsec_sample_rate: lp
   bme680_bsec_temperature_offset: "0"
 
 bme680_bsec:
+  address: "${bmex80_address}"
   sample_rate: "${bme680_bsec_sample_rate}"
   state_save_interval: 2h
   temperature_offset: "${bme680_bsec_temperature_offset}"

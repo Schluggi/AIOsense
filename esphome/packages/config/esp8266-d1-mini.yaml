@@ -2,6 +2,7 @@ substitutions:
   buzzer_pin: GPIO12  # untested
   led_pin: GPIO2
   pir_pin: GPIO13
+  pir_pin_mode: "INPUT"
   sen0395_io_pin: GPIO16
   uart_rx_pin: GPIO3
   uart_tx_pin: GPIO1

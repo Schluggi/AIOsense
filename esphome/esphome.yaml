@@ -5,7 +5,7 @@ substitutions:
 
   # bh1750_update_interval: 5s
 
-  # bmex80_address: "0x76"
+  # bmex80_address: "0x76"  # for some modules you have to change it to 0x77
   # bmex80_offset_humidity: "0"
   # bmex80_offset_temperature: "0"
   # bmex80_update_interval: 30s

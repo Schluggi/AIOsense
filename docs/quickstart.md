@@ -2,6 +2,9 @@
 
 ![pcbway.png](img/aiosense_closed.JPG){: style="height:80%;width:80%"}
 
+> **Note:** You can also buy AIOsense as a kit
+> on [tindie](https://www.tindie.com/products/gadgetgarage/aiosense/).
+
 ## Order PCB
 
 [![pcbway.png](img/pcbway.png)](https://www.pcbway.com/project/shareproject/AIOsense_All_In_One_Sensor_132c1507.html)

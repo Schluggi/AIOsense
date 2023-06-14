@@ -1,5 +1,5 @@
 substitutions:
-  buzzer_pin: GPIO9  # untested
+  buzzer_pin: GPIO9
   led_invert: "true"
   led_pin: GPIO15
   pir_pin: GPIO11

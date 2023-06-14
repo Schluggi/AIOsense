@@ -8,8 +8,9 @@ substitutions:
 
 esp32:
   board: esp32-s2-saola-1
+  variant: ESP32S2
   framework:
-    type: esp-idf
+    type: arduino
 
 i2c:
   sda: GPIO33

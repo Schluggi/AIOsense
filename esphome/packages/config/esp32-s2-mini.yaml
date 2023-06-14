@@ -3,7 +3,7 @@ substitutions:
   led_invert: "true"
   led_pin: GPIO15
   pir_pin: GPIO11
-  sen0395_io_pin: GPIO3
+  sen0395_io_pin: GPIO5
   uart_rx_pin: GPIO37
   uart_tx_pin: GPIO39
 

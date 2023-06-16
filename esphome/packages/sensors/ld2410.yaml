@@ -42,19 +42,19 @@ binary_sensor:
       name: "mmWave"
       id: motion_mmwave
     has_moving_target:
-      name: "Moving Target"
+      name: "mmWave Moving Target"
     has_still_target:
-      name: "Still Target"
+      name: "mmWave Still Target"
 
 sensor:
   - platform: ld2410
     moving_distance:
-      name : Moving Distance
+      name : "mmWave Moving Distance"
     still_distance:
-      name: Still Distance
+      name: "mmWave Still Distance"
     moving_energy:
-      name: Move Energy
+      name: "mmWave Move Energy"
     still_energy:
-      name: Still Energy
+      name: "mmWave Still Energy"
     detection_distance:
-      name: Detection Distance
+      name: "mmWave Detection Distance"

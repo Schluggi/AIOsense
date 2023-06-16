@@ -6,8 +6,9 @@ substitutions:
   ld2410_timeout: 5s
 
 uart:
-  tx_pin: "${uart_tx_pin}"
-  rx_pin: "${uart_rx_pin}"
+  # switching rx & tx is not a mistake but necessary
+  tx_pin: "${uart_rx_pin}"
+  rx_pin: "${uart_tx_pin}"
   baud_rate: 256000
   parity: NONE
   stop_bits: 1
@@ -41,6 +42,19 @@ binary_sensor:
       name: "mmWave"
       id: motion_mmwave
     has_moving_target:
-      name: "Moving Target"
+      name: "mmWave Moving Target"
     has_still_target:
-      name: "Still Target"
+      name: "mmWave Still Target"
+
+sensor:
+  - platform: ld2410
+    moving_distance:
+      name : "mmWave Moving Distance"
+    still_distance:
+      name: "mmWave Still Distance"
+    moving_energy:
+      name: "mmWave Move Energy"
+    still_energy:
+      name: "mmWave Still Energy"
+    detection_distance:
+      name: "mmWave Detection Distance"

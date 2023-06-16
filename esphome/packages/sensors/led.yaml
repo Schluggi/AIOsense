@@ -1,9 +1,12 @@
+substitutions:
+  led_invert: "false"
+
 output:
   - id: led_output
     platform: gpio
     pin:
       number: "${led_pin}"
-      inverted: true
+      inverted: "${led_invert}"
 
 light:
   - id: led

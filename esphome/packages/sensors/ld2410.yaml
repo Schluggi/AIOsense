@@ -45,3 +45,16 @@ binary_sensor:
       name: "Moving Target"
     has_still_target:
       name: "Still Target"
+
+sensor:
+  - platform: ld2410
+    moving_distance:
+      name : Moving Distance
+    still_distance:
+      name: Still Distance
+    moving_energy:
+      name: Move Energy
+    still_energy:
+      name: Still Energy
+    detection_distance:
+      name: Detection Distance

@@ -49,7 +49,7 @@ binary_sensor:
 sensor:
   - platform: ld2410
     moving_distance:
-      name : "mmWave Moving Distance"
+      name: "mmWave Moving Distance"
     still_distance:
       name: "mmWave Still Distance"
     moving_energy:

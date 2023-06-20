@@ -6,8 +6,8 @@
 
   (title_block
     (title "AIOsense")
-    (date "2023-04-23")
-    (rev "2.1.0-rc1")
+    (date "2023-06-20")
+    (rev "2.1.0")
     (company "Schluggi")
     (comment 1 "https://github.com/Schluggi/AIOsense")
   )

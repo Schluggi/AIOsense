@@ -12,7 +12,7 @@ mkdocs-awesome-pages-plugin==2.9.1
 natsort==8.4.0
 packaging==23.1
 python-dateutil==2.8.2
-PyYAML==6.0
+PyYAML==6.0.1
 pyyaml_env_tag==0.1
 six==1.16.0
 watchdog==3.0.0

@@ -19,7 +19,7 @@ switch:
     id: "mmwave_sensor"
     entity_category: config
     optimistic: true
-    restore_state: true
+    restore_mode: RESTORE_DEFAULT_ON
     assumed_state: true
     turn_on_action:
       - uart.write: "sensorStart"
@@ -33,7 +33,7 @@ switch:
     id: "mmwave_led"
     entity_category: config
     optimistic: true
-    restore_state: true
+    restore_mode: RESTORE_DEFAULT_OFF
     assumed_state: true
     turn_on_action:
       - switch.turn_off: mmwave_sensor

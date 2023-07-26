@@ -6,9 +6,8 @@ substitutions:
   ld2410_timeout: 5s
 
 uart:
-  # switching rx & tx is not a mistake but necessary
-  tx_pin: "${uart_rx_pin}"
-  rx_pin: "${uart_tx_pin}"
+  tx_pin: "${uart_tx_pin}"
+  rx_pin: "${uart_rx_pin}"
   baud_rate: 256000
   parity: NONE
   stop_bits: 1

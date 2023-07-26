@@ -10,7 +10,6 @@ nav:
 
   - Software:
       - Flashing ESPHome: flashing.md
-      #- Home Assistant: homeassistant.md
 
   - Other:
       - 🐞 Debugging: debugging.md

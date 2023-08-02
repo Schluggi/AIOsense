@@ -12,15 +12,6 @@ light:
     num_leds: 1
     pin: "${rgb_led_pin}"
     icon: "mdi:led-outline"
-light:
-  - platform: neopixelbus
-    name: "LED"
-    id: led
-    type: GRB
-    variant: WS2812X
-    num_leds: 1
-    pin: "${rgb_led_pin}"
-    icon: "mdi:led-outline"
     effects:
       - strobe:
           colors:

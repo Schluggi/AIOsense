@@ -1,4 +1,8 @@
 # https://esphome.io/components/light/neopixelbus.html
+substitutions:
+  strobe_on: 50ms
+  strobe_off: 100ms
+  
 light:
   - platform: neopixelbus
     name: "LED"
@@ -8,7 +12,43 @@ light:
     num_leds: 1
     pin: "${rgb_led_pin}"
     icon: "mdi:led-outline"
-
+light:
+  - platform: neopixelbus
+    name: "LED"
+    id: led
+    type: GRB
+    variant: WS2812X
+    num_leds: 1
+    pin: "${rgb_led_pin}"
+    icon: "mdi:led-outline"
+    effects:
+      - strobe:
+          colors:
+            - state: true
+              duration: "${strobe_on}"
+            - state: false
+              duration: "${strobe_off}"
+      - strobe:
+          name: Alarm
+          colors:
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 0%
+              blue: 0%
+              duration: "${strobe_on}"
+            - state: false
+              duration: "${strobe_off}"
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 100%
+              blue: 100%
+              duration: "${strobe_on}"
+            - state: false
+              duration: "${strobe_off}"
+      - pulse:
+      
 esphome:
   on_boot:
     then:

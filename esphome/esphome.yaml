@@ -22,7 +22,7 @@ substitutions:
   # pir_delayed_on: 0s
 
   # led_strobe_on: 50ms   # controls the strobe effect if rgb_led or led is enabled
-  # led_strobe_off: 100ms 
+  # led_strobe_off: 100ms
 
 packages:
   remote_package:

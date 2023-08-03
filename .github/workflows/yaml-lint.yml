@@ -33,5 +33,6 @@ jobs:
                 level: error
               document-end: disable
               document-start: disable
+              line-length: disable
               truthy:
                 allowed-values: ['true', 'false', 'on']

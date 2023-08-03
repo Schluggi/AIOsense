@@ -23,7 +23,6 @@ light:
               duration: "${led_strobe_on}"
             - state: false
               duration: "${led_strobe_off}"
-      - pulse:
 
 esphome:
   on_boot:

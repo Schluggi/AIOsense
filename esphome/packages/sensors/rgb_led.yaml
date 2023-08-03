@@ -2,7 +2,7 @@
 substitutions:
   led_strobe_on: 50ms
   led_strobe_off: 100ms
-  
+
 light:
   - platform: neopixelbus
     name: "LED"
@@ -39,7 +39,7 @@ light:
             - state: false
               duration: "${led_strobe_off}"
       - pulse:
-      
+
 esphome:
   on_boot:
     then:

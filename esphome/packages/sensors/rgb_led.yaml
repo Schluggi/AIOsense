@@ -1,7 +1,7 @@
 # https://esphome.io/components/light/neopixelbus.html
 substitutions:
-  strobe_on: 50ms
-  strobe_off: 100ms
+  led_strobe_on: 50ms
+  led_strobe_off: 100ms
   
 light:
   - platform: neopixelbus
@@ -16,9 +16,9 @@ light:
       - strobe:
           colors:
             - state: true
-              duration: "${strobe_on}"
+              duration: "${led_strobe_on}"
             - state: false
-              duration: "${strobe_off}"
+              duration: "${led_strobe_off}"
       - strobe:
           name: Alarm
           colors:
@@ -27,17 +27,17 @@ light:
               red: 100%
               green: 0%
               blue: 0%
-              duration: "${strobe_on}"
+              duration: "${led_strobe_on}"
             - state: false
-              duration: "${strobe_off}"
+              duration: "${led_strobe_off}"
             - state: true
               brightness: 100%
               red: 100%
               green: 100%
               blue: 100%
-              duration: "${strobe_on}"
+              duration: "${led_strobe_on}"
             - state: false
-              duration: "${strobe_off}"
+              duration: "${led_strobe_off}"
       - pulse:
       
 esphome:

@@ -13,9 +13,6 @@ uart:
   stop_bits: 1
 
 ld2410:
-  timeout: "${ld2410_timeout}"
-  max_move_distance: "${ld2410_max_distance_move}"
-  max_still_distance: "${ld2410_max_distance_still}"
 
 number:
   - platform: ld2410

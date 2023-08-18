@@ -13,27 +13,62 @@ uart:
   stop_bits: 1
 
 ld2410:
-  timeout: "${ld2410_timeout}"
-  max_move_distance: "${ld2410_max_distance_move}"
-  max_still_distance: "${ld2410_max_distance_still}"
-  g0_move_threshold: 50
-  g0_still_threshold: 0
-  g1_move_threshold: 50
-  g1_still_threshold: 0
-  g2_move_threshold: 40
-  g2_still_threshold: 40
-  g3_move_threshold: 40
-  g3_still_threshold: 40
-  g4_move_threshold: 40
-  g4_still_threshold: 40
-  g5_move_threshold: 40
-  g5_still_threshold: 40
-  g6_move_threshold: 30
-  g6_still_threshold: 15
-  g7_move_threshold: 30
-  g7_still_threshold: 15
-  g8_move_threshold: 30
-  g8_still_threshold: 15
+
+number:
+  - platform: ld2410
+    timeout:
+      name: timeout
+    light_threshold:
+      name: light threshold
+    max_move_distance_gate:
+      name: max move distance gate
+    max_still_distance_gate:
+      name: max still distance gate
+    g0:
+      move_threshold:
+        name: g0 move threshold
+      still_threshold:
+        name: g0 still threshold
+    g1:
+      move_threshold:
+        name: g1 move threshold
+      still_threshold:
+        name: g1 still threshold
+    g2:
+      move_threshold:
+        name: g2 move threshold
+      still_threshold:
+        name: g2 still threshold
+    g3:
+      move_threshold:
+        name: g3 move threshold
+      still_threshold:
+        name: g3 still threshold
+    g4:
+      move_threshold:
+        name: g4 move threshold
+      still_threshold:
+        name: g4 still threshold
+    g5:
+      move_threshold:
+        name: g5 move threshold
+      still_threshold:
+        name: g5 still threshold
+    g6:
+      move_threshold:
+        name: g6 move threshold
+      still_threshold:
+        name: g6 still threshold
+    g7:
+      move_threshold:
+        name: g7 move threshold
+      still_threshold:
+        name: g7 still threshold
+    g8:
+      move_threshold:
+        name: g8 move threshold
+      still_threshold:
+        name: g8 still threshold
 
 binary_sensor:
   - platform: ld2410

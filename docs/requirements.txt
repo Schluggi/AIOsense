@@ -16,5 +16,5 @@ PyYAML==6.0.1
 pyyaml_env_tag==0.1
 six==1.16.0
 watchdog==3.0.0
-wcmatch==8.4.1
+wcmatch==8.5
 zipp==3.16.2

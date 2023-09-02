@@ -1,4 +1,4 @@
-bracex==2.3.post1
+bracex==2.4
 click==8.1.7
 colorama==0.4.6
 ghp-import==2.1.0

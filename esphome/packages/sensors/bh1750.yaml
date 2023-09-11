@@ -2,9 +2,32 @@
 
 substitutions:
   bh1750_update_interval: "5s"
+  illuminance_offset: "0"
+
+number:
+  - platform: template
+    name: "Illuminance Offset"
+    id: illuminance_offset_ui
+    unit_of_measurement: "lx"
+    min_value: -100
+    max_value: 100
+    step: 1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:brightness-5"
+    entity_category: config
+    on_value:
+      - lambda: 'id(illuminance_sensor).update();'\
 
 sensor:
   - platform: bh1750
+    id: illuminance_sensor
     name: "Illuminance"
     address: 0x23
     update_interval: "${bh1750_update_interval}"
+    filter:
+      - offset: ${illuminance_offset}
+      - lambda: "return x + id(illuminance_offset_ui).state;"

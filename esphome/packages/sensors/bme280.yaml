@@ -45,7 +45,7 @@ number:
   - platform: template
     name: "Pressure Offset"
     id: pressure_offset_ui
-    unit_of_measurement: "%"
+    unit_of_measurement: "hPa"
     min_value: -500
     max_value: 500
     step: 1

@@ -20,7 +20,7 @@ number:
     icon: "mdi:brightness-5"
     entity_category: config
     on_value:
-      - lambda: 'id(illuminance_sensor).update();'\
+      - lambda: 'id(illuminance_sensor).update();'
 
 sensor:
   - platform: bh1750

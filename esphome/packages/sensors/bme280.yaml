@@ -2,21 +2,80 @@
 
 substitutions:
   bmex80_address: "0x76"
-  bmex80_offset_humidity: "0"
-  bmex80_offset_temperature: "0"
   bmex80_update_interval: 30s
+  humidity_offset: "0"
+  pressure_offset: "0"
+  temperature_offset: "0"
+
+number:
+  - platform: template
+    name: "Temperature Offset"
+    id: temperature_offset_ui
+    unit_of_measurement: "°C"
+    min_value: -10
+    max_value: 10
+    step: 0.1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:thermometer"
+    entity_category: config
+    on_value:
+      - lambda: 'id(bme280_sensor).update();'
+
+  - platform: template
+    name: "Humidity Offset"
+    id: humidity_offset_ui
+    unit_of_measurement: "%"
+    min_value: -50
+    max_value: 50
+    step: 0.1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:water-percent"
+    entity_category: config
+    on_value:
+      - lambda: 'id(bme280_sensor).update();'
+
+  - platform: template
+    name: "Pressure Offset"
+    id: pressure_offset_ui
+    unit_of_measurement: "hPa"
+    min_value: -500
+    max_value: 500
+    step: 1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:gauge"
+    entity_category: config
+    on_value:
+      - lambda: 'id(bme280_sensor).update();'
 
 sensor:
   - platform: bme280
+    id: bme280_sensor
     address: "${bmex80_address}"
     update_interval: "${bmex80_update_interval}"
     temperature:
       name: "Temperature"
       filters:
-        - offset: "${bmex80_offset_temperature}"
+        - offset: ${temperature_offset}
+        - lambda: "return x + id(temperature_offset_ui).state;"
     humidity:
       name: "Humidity"
       filters:
-        - offset: "${bmex80_offset_humidity}"
+        - offset: ${humidity_offset}
+        - lambda: "return x + id(humidity_offset_ui).state;"
     pressure:
       name: "Pressure"
+      filters:
+        - offset: ${pressure_offset}
+        - lambda: "return x + id(pressure_offset_ui).state;"

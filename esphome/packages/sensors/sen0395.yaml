@@ -4,6 +4,15 @@ uart:
   rx_pin: "${uart_rx_pin}"
   baud_rate: 115200
 
+custom_component:
+- lambda: |-
+    auto my_custom = new Sen0395Distance(id(uart_bus));
+    return {my_custom};
+
+esphome:
+  includes:
+    - /lib/sen0395_distance.h
+
 binary_sensor:
   - platform: gpio
     name: "mmWave"

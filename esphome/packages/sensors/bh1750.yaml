@@ -28,6 +28,6 @@ sensor:
     name: "Illuminance"
     address: 0x23
     update_interval: "${bh1750_update_interval}"
-    filter:
+    filters:
       - offset: ${illuminance_offset}
       - lambda: "return x + id(illuminance_offset_ui).state;"

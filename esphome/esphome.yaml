@@ -1,7 +1,7 @@
 substitutions:
   name: "aiosense-bedroom"  # lowercase only, have to be unique
   friendly_name: "AIOsense Bedroom"  # device name and entity prefix
-  version: "2.0.0"  # your AIOsense version
+  version: "2.1.0"  # your AIOsense version
 
   # bh1750_update_interval: 5s
 
@@ -18,9 +18,6 @@ substitutions:
 
   # LD2410(c) does not work? Please notice:
   # https://aiosense.readthedocs.io/en/latest/debugging/#ld2410c-does-not-work
-  # ld2410_max_distance_move: 4.5m
-  # ld2410_max_distance_still: 4.5m
-  # ld2410_timeout: 5s
 
   # pir_delayed_off: 1s
   # pir_delayed_on: 0s

@@ -1,10 +1,5 @@
 # https://esphome.io/components/sensor/ld2410.html
 
-substitutions:
-  ld2410_max_distance_move: 4.5m
-  ld2410_max_distance_still: 4.5m
-  ld2410_timeout: 5s
-
 uart:
   tx_pin: "${uart_tx_pin}"
   rx_pin: "${uart_rx_pin}"

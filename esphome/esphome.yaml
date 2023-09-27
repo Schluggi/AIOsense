@@ -18,9 +18,6 @@ substitutions:
 
   # LD2410(c) does not work? Please notice:
   # https://aiosense.readthedocs.io/en/latest/debugging/#ld2410c-does-not-work
-  # ld2410_max_distance_move: 4.5m
-  # ld2410_max_distance_still: 4.5m
-  # ld2410_timeout: 5s
 
   # pir_delayed_off: 1s
   # pir_delayed_on: 0s

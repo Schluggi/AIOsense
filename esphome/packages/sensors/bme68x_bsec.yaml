@@ -9,7 +9,8 @@ substitutions:
 
 external_components:
   - source: github://schluggi/esphome@dev
-    components: [ bme68x_bsec ]
+    components:
+      - bme68x_bsec
 
 bme68x_bsec:
   address: "${bme_address}"

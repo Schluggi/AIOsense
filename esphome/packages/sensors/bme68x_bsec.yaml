@@ -42,7 +42,8 @@ sensor:
         - offset: ${iaq_offset}
         - lambda: "return x + id(iaq_offset_ui).state;"
     co2_equivalent:
-      name: "CO₂ Equivalent"
+      name: "CO2 Equivalent"
+      friendly_name: "CO₂ Equivalent"
       device_class: carbon_dioxide
       filters:
         - offset: ${co2_offset}
@@ -101,7 +102,8 @@ number:
     entity_category: config
 
   - platform: template
-    name: "CO₂ Offset"
+    name: "CO2 Offset"
+    friendly_name: "CO₂ Offset"
     id: co2_offset_ui
     unit_of_measurement: "ppm"
     min_value: -1000

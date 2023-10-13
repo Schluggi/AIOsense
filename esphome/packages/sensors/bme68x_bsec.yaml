@@ -37,9 +37,9 @@ sensor:
       device_class: volatile_organic_compounds
 
 text_sensor:
-  - platform: bme68x_bsec
-    iaq_accuracy:
-      name: "IAQ Accuracy"
+#  - platform: bme68x_bsec
+#    iaq_accuracy:
+#      name: "IAQ Accuracy"
 
   - platform: template
     name: "IAQ Classification"

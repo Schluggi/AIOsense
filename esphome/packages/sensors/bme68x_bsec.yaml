@@ -1,5 +1,3 @@
-# https://esphome.io/components/sensor/bme68x_bsec.html
-
 substitutions:
   bme_address: "0x76"
   co2_offset: "0"

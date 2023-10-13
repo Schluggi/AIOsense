@@ -1,8 +1,8 @@
 # https://esphome.io/cookbook/bme280_environment.html
 
 substitutions:
-  bmex80_address: "0x76"
-  bmex80_update_interval: 30s
+  bme_address: "0x76"
+  bme_update_interval: 30s
   humidity_offset: "0"
   pressure_offset: "0"
   temperature_offset: "0"
@@ -62,8 +62,8 @@ number:
 sensor:
   - platform: bme280
     id: bme280_sensor
-    address: "${bmex80_address}"
-    update_interval: "${bmex80_update_interval}"
+    address: "${bme_address}"
+    update_interval: "${bme_update_interval}"
     temperature:
       name: "Temperature"
       filters:

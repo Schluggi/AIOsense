@@ -21,7 +21,6 @@ bme68x_bsec:
 
 sensor:
   - platform: bme68x_bsec
-    id: bme_68x
     temperature:
       name: "Temperature"
       filters:
@@ -64,8 +63,6 @@ number:
     initial_value: 0
     icon: "mdi:thermometer"
     entity_category: config
-    on_value:
-      - lambda: 'id(bme_68x).update();'
 
   - platform: template
     name: "Humidity Offset"
@@ -81,8 +78,6 @@ number:
     initial_value: 0
     icon: "mdi:water-percent"
     entity_category: config
-    on_value:
-      - lambda: 'id(bme_68x).update();'
 
   - platform: template
     name: "Pressure Offset"
@@ -98,8 +93,6 @@ number:
     initial_value: 0
     icon: "mdi:gauge"
     entity_category: config
-    on_value:
-      - lambda: 'id(bme_68x).update();'
 
 text_sensor:
 #  - platform: bme68x_bsec

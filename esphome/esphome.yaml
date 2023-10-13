@@ -8,10 +8,13 @@ substitutions:
   # bme_address: "0x76"  # for some modules you have to change it to 0x77
   # bme_update_interval: 30s
 
+  # co2_offset: "0"  # bsec only
   # humidity_offset: "0"
+  # iaq_offset: "0" # bsec only
   # illuminance_offset: "0"
   # pressure_offset: "0"
   # temperature_offset: "0"
+  # voc_offset: "0" # bsec only
 
   # LD2410(c) does not work? Please notice:
   # https://aiosense.readthedocs.io/en/latest/debugging/#ld2410c-does-not-work

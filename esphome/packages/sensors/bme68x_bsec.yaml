@@ -2,6 +2,9 @@
 
 substitutions:
   bme_address: "0x76"
+  humidity_offset: "0"
+  pressure_offset: "0"
+  temperature_offset: "0"
   #bme680_bsec_sample_rate: lp
   #bme680_bsec_temperature_offset: "0"
 

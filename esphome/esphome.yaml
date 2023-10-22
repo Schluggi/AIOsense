@@ -5,16 +5,16 @@ substitutions:
 
   # bh1750_update_interval: 5s
 
-  # bmex80_address: "0x76"  # for some modules you have to change it to 0x77
-  # bmex80_update_interval: 30s
+  # bme_address: "0x76"  # for some modules you have to change it to 0x77
+  # bme_update_interval: 30s
 
+  # co2_offset: "0"  # bsec only
   # humidity_offset: "0"
+  # iaq_offset: "0" # bsec only
   # illuminance_offset: "0"
   # pressure_offset: "0"
   # temperature_offset: "0"
-
-  # bme680_bsec_sample_rate: lp # lp -> 3s, ulp ->5min
-  # bme680_bsec_temperature_offset: "0"
+  # voc_offset: "0" # bsec only
 
   # LD2410(c) does not work? Please notice:
   # https://aiosense.readthedocs.io/en/latest/debugging/#ld2410c-does-not-work
@@ -44,8 +44,8 @@ packages:
       # - esphome/packages/sensors/buzzer.yaml  # AIOsense >= 2.1.x only
       # - esphome/packages/sensors/voice_assistant.yaml  # ESP32-C3 only (for now)
       # - esphome/packages/sensors/bme280.yaml  # enable for bme280
-      - esphome/packages/sensors/bme680.yaml  # disable for bme280
-      # - esphome/packages/sensors/bme680_bsec.yaml  # does not work yet
+      # - esphome/packages/sensors/bme680.yaml  # disable for bme280
+      - esphome/packages/sensors/bme68x_bsec.yaml
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are on
       - esphome/packages/sensors/pir.yaml
       - esphome/packages/sensors/rgb_led.yaml  # esp32-c3-mini only

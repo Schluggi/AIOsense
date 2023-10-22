@@ -90,9 +90,7 @@ for their high quality digital audio.
 | INMP441 | [Amazon DE³](https://amzn.to/40y8twJ), [AliExpress](https://de.aliexpress.com/wholesale?catId=0&initiative_id=SB_20221127114658&SearchText=inmp441&spm=a2g0o.tm800107193.1000002.0&dida=y) |
 
 ### Compatibility
-
-> **WARNING**: Not supported yet!
-> This sensor is fully compatible with any other sensor or module.
+> **AIOsense v2.1.0**: This sensor is fully compatible with any other sensor or module besides the buzzer. Please disconnect the buzzer first. 
 
 <hr>
 

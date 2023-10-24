@@ -45,5 +45,5 @@ esphome:
     - priority: 0
       then:
         - light.turn_on: led
-        - delay: 3s
+        - delay: 2s
         - light.turn_off: led

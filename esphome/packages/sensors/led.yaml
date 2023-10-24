@@ -26,7 +26,8 @@ light:
 
 esphome:
   on_boot:
-    then:
-      - light.turn_on: led
-      - delay: 3s
-      - light.turn_off: led
+    - priority: 0
+      then:
+        - light.turn_on: led
+        - delay: 2s
+        - light.turn_off: led

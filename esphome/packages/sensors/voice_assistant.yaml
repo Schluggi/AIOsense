@@ -1,16 +1,14 @@
-# WIP, C3-mini only (for now)
-
 i2s_audio:
   id: i2s_in
-  i2s_lrclk_pin: A5  # WS
-  i2s_bclk_pin: A1  # SCK
+  i2s_lrclk_pin: "${i2s_lrclk_pin}"  # WS
+  i2s_bclk_pin: "${i2s_bclk_pin}"  # SCK
 
 microphone:
   - platform: i2s_audio
     id: mic_i2s
     channel: left
     adc_type: external
-    i2s_din_pin: A0  # SD
+    i2s_din_pin: "${i2s_din_pin}"  # SD
     i2s_audio_id: i2s_in
     pdm: false
 

@@ -1,7 +1,6 @@
 substitutions:
   name: "aiosense-bedroom"  # lowercase only, have to be unique
   friendly_name: "AIOsense Bedroom"  # device name and entity prefix
-  version: "2.1.0"  # your AIOsense version
 
   # bh1750_update_interval: 5s
 

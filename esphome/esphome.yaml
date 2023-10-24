@@ -41,15 +41,15 @@ packages:
 
       # --- select your sensors ---
       - esphome/packages/sensors/bh1750.yaml
-      # - esphome/packages/sensors/buzzer.yaml  # AIOsense >= 2.1.x only
-      # - esphome/packages/sensors/voice_assistant.yaml  # ESP32-C3 only (for now)
+      # - esphome/packages/sensors/buzzer.yaml  # AIOsense PCB >= 2.1.x only
+      # - esphome/packages/sensors/voice_assistant.yaml  # c3-mini only (for now)
       # - esphome/packages/sensors/bme280.yaml  # enable for bme280
       # - esphome/packages/sensors/bme680.yaml  # disable for bme280
       - esphome/packages/sensors/bme68x_bsec.yaml
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are on
       - esphome/packages/sensors/pir.yaml
-      - esphome/packages/sensors/rgb_led.yaml  # esp32-c3-mini only
-      # - esphome/packages/sensors/led.yaml  # d1-mini only
+      - esphome/packages/sensors/rgb_led.yaml  # for c3-mini & s3-mini
+      # - esphome/packages/sensors/led.yaml  # for d1-mini & s2-mini
 
       # --- select your radar sensor ---
       # - esphome/packages/sensors/ld2410.yaml

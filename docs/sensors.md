@@ -5,7 +5,7 @@ want but notice the compatibility.
 
 <hr>
 
-## 🌡️Temperature, Humidity, Pressure & Air Quality
+## 🌡️Temperature, Humidity, Pressure, VOC & Air Quality
 
 For these measurements we recommend the industrial sensors BME680/BME688 or the
 BME280 (cheaper but without air
@@ -24,6 +24,8 @@ quality sensor. Use a hotplate instead.
 Related to [#7](https://github.com/Schluggi/AIOsense/issues/7) sometimes SMD
 soldering can be inaccessible or difficult.
 You can use a BME PCB module instead.
+
+The default offset is -6 °C. 
 
 ### Where to buy?
 

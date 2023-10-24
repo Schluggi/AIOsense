@@ -13,7 +13,7 @@ substitutions:
   # iaq_offset: "0" # bsec only
   # illuminance_offset: "0"
   # pressure_offset: "0"
-  # temperature_offset: "0"
+  temperature_offset: "-6"
   # voc_offset: "0" # bsec only
 
   # LD2410(c) does not work? Please notice:

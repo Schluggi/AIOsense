@@ -44,8 +44,6 @@ esphome:
   on_boot:
     - priority: 0
       then:
-        - light.turn_on:
-            id: led
-            effect: pulse
+        - light.turn_on: led
         - delay: 2s
         - light.turn_off: led

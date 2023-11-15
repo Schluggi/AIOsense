@@ -33,9 +33,10 @@ packages:
       - esphome/packages/config/base.yaml
 
       # ----- select your board -----
-      - esphome/packages/config/esp32-c3-mini.yaml
+      # - esphome/packages/config/esp32-c3-mini.yaml
       # - esphome/packages/config/esp32-d1-mini.yaml
       # - esphome/packages/config/esp32-s2-mini.yaml
+      - esphome/packages/config/esp32-s3-mini.yaml
       # - esphome/packages/config/esp8266-d1-mini.yaml
 
       # ----- select your modules (general) -----

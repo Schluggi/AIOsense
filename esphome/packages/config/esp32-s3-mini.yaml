@@ -5,6 +5,7 @@ substitutions:
   i2s_lrclk_pin: GPIO10
   pir_pin: GPIO11
   rgb_led_pin: GPIO47
+  rgb_led_type: RGB
   sen0395_io_pin: GPIO4
   uart_rx_pin: GPIO44
   uart_tx_pin: GPIO43

@@ -2,12 +2,13 @@
 substitutions:
   led_strobe_on: 50ms
   led_strobe_off: 100ms
+  rgb_led_type: GRB
 
 light:
   - platform: neopixelbus
-    name: "LED"
+    name: "${rgb_led_type}"
     id: led
-    type: GRB
+    type: type
     variant: WS2812X
     num_leds: 1
     pin: "${rgb_led_pin}"

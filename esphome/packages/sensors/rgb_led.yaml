@@ -6,9 +6,9 @@ substitutions:
 
 light:
   - platform: neopixelbus
-    name: "${rgb_led_type}"
+    name: "LED"
     id: led
-    type: type
+    type: "${rgb_led_type}"
     variant: WS2812X
     num_leds: 1
     pin: "${rgb_led_pin}"

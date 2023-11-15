@@ -2,7 +2,7 @@
 substitutions:
   led_strobe_on: 50ms
   led_strobe_off: 100ms
-  rgb_led_type: RGB #GRB
+  rgb_led_type: GRB
 
 light:
   - platform: neopixelbus

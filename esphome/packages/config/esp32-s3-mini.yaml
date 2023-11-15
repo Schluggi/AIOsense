@@ -14,6 +14,7 @@ esp32:
   variant: esp32s3
   framework:
     type: arduino
+    version: latest
 
 i2c:
   sda: GPIO35

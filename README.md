@@ -71,7 +71,7 @@ Created and maintained by Lukas Schulte-Tickmann / [Schluggi](https://github.com
 
 ### Special thanks
 - My dad for some electrical engineering advice and PCB reviewing
-- [MeisterGig](https://github.com/MeisterGig) for the case design and some general discussions about the board
+- [lukas-holzner](https://github.com/lukas-holzner) for the case design and some general discussions about the board
 - [jankae](https://github.com/jankae) for PCB reviewing
 - [reschandreas](https://github.com/reschandreas) for general repo work
 - [PCBWay³](https://pcbway.com/g/DFb536) for sponsoring the PCB prototypes

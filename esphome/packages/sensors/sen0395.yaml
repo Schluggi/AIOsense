@@ -219,8 +219,8 @@ button:
             - !lambda if(id(mmwave_segments).state >= 3){ return id(mmwave_segment_3_begin).state; } else { return -1; };
             - !lambda if(id(mmwave_segments).state >= 3){ return id(mmwave_segment_3_end).state; } else { return -1; };
 
-            - !lambda if(id(mmwave_segments).state >= 4){ return id(mmwave_segment_4_begin).state; } else { return -1; };
-            - !lambda if(id(mmwave_segments).state >= 4){ return id(mmwave_segment_4_end).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state == 4){ return id(mmwave_segment_4_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state == 4){ return id(mmwave_segment_4_end).state; } else { return -1; };
           output_latency:
             delay_after_detect: !lambda return id(mmwave_on_latency).state;
             delay_after_disappear: !lambda return id(mmwave_off_latency).state;

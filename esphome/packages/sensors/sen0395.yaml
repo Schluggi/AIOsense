@@ -74,8 +74,20 @@ number:
     mode: box
 
   - platform: template
-    name: "mmWave Distance"
-    id: mmwave_distance
+    name: "mmWave Segment 1 Begin"
+    id: mmwave_segment_1_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 1 End"
+    id: mmwave_segment_1_end
     entity_category: config
     min_value: 0
     max_value: 9
@@ -83,8 +95,92 @@ number:
     optimistic: true
     step: 0.15
     restore_value: true
-    unit_of_measurement: m
-    mode: box
+    mode: BOX
+
+
+  - platform: template
+    name: "mmWave Segment 2 Begin"
+    id: mmwave_segment_2_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 2 End"
+    id: mmwave_segment_2_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 3 Begin"
+    id: mmwave_segment_3_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 3 End"
+    id: mmwave_segment_3_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 4 Begin"
+    id: mmwave_segment_4_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 4 End"
+    id: mmwave_segment_4_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segments"
+    id: mmwave_segments
+    entity_category: config
+    min_value: 1
+    max_value: 4
+    initial_value: 1
+    optimistic: true
+    step: 1
+    restore_value: true
+    mode: SLIDER
 
 button:
   - platform: template
@@ -107,8 +203,17 @@ button:
       - dfrobot_sen0395.settings:
           sensitivity: !lambda return id(mmwave_sensitivity).state;
           detection_segments:
-            - !lambda return 0;
-            - !lambda return id(mmwave_distance).state;
+            - !lambda return id(mmwave_segment_1_begin).state;
+            - !lambda return id(mmwave_segment_1_end).state;
+
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_2_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_2_end).state; } else { return -1; };
+
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_3_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_3_end).state; } else { return -1; };
+
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_4_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_4_end).state; } else { return -1; };
           output_latency:
             delay_after_detect: !lambda return id(mmwave_on_latency).state;
             delay_after_disappear: !lambda return id(mmwave_off_latency).state;

@@ -32,32 +32,30 @@ packages:
     files:
       - esphome/packages/config/base.yaml
 
-      # ----- select your board -----
+      # ----- board -----
       # - esphome/packages/config/esp32-c3-mini.yaml
       # - esphome/packages/config/esp32-d1-mini.yaml
       # - esphome/packages/config/esp32-s2-mini.yaml
       - esphome/packages/config/esp32-s3-mini.yaml
       # - esphome/packages/config/esp8266-d1-mini.yaml
 
-      # ----- select your modules (general) -----
+      # ----- modules -----
       - esphome/packages/sensors/bh1750.yaml
       # - esphome/packages/sensors/bme280.yaml  # enable for bme280
-      # - esphome/packages/sensors/bme680.yaml  # disable for bme280
-      - esphome/packages/sensors/bme68x_bsec.yaml
-      - esphome/packages/sensors/buzzer.yaml  # AIOsense PCB >= 2.1.x only
+      - esphome/packages/sensors/bme68x_bsec.yaml  # disable for bme280
+      - esphome/packages/sensors/buzzer.yaml  # PCB >= v2.1.0
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are activated
       - esphome/packages/sensors/pir.yaml
-      - esphome/packages/sensors/voice_assistant.yaml  # esp32 (all versions) only
+    
+      # ----- voice assistant (use rgb_led for esp32-c3 & esp32-s3 only-----
+      # - esphome/packages/sensors/voice_assistant-rgb_led.yaml
+      - esphome/packages/sensors/voice_assistant-led.yaml
 
-      # ----- rgb led modules (esp32-c3 & esp32-s3 only) -----
+      # ----- led modules (use rgb_led for esp32-c3 & esp32-s3 only) -----
       - esphome/packages/sensors/rgb_led.yaml
-      # - esphome/packages/sensors/voice_assistant_rgb_led.yaml
-
-      # ----- single color led modules (esp32-d1 & esp32-s2 only) -----
       # - esphome/packages/sensors/led.yaml
-      # - esphome/packages/sensors/voice_assistant_led.yaml  # esp32-s2 only
 
-      # ----- select your radar sensor -----
+      # ----- mmWave radar sensor -----
       # - esphome/packages/sensors/ld2410.yaml
       - esphome/packages/sensors/sen0395.yaml
 

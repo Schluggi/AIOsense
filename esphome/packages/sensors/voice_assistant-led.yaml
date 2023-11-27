@@ -1,0 +1,101 @@
+i2s_audio:
+  id: i2s_in
+  i2s_lrclk_pin: "${i2s_lrclk_pin}"  # WS
+  i2s_bclk_pin: "${i2s_bclk_pin}"  # SCK
+
+microphone:
+  - platform: i2s_audio
+    id: mic_i2s
+    channel: left
+    adc_type: external
+    i2s_din_pin: "${i2s_din_pin}"  # SD
+    i2s_audio_id: i2s_in
+    pdm: false
+
+voice_assistant:
+  id: va
+  microphone: mic_i2s
+  noise_suppression_level: 2
+  auto_gain: 31dBFS
+  volume_multiplier: 2.0
+  on_listening:
+    - light.turn_on:
+        id: led
+        effect: strobe
+  on_tts_start:
+    - light.turn_on:
+        id: led
+        effect: strobe
+  on_end:
+    - delay: 100ms
+    - script.execute: reset_led
+  on_error:
+    - light.turn_on:
+        id: led
+        effect: none
+    - delay: 1s
+    - script.execute: reset_led
+    - script.wait: reset_led
+    - lambda: |-
+        if (code == "wake-provider-missing" || code == "wake-engine-missing") {
+          id(use_wake_word).turn_off();
+        }
+
+script:
+  - id: reset_led
+    then:
+      - if:
+          condition:
+            - switch.is_on: use_wake_word
+            - switch.is_on: listen_light
+          then:
+            - light.turn_on:
+                id: led
+                effect: none
+          else:
+            - light.turn_off: led
+
+switch:
+  - platform: template
+    name: "VA Use Wake Word"
+    id: use_wake_word
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+    entity_category: config
+    on_turn_on:
+      - lambda: id(va).set_use_wake_word(true);
+      - if:
+          condition:
+            not:
+              - voice_assistant.is_running
+          then:
+            - voice_assistant.start_continuous
+      - script.execute: reset_led
+    on_turn_off:
+      - voice_assistant.stop
+      - lambda: id(va).set_use_wake_word(false);
+      - script.execute: reset_led
+
+  - platform: template
+    name: "VA Listen Light"
+    id: listen_light
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+    entity_category: config
+    on_turn_on:
+      - script.execute: reset_led
+    on_turn_off:
+      - script.execute: reset_led
+
+esphome:
+  min_version: 2023.10.0
+  on_boot:
+    - priority: -100
+      then:
+        - wait_until: api.connected
+        - delay: 1s
+        - if:
+            condition:
+              switch.is_on: use_wake_word
+            then:
+              - voice_assistant.start_continuous:

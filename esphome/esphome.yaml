@@ -27,7 +27,7 @@ substitutions:
 packages:
   remote_package:
     url: https://github.com/schluggi/AIOsense
-    ref: v3
+    ref: esphome-v3.0.0
     refresh: 1d
     files:
       - esphome/packages/config/base.yaml

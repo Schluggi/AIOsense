@@ -7,7 +7,7 @@ light:
   - platform: neopixelbus
     name: "LED"
     id: led
-    type: GRB
+    type: "${rgb_led_type}"
     variant: WS2812X
     num_leds: 1
     pin: "${rgb_led_pin}"
@@ -42,7 +42,8 @@ light:
 
 esphome:
   on_boot:
-    then:
-      - light.turn_on: led
-      - delay: 3s
-      - light.turn_off: led
+    - priority: 0
+      then:
+        - light.turn_on: led
+        - delay: 2s
+        - light.turn_off: led

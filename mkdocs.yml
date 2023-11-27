@@ -1,18 +1,32 @@
 site_name: AIOsense
 
-site_url: https://aiosense.readthedocs.io/en/latest/
+repo_name: Schluggi/AIOsense
 repo_url: https://github.com/Schluggi/AIOsense
-edit_uri: https://github.com/Schluggi/AIOsense/edit/main/docs
 
 theme:
-  name: readthedocs
+  name: material
   highlightjs: true
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 
 plugins:
-  - search
   - awesome-pages:
       filename: nav.yml
       strict: false
+  - search
+  - social
+  - tags
 
 markdown_extensions:
   - attr_list  # for image scale

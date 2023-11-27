@@ -1,5 +1,8 @@
 substitutions:
   buzzer_pin: GPIO9
+  i2s_bclk_pin: GPIO7
+  i2s_din_pin: "${buzzer_pin}"
+  i2s_lrclk_pin: GPIO12
   led_invert: "true"
   led_pin: GPIO15
   pir_pin: GPIO11

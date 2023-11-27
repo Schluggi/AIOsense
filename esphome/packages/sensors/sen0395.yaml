@@ -4,6 +4,9 @@ uart:
   rx_pin: "${uart_rx_pin}"
   baud_rate: 115200
 
+dfrobot_sen0395:
+  uart_id: uart_bus
+
 binary_sensor:
   - platform: gpio
     name: "mmWave"
@@ -14,91 +17,25 @@ binary_sensor:
       mode: INPUT_PULLDOWN
 
 switch:
-  - platform: template
+  - platform: dfrobot_sen0395
     name: "mmWave Sensor"
-    id: "mmwave_sensor"
-    entity_category: config
-    optimistic: true
-    restore_mode: RESTORE_DEFAULT_ON
-    assumed_state: true
-    turn_on_action:
-      - uart.write: "sensorStart"
-      - delay: 1s
-    turn_off_action:
-      - uart.write: "sensorStop"
-      - delay: 1s
+    type: sensor_active
 
-  - platform: template
+  - platform: dfrobot_sen0395
+    name: "mmWave Presence Via Uart"
+    type: presence_via_uart
+    disabled_by_default: true
+
+  - platform: dfrobot_sen0395
+    name: "mmWave Autostart"
+    type: start_after_boot
+    disabled_by_default: true
+
+  - platform: dfrobot_sen0395
     name: "mmWave LED"
-    id: "mmwave_led"
-    entity_category: config
-    optimistic: true
-    restore_mode: RESTORE_DEFAULT_OFF
-    assumed_state: true
-    turn_on_action:
-      - switch.turn_off: mmwave_sensor
-      - delay: 1s
-      - uart.write: "setLedMode 1 0"
-      - delay: 1s
-      - uart.write: "saveConfig"
-      - delay: 3s
-      - switch.turn_on: mmwave_sensor
-    turn_off_action:
-      - switch.turn_off: mmwave_sensor
-      - delay: 1s
-      - uart.write: "setLedMode 1 1"
-      - delay: 1s
-      - uart.write: "saveConfig"
-      - delay: 3s
-      - switch.turn_on: mmwave_sensor
+    type: turn_on_led
 
 number:
-  - platform: template
-    name: "mmWave Distance"
-    id: mmwave_distance
-    entity_category: config
-    min_value: 0
-    max_value: 800
-    initial_value: 315
-    optimistic: true
-    step: 50
-    restore_value: true
-    unit_of_measurement: cm
-    mode: slider
-    set_action:
-      - switch.turn_off: mmwave_sensor
-      - delay: 1s
-      - uart.write: !lambda int cm = (int)ceil(x / 15.0);
-          std::string cms = "detRangeCfg -1 0 " + to_string(cm);
-          return std::vector<unsigned char>(cms.begin(), cms.end());
-      - delay: 1s
-      - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
-      - delay: 1s
-      - switch.turn_on: mmwave_sensor
-
-  - platform: template
-    name: "mmWave Off Latency"
-    id: mmwave_latency
-    entity_category: config
-    min_value: 0
-    max_value: 65000
-    initial_value: 12500
-    optimistic: true
-    step: 25
-    restore_value: true
-    unit_of_measurement: ms
-    mode: box
-    set_action:
-      - switch.turn_off: mmwave_sensor
-      - delay: 1s
-      - uart.write: !lambda int ms = (int)ceil(x / 25.0);
-          std::string mss = "outputLatency -1 0 " + to_string(ms);
-          return std::vector<unsigned char>(mss.begin(), mss.end());
-      - delay: 1s
-      - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
-      - delay: 1s
-      - switch.turn_on: mmwave_sensor
-
   - platform: template
     name: "mmWave Sensitivity"
     id: mmwave_sensitivity
@@ -109,24 +46,181 @@ number:
     optimistic: true
     step: 1
     restore_value: true
-    set_action:
-      - switch.turn_off: mmwave_sensor
-      - delay: 1s
-      - uart.write:
-          !lambda std::string mss = "setSensitivity " + to_string((int)x);
-          return std::vector<unsigned char>(mss.begin(), mss.end());
-      - delay: 1s
-      - uart.write: "saveConfig"
-      - delay: 1s
-      - switch.turn_on: mmwave_sensor
+
+  - platform: template
+    name: "mmWave Off Latency"
+    id: mmwave_off_latency
+    entity_category: config
+    min_value: 0
+    max_value: 60
+    initial_value: 10
+    optimistic: true
+    step: 0.025
+    restore_value: true
+    unit_of_measurement: s
+    mode: box
+
+  - platform: template
+    name: "mmWave On Latency"
+    id: mmwave_on_latency
+    entity_category: config
+    min_value: 0
+    max_value: 60
+    initial_value: 2.5
+    optimistic: true
+    step: 0.025
+    restore_value: true
+    unit_of_measurement: s
+    mode: box
+
+  - platform: template
+    name: "mmWave Segment 1 Begin"
+    id: mmwave_segment_1_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 1 End"
+    id: mmwave_segment_1_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 3
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 2 Begin"
+    id: mmwave_segment_2_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 2 End"
+    id: mmwave_segment_2_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 3 Begin"
+    id: mmwave_segment_3_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 3 End"
+    id: mmwave_segment_3_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 4 Begin"
+    id: mmwave_segment_4_begin
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segment 4 End"
+    id: mmwave_segment_4_end
+    entity_category: config
+    min_value: 0
+    max_value: 9
+    initial_value: 0
+    optimistic: true
+    step: 0.15
+    restore_value: true
+    unit_of_measurement: m
+    mode: BOX
+
+  - platform: template
+    name: "mmWave Segments"
+    id: mmwave_segments
+    entity_category: config
+    min_value: 1
+    max_value: 4
+    initial_value: 1
+    optimistic: true
+    step: 1
+    restore_value: true
+    mode: SLIDER
 
 button:
   - platform: template
     name: "mmWave Factory Reset"
+    entity_category: diagnostic
+    on_press:
+      - dfrobot_sen0395.settings:
+          factory_reset: true
+
+  - platform: template
+    name: "mmWave Restart"
+    entity_category: diagnostic
+    on_press:
+      - dfrobot_sen0395.reset
+
+  - platform: template
+    name: "mmWave Apply Settings"
     entity_category: config
     on_press:
-      - switch.turn_off: mmwave_sensor
-      - delay: 1s
-      - uart.write: "resetCfg"
-      - delay: 3s
-      - switch.turn_on: mmwave_sensor
+      - dfrobot_sen0395.settings:
+          sensitivity: !lambda return id(mmwave_sensitivity).state;
+          detection_segments:
+            - !lambda return id(mmwave_segment_1_begin).state;
+            - !lambda return id(mmwave_segment_1_end).state;
+
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_2_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state >= 2){ return id(mmwave_segment_2_end).state; } else { return -1; };
+
+            - !lambda if(id(mmwave_segments).state >= 3){ return id(mmwave_segment_3_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state >= 3){ return id(mmwave_segment_3_end).state; } else { return -1; };
+
+            - !lambda if(id(mmwave_segments).state == 4){ return id(mmwave_segment_4_begin).state; } else { return -1; };
+            - !lambda if(id(mmwave_segments).state == 4){ return id(mmwave_segment_4_end).state; } else { return -1; };
+          output_latency:
+            delay_after_detect: !lambda return id(mmwave_on_latency).state;
+            delay_after_disappear: !lambda return id(mmwave_off_latency).state;

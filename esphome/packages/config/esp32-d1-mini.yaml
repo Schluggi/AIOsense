@@ -1,5 +1,8 @@
 substitutions:
-  buzzer_pin: GPIO19  # untested
+  buzzer_pin: GPIO19
+  i2s_bclk_pin: GPIO14
+  i2s_din_pin: "${buzzer_pin}"
+  i2s_lrclk_pin: GPIO15
   led_pin: GPIO2
   pir_pin: GPIO23
   sen0395_io_pin: GPIO26

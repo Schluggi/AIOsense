@@ -1,4 +1,4 @@
-# AIOsense (All-In-One Sensor)
+# AIOsense
 
 [![license](https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/blob/master/LICENSE.txt)
 [![stars](https://img.shields.io/github/stars/schluggi/AIOsense?style=for-the-badge&logo=appveyor)](https://github.com/Schluggi/AIOsense/stargazers)
@@ -8,26 +8,33 @@
 
 <a href="https://www.tindie.com/products/gadgetgarage/aiosense/"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" alt="I sell on Tindie" width="200" height="104"></a>
 ## Description
+Based on the idea of an all-in-one sensor AIOsense was born.
 
-This project is based on the idea of
-the [Presence One](https://shop.everythingsmart.io/en-de/products/everything-presence-one-kit).
-I made my own, less expensive, modular & open-source version of it.
+The goal is to provide you with a sensor that is modular, affordable and
+easy to solder (no SMD) as an alternative for commercially available sensors. We
+also focus on upgrade-ability, so you don't have to buy all parts again in case
+of a new PCB release. In most cases, this sensor is cheaper and better than the
+commercially ones. 
 
-This board covers all the features of the original, plus these extras:
+## Available Sensors / Modules
 
-- swappable modules
-- open-source
-- additional sensors
-    - air pressure
-    - air quality (IAQ)
-    - CO² equivalent
-    - breath VOC equivalent
+- (RGB)-LED
+- Barometer
+- Breath VOC equivalent
+- Buzzer / Beeper
+- CO² equivalent
+- Humidity sensor
+- Light / Illumination sensor
+- PIR motion sensor
+- Temperature sensor
+- mmWave / Radar sensor
 
-- modular
-- less expensive
-- customizable
+**Coming soon:**
+- Full Voice Assistant support
+- Microphone
+- Speaker
 
-Supported sensors are listed in the documentation:
+All supported sensors & modules are listed in the documentation:
 [Sensor Modules](https://aiosense.readthedocs.io/en/latest/sensors/)
 
 ## What does it look like? 👀

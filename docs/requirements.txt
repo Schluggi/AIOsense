@@ -11,7 +11,7 @@ cssselect2==0.7.0
 defusedxml==0.7.1
 ghp-import==2.1.0
 idna==3.6
-importlib-metadata==6.8.0
+importlib-metadata==6.9.0
 Jinja2==3.1.2
 Markdown==3.5.1
 MarkupSafe==2.1.3

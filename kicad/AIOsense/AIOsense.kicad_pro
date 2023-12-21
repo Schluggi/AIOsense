@@ -473,7 +473,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "../../../../AIOsensev300.step",
+      "step": "AIOsense.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 3.2,
-          "height": 5.6,
-          "width": 5.6
+          "drill": 0.7,
+          "height": 1.05,
+          "width": 1.05
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -46,7 +46,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.19999999999999998
         }
       },
       "diff_pair_dimensions": [
@@ -56,14 +56,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "annular_width|180600000|93075000|a9c0d434-79bb-4a9d-81b8-c1498781a300|00000000-0000-0000-0000-000000000000",
-        "annular_width|180600000|94345000|56e98706-aa58-454a-b5d9-f9d73c60a355|00000000-0000-0000-0000-000000000000",
-        "annular_width|180600000|95615000|86ffdefd-d1ce-4ef3-b951-c4a430c3717e|00000000-0000-0000-0000-000000000000",
-        "annular_width|180600000|96885000|ea633016-4721-48c7-b123-befab4b2475e|00000000-0000-0000-0000-000000000000",
-        "annular_width|180600000|98155000|8de58316-a070-43a4-b6a3-fe832a7dc4a7|00000000-0000-0000-0000-000000000000",
-        "silk_over_copper|151287500|146470263|3f588141-be8b-4002-9040-a4253f37c25f|00000000-0000-0000-0000-000000000000"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -122,7 +115,7 @@
         "allow_microvias": false,
         "max_error": 0.005,
         "min_clearance": 0.19999999999999998,
-        "min_connection": 0.0,
+        "min_connection": 0.19999999999999998,
         "min_copper_edge_clearance": 0.3,
         "min_hole_clearance": 0.19999999999999998,
         "min_hole_to_hole": 0.5,
@@ -134,11 +127,11 @@
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.19999999999999998,
-        "min_via_annular_width": 0.19999999999999998,
+        "min_via_annular_width": 0.15,
         "min_via_diameter": 0.39999999999999997,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.049999999999999996,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -435,7 +428,7 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.3,
+        "track_width": 0.254,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
@@ -452,7 +445,7 @@
         "name": "Voltage",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
+        "track_width": 1.0,
         "via_diameter": 1.0,
         "via_drill": 0.5,
         "wire_width": 6
@@ -480,7 +473,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "AIOsense.step",
+      "step": "../../../../AIOsensev300.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

@@ -28,7 +28,7 @@ Pillow==10.1.0
 platformdirs==4.1.0
 pycparser==2.21
 Pygments==2.17.2
-pymdown-extensions==10.5
+pymdown-extensions==10.6
 python-dateutil==2.8.2
 PyYAML==6.0.1
 pyyaml_env_tag==0.1

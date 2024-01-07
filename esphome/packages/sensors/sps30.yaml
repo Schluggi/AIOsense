@@ -1,0 +1,27 @@
+# https://esphome.io/components/sensor/sps30.html
+
+
+sensor:
+  - platform: sps30
+    pm_1_0:
+      name: "PM1"
+      id: "pm1"
+      unit_of_measurement: "μg/m³"
+      accuracy_decimals: 0
+    pm_2_5:
+      name: "PM2.5"
+      id: "pm25"
+      unit_of_measurement: "μg/m³"
+      accuracy_decimals: 0
+    pm_4_0:
+      name: "PM4"
+      id: "pm4"
+      unit_of_measurement: "μg/m³"
+      accuracy_decimals: 0
+    pm_10_0:
+      name: "PM10"
+      id: "pm10"
+      unit_of_measurement: "μg/m³"
+      accuracy_decimals: 0
+    address: 0x69
+    update_interval: 10s

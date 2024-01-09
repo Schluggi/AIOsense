@@ -6,22 +6,17 @@ sensor:
     pm_1_0:
       name: "PM1"
       id: "pm1"
-      unit_of_measurement: "μg/m³"
       accuracy_decimals: 0
+      device_class: PM1
     pm_2_5:
       name: "PM2.5"
       id: "pm25"
-      unit_of_measurement: "μg/m³"
       accuracy_decimals: 0
-    pm_4_0:
-      name: "PM4"
-      id: "pm4"
-      unit_of_measurement: "μg/m³"
-      accuracy_decimals: 0
+      device_class: PM25
     pm_10_0:
       name: "PM10"
       id: "pm10"
-      unit_of_measurement: "μg/m³"
       accuracy_decimals: 0
+      device_class: PM10
     address: 0x69
-    update_interval: 10s
+    update_interval: 60s

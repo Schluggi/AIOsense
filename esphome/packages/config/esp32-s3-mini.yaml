@@ -2,6 +2,7 @@ substitutions:
   buzzer_pin: GPIO1
   i2s_bclk_pin: GPIO38
   i2s_din_pin: GPIO37
+  i2s_dout_pin: GPIO36
   i2s_lrclk_pin: GPIO35
   pir_pin: GPIO3
   rgb_led_pin: GPIO47

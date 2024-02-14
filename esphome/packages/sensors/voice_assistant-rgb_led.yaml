@@ -15,7 +15,6 @@ microphone:
     channel: left
     adc_type: external
     i2s_din_pin: "${i2s_din_pin}"  # SD
-    i2s_audio_id: i2s_in
     pdm: false
 
 voice_assistant:

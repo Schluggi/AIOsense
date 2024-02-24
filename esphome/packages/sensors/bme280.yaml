@@ -60,7 +60,7 @@ number:
       - lambda: 'id(bme280_sensor).update();'
 
 sensor:
-  - platform: bme280
+  - platform: bme280_i2c
     id: bme280_sensor
     address: "${bme_address}"
     update_interval: "${bme_update_interval}"

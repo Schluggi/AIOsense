@@ -1,0 +1,22 @@
+# https://esphome.io/components/sensor/sps30.html
+
+
+sensor:
+  - platform: sps30
+    pm_1_0:
+      name: "PM1"
+      id: "pm1"
+      accuracy_decimals: 0
+      device_class: PM1
+    pm_2_5:
+      name: "PM2.5"
+      id: "pm25"
+      accuracy_decimals: 0
+      device_class: PM25
+    pm_10_0:
+      name: "PM10"
+      id: "pm10"
+      accuracy_decimals: 0
+      device_class: PM10
+    address: 0x69
+    update_interval: 60s

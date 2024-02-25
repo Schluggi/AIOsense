@@ -26,8 +26,10 @@ substitutions:
 
 packages:
   remote_package:
-    url: https://github.com/schluggi/AIOsense
-    ref: esphome-v3.0.0
+    # url: https://github.com/schluggi/AIOsense
+    # ref: esphome-v3.0.0
+    url: https://github.com/tomvancutsem/AIOsense
+    ref: sps30
     refresh: 1d
     files:
       - esphome/packages/config/base.yaml
@@ -46,10 +48,12 @@ packages:
       - esphome/packages/sensors/buzzer.yaml  # PCB >= v2.1.0
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are activated
       - esphome/packages/sensors/pir.yaml
+      # - esphome/packages/sensors/sps30.yaml
 
       # ----- voice assistant (use rgb_led for esp32-c3 & esp32-s3 only-----
-      - esphome/packages/sensors/voice_assistant-rgb_led.yaml
+      # - esphome/packages/sensors/voice_assistant-rgb_led.yaml
       # - esphome/packages/sensors/voice_assistant-led.yaml
+      - esphome/packages/sensors/voice_assistant-rgb_led-micro_wakeword.yaml #only on ESP32 S3
 
       # ----- led modules (use rgb_led for esp32-c3 & esp32-s3 only) -----
       - esphome/packages/sensors/rgb_led.yaml

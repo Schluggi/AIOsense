@@ -12,11 +12,10 @@ substitutions:
   uart_tx_pin: GPIO43
 
 esp32:
-  board: esp32-s3-devkitc-1
-  variant: esp32s3
+  board: esp32-s3-devkitm-1
   framework:
-    type: arduino
-    version: latest
+    type: esp-idf
+    version: recommended
 
 i2c:
   sda: GPIO21

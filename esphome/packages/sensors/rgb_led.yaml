@@ -4,11 +4,14 @@ substitutions:
   led_strobe_off: 100ms
 
 light:
-  - platform: neopixelbus
+  - platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    rmt_channel: 0
+    chipset: ws2812
     name: "LED"
     id: led
-    type: "${rgb_led_type}"
-    variant: WS2812X
+#    type: "${rgb_led_type}"
+#    variant: WS2812X
     num_leds: 1
     pin: "${rgb_led_pin}"
     icon: "mdi:led-outline"
@@ -39,6 +42,8 @@ light:
             - state: false
               duration: "${led_strobe_off}"
       - pulse:
+
+
 
 esphome:
   on_boot:

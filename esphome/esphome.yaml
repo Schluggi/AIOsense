@@ -51,8 +51,9 @@ packages:
       # - esphome/packages/sensors/sps30.yaml
 
       # ----- voice assistant (use rgb_led for esp32-c3 & esp32-s3 only-----
-      - esphome/packages/sensors/voice_assistant-rgb_led.yaml
+      # - esphome/packages/sensors/voice_assistant-rgb_led.yaml
       # - esphome/packages/sensors/voice_assistant-led.yaml
+      - esphome/packages/voice_assistant-rgb_led-micro_wakeword.yaml #only on ESP32 S3
 
       # ----- led modules (use rgb_led for esp32-c3 & esp32-s3 only) -----
       - esphome/packages/sensors/rgb_led.yaml

@@ -6,8 +6,8 @@
 
   (title_block
     (title "AIOsense")
-    (date "2024-01-28")
-    (rev "3.0.0")
+    (date "2024-03-14")
+    (rev "3.0.0-rc1")
     (company "Schluggi / Mourix")
     (comment 1 "https://github.com/Schluggi/AIOsense")
   )

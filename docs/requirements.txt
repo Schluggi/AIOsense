@@ -40,4 +40,4 @@ urllib3==2.2.1
 watchdog==4.0.0
 wcmatch==8.5.1
 webencodings==0.5.1
-zipp==3.18.0
+zipp==3.18.1

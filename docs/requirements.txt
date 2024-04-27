@@ -1,6 +1,6 @@
 Babel==2.14.0
 bracex==2.4
-cairocffi==1.6.1
+cairocffi==1.7.0
 CairoSVG==2.7.1
 certifi==2024.2.2
 cffi==1.16.0

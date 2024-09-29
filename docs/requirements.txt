@@ -1,5 +1,5 @@
 Babel==2.16.0
-bracex==2.5
+bracex==2.5.post1
 cairocffi==1.7.1
 CairoSVG==2.7.1
 certifi==2024.8.30

@@ -36,7 +36,7 @@ regex==2023.12.25
 requests==2.32.3
 six==1.17.0
 tinycss2==1.4.0
-urllib3==2.2.3
+urllib3==2.3.0
 watchdog==4.0.2
 wcmatch==8.5.2
 webencodings==0.5.1

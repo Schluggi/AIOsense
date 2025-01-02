@@ -24,7 +24,7 @@ natsort==8.4.0
 packaging==24.2
 paginate==0.5.6
 pathspec==0.12.1
-Pillow==10.4.0
+Pillow==11.1.0
 platformdirs==4.3.6
 pycparser==2.22
 Pygments==2.18.0

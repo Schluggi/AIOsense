@@ -27,7 +27,7 @@ pathspec==0.12.1
 Pillow==10.4.0
 platformdirs==4.3.6
 pycparser==2.22
-Pygments==2.19.0
+Pygments==2.19.1
 pymdown-extensions==10.13
 python-dateutil==2.9.0.post0
 PyYAML==6.0.2

@@ -6,6 +6,7 @@ substitutions:
   humidity_offset: "0"
   pressure_offset: "0"
   temperature_offset: "0"
+  sensor_smoothing_window: "30"
 
 number:
   - platform: template
@@ -69,13 +70,25 @@ sensor:
       filters:
         - offset: ${temperature_offset}
         - lambda: "return x + id(temperature_offset_ui).state;"
+        - sliding_window_moving_average:
+            window_size: ${sensor_smoothing_window}
+            send_every: ${sensor_smoothing_window}
+            send_first_at: ${sensor_smoothing_window}
     humidity:
       name: "Humidity"
       filters:
         - offset: ${humidity_offset}
         - lambda: "return x + id(humidity_offset_ui).state;"
+        - sliding_window_moving_average:
+            window_size: ${sensor_smoothing_window}
+            send_every: ${sensor_smoothing_window}
+            send_first_at: ${sensor_smoothing_window}
     pressure:
       name: "Pressure"
       filters:
         - offset: ${pressure_offset}
         - lambda: "return x + id(pressure_offset_ui).state;"
+        - sliding_window_moving_average:
+            window_size: ${sensor_smoothing_window}
+            send_every: ${sensor_smoothing_window}
+            send_first_at: ${sensor_smoothing_window}

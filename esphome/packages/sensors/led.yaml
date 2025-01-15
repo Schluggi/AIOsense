@@ -11,10 +11,12 @@ output:
       inverted: "${led_invert}"
 
 light:
-  - id: led
-    platform: binary
+  - platform: status_led
+    id: led
     name: "LED"
-    output: led_output
+    pin:
+      number: "${led_pin}"
+      inverted: "${led_invert}"
     icon: "mdi:led-outline"
     effects:
       - strobe:

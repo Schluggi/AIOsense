@@ -6,7 +6,6 @@
 [![donate-paypal](https://img.shields.io/badge/donate-PayPal-blue.svg?style=for-the-badge&logo=appveyor)](https://www.paypal.com/donate/?hosted_button_id=KPG2MY37LCC24)
 [![docs](https://img.shields.io/badge/Docs-READ_The_Docs-lightblue.svg?style=for-the-badge&logo=appveyor)](https://aiosense.readthedocs.io/en/latest/)
 
-<a href="https://www.tindie.com/products/gadgetgarage/aiosense/"><img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-larges.png" alt="I sell on Tindie" width="200" height="104"></a>
 ## Description
 Based on the idea of an all-in-one sensor AIOsense was born.
 

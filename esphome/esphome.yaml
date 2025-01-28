@@ -54,6 +54,7 @@ packages:
       # ----- led modules (use rgb_led for esp32-c3 & esp32-s3 only) -----
       - esphome/packages/sensors/rgb_led.yaml
       # - esphome/packages/sensors/led.yaml
+      # - esphome/packages/sensors/status_led.yaml
 
       # ----- mmWave radar sensor -----
       # - esphome/packages/sensors/ld2410.yaml

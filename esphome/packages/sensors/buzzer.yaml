@@ -5,22 +5,43 @@ output:
     pin: "${buzzer_pin}"
     id: rtttl_out
 
+binary_sensor:
+  - platform: template
+    name: "RTTTL Playing"
+    id: rtttl_playing
+    device_class: running
+
 api:
   services:
+    - service: stop_rtttl
+      then:
+        - rtttl.stop
+        - binary_sensor.template.publish:
+            id: rtttl_playing
+            state: false
     - service: play_rtttl
       variables:
         song_str: string
       then:
         - rtttl.play:
             rtttl: !lambda 'return song_str;'
+        - binary_sensor.template.publish:
+            id: rtttl_playing
+            state: true
 
 rtttl:
   output: rtttl_out
   on_finished_playback:
     - logger.log: 'Song ended!'
+    - binary_sensor.template.publish:
+        id: rtttl_playing
+        state: false
 
 esphome:
   on_boot:
     - priority: 10
       then:
         - rtttl.play: "two short:d=4,o=5,b=100:16e6,16e6"
+        - binary_sensor.template.publish:
+            id: rtttl_playing
+            state: false

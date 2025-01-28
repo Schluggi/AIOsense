@@ -1,13 +1,28 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    ":dependencyDashboard"
+    "config:base"
   ],
   "dependencyDashboard": false,
+  "pip-compile": {
+    "fileMatch": [
+      "(^|/)requirements\\.txt$"
+    ],
+    "automerge": true,
+    "lockFileMaintenance": {
+      "schedule": [
+        "at any time"
+      ],
+      "commitMessageAction": "Update pip requirements using pip-compile"
+    }
+  },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "major"
+      ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
     }

@@ -11,11 +11,14 @@ substitutions:
   uart_tx_pin: GPIO43
 
 esp32:
-  board: esp32-s3-devkitc-1
+  board: lolin_s3_mini
   variant: esp32s3
+  flash_size: 4MB
+
   framework:
     type: arduino
-    version: latest
+    version: 2.0.8
+    platform_version: 6.10.0
 
 i2c:
   sda: GPIO35
@@ -24,3 +27,15 @@ i2c:
 sensor:
   - platform: internal_temperature
     name: "CPU Temperature"
+
+esphome:
+  platformio_options:
+    board_build.arduino.memory_type: qio_qspi
+    board_upload.ram_size: 327680
+    board_upload_maximum_size: 4193404
+    board_upload_speed: 460800
+    build_flags: [
+      "-DBOARD_HAS_PSRAM",
+      "-DARDUINO_LOLIN_S3_MINI",
+      "-DARDUINO_USB_MODE=1"
+    ]

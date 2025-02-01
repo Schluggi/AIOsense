@@ -8,7 +8,7 @@ babel==2.16.0
     # via mkdocs-material
 bracex==2.5.post1
     # via wcmatch
-certifi==2024.12.14
+certifi==2025.1.31
     # via requests
 charset-normalizer==3.4.1
     # via requests

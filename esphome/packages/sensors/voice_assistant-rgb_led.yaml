@@ -1,20 +1,29 @@
 i2s_audio:
-  id: i2s_in
-  i2s_lrclk_pin: "${i2s_lrclk_pin}"  # WS
-  i2s_bclk_pin: "${i2s_bclk_pin}"  # SCK
+  - id: i2s
+    i2s_lrclk_pin: "${i2s_lrclk_pin}"
+    i2s_bclk_pin: "${i2s_bclk_pin}"
 
 microphone:
   - platform: i2s_audio
-    id: mic_i2s
+    id: mic
     channel: left
     adc_type: external
-    i2s_din_pin: "${i2s_din_pin}"  # SD
-    i2s_audio_id: i2s_in
+    i2s_din_pin: "${i2s_din_pin}"
+    i2s_audio_id: i2s
     pdm: false
+
+media_player:
+  - platform: i2s_audio
+    id: media_player
+    name: Media Player
+    dac_type: external
+    i2s_dout_pin: "${i2s_dout_pin}"
+    mode: mono
 
 voice_assistant:
   id: va
-  microphone: mic_i2s
+  microphone: mic
+  media_player: media_player
   noise_suppression_level: 2
   auto_gain: 31dBFS
   volume_multiplier: 2.0

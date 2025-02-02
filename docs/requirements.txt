@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-babel==2.16.0
+babel==2.17.0
     # via mkdocs-material
 bracex==2.5.post1
     # via wcmatch

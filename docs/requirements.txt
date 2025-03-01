@@ -6,6 +6,8 @@
 #
 babel==2.17.0
     # via mkdocs-material
+backrefs==5.8
+    # via mkdocs-material
 bracex==2.5.post1
     # via wcmatch
 certifi==2025.1.31
@@ -46,7 +48,7 @@ mkdocs-awesome-pages-plugin==2.10.1
     # via -r requirements.in
 mkdocs-get-deps==0.2.0
     # via mkdocs
-mkdocs-material==9.6.5
+mkdocs-material==9.6.6
     # via -r requirements.in
 mkdocs-material-extensions==1.3.1
     # via
@@ -76,8 +78,6 @@ pyyaml==6.0.2
     #   pyyaml-env-tag
 pyyaml-env-tag==0.1
     # via mkdocs
-regex==2024.11.6
-    # via mkdocs-material
 requests==2.32.3
     # via mkdocs-material
 six==1.17.0

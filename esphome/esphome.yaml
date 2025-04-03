@@ -47,12 +47,14 @@ packages:
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are activated
       - esphome/packages/sensors/pir.yaml
 
-      # ----- voice assistant (use rgb_led for esp32-c3 & esp32-s3 only-----
-      - esphome/packages/sensors/voice_assistant-rgb_led.yaml
+      # ----- voice assistant -----
+      - esphome/packages/sensors/idf-voice_assistant-rgb_led.yaml
+      # - esphome/packages/sensors/voice_assistant-rgb_led.yaml
       # - esphome/packages/sensors/voice_assistant-led.yaml
 
-      # ----- led modules (use rgb_led for esp32-c3 & esp32-s3 only) -----
-      - esphome/packages/sensors/rgb_led.yaml
+      # ----- led modules -----
+      - esphome/packages/sensors/idf-rgb_led.yaml
+      # - esphome/packages/sensors/rgb_led.yaml
       # - esphome/packages/sensors/led.yaml
       # - esphome/packages/sensors/status_led.yaml
 
@@ -60,6 +62,8 @@ packages:
       # - esphome/packages/sensors/ld2410.yaml
       - esphome/packages/sensors/sen0395.yaml
 
+      # ----- debugging -----
+      # - esphome/packages/sensors/idf-debug.yaml
 
 # Enable Home Assistant API
 api:

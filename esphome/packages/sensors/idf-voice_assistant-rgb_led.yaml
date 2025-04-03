@@ -21,8 +21,8 @@ speaker:
     channel: mono
     timeout: never
   - platform: mixer
-    id: mixer_speaker_id
-    output_speaker: speaker_id
+    id: spk_mixer
+    output_speaker: spk
     source_speakers:
       - id: announcement_spk_mixer_input
       - id: media_spk_mixer_input

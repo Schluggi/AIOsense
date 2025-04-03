@@ -1,7 +1,7 @@
 substitutions:
   buzzer_pin: GPIO13
   i2s_bclk_pin: GPIO38
-  i2s_din_pin: "${buzzer_pin}"
+  i2s_din_pin: GPIO37
   i2s_dout_pin: GPIO33
   i2s_lrclk_pin: GPIO10
   pir_pin: GPIO11

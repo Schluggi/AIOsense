@@ -13,8 +13,6 @@ light:
     rmt_channel: 0
     pin: "${rgb_led_pin}"
     icon: "mdi:led-outline"
-    effects:
-      - pulse:
 
 
 esphome:

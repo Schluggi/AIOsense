@@ -12,7 +12,6 @@ microphone:
     i2s_audio_id: i2s
     pdm: false
 
-
 speaker:
   - platform: i2s_audio
     dac_type: external

@@ -27,14 +27,6 @@ sensor:
   - platform: internal_temperature
     name: "CPU Temperature"
 
-esphome:
-  platformio_options:
-    board_build.arduino.memory_type: qio_qspi
-    board_upload.ram_size: 327680
-    board_upload_maximum_size: 4193404
-    board_upload_speed: 460800
-    build_flags: [
-      "-DBOARD_HAS_PSRAM",
-      "-DARDUINO_LOLIN_S3_MINI",
-      "-DARDUINO_USB_MODE=1"
-    ]
+psram:
+  mode: octal
+  speed: 80MHz

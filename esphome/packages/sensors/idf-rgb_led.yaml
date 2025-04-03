@@ -12,6 +12,33 @@ light:
     num_leds: 1
     pin: "${rgb_led_pin}"
     icon: "mdi:led-outline"
+    effects:
+      - strobe:
+          colors:
+            - state: true
+              duration: "${led_strobe_on}"
+            - state: false
+              duration: "${led_strobe_off}"
+      - strobe:
+          name: Alarm
+          colors:
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 0%
+              blue: 0%
+              duration: "${led_strobe_on}"
+            - state: false
+              duration: "${led_strobe_off}"
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 100%
+              blue: 100%
+              duration: "${led_strobe_on}"
+            - state: false
+              duration: "${led_strobe_off}"
+      - pulse:
 
 
 esphome:

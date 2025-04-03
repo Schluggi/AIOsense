@@ -36,7 +36,7 @@ speaker:
 media_player:
   - platform: speaker
     name: "Speaker Media Player"
-    id: spk
+    id: mp
     buffer_size: 2000000
     media_pipeline:
       speaker: media_spk_resampling_input

@@ -10,7 +10,6 @@ light:
     rgb_order: "RGB"
     chipset: WS2812
     num_leds: 1
-    rmt_channel: 0
     pin: "${rgb_led_pin}"
     icon: "mdi:led-outline"
 

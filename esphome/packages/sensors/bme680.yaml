@@ -87,6 +87,7 @@ sensor:
         - lambda: "return x + id(temperature_offset_ui).state;"
     humidity:
       name: "Humidity"
+      id: "humidity"
       filters:
         - offset: ${humidity_offset}
         - lambda: "return x + id(humidity_offset_ui).state;"
@@ -97,6 +98,7 @@ sensor:
         - lambda: "return x + id(pressure_offset_ui).state;"
     gas_resistance:
       name: "Gas Resistance"
+      id: "gas_resistance"
   - platform: template
     name: "Air Quality"
     device_class: aqi

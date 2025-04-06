@@ -4,6 +4,7 @@ substitutions:
   bme_address: "0x76"
   bme_update_interval: "30s"
   humidity_offset: "0"
+  iaq_offset: "0"
   pressure_offset: "0"
   temperature_offset: "0"
 
@@ -59,6 +60,21 @@ number:
     on_value:
       - lambda: 'id(bme680_sensor).update();'
 
+  - platform: template
+    name: "IAQ Offset"
+    id: iaq_offset_ui
+    unit_of_measurement: "IAQ"
+    min_value: -400
+    max_value: 400
+    step: 1
+    mode: box
+    update_interval: never
+    optimistic: true
+    restore_value: true
+    initial_value: 0
+    icon: "mdi:gauge"
+    entity_category: config
+
 sensor:
   - platform: bme680
     id: bme680_sensor
@@ -81,3 +97,44 @@ sensor:
         - lambda: "return x + id(pressure_offset_ui).state;"
     gas_resistance:
       name: "Gas Resistance"
+  - platform: template
+    name: "Air Quality"
+    device_class: aqi
+    id: iaq
+    icon: "mdi:gauge"
+    filters:
+      - offset: ${iaq_offset}
+      - lambda: "return x + id(iaq_offset_ui).state;"
+    lambda: |-
+      return log(id(gas_resistance).state) + 0.04 *  id(humidity).state;
+    state_class: "measurement"
+
+text_sensor:
+  - platform: template
+    name: "IAQ Classification"
+    icon: "mdi:checkbox-marked-circle-outline"
+    lambda: |-
+      if ( int(id(iaq).state) <= 50) {
+        return {"Excellent"};
+      }
+      else if (int(id(iaq).state) >= 51 && int(id(iaq).state) <= 100) {
+        return {"Good"};
+      }
+      else if (int(id(iaq).state) >= 101 && int(id(iaq).state) <= 150) {
+        return {"Lightly polluted"};
+      }
+      else if (int(id(iaq).state) >= 151 && int(id(iaq).state) <= 200) {
+        return {"Moderately polluted"};
+      }
+      else if (int(id(iaq).state) >= 201 && int(id(iaq).state) <= 250) {
+        return {"Heavily polluted"};
+      }
+      else if (int(id(iaq).state) >= 251 && int(id(iaq).state) <= 350) {
+        return {"Severely polluted"};
+      }
+      else if (int(id(iaq).state) >= 351) {
+        return {"Extremely polluted"};
+      }
+      else {
+        return {"error"};
+      }

@@ -48,7 +48,6 @@ media_player:
       num_channels: 1
       format: FLAC
 
-
 voice_assistant:
   id: va
   microphone: mic

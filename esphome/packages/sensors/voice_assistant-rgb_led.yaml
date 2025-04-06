@@ -12,18 +12,26 @@ microphone:
     i2s_audio_id: i2s
     pdm: false
 
-media_player:
+# does not work in ESPHome 2025.3.3
+#media_player:
+#  - platform: i2s_audio
+#    id: mp
+#    name: Media Player
+#    dac_type: external
+#    i2s_dout_pin: "${i2s_dout_pin}"
+#    mode: mono
+
+speaker:
   - platform: i2s_audio
-    id: mp
-    name: Media Player
     dac_type: external
-    i2s_dout_pin: "${i2s_dout_pin}"
-    mode: mono
+    i2s_dout_pin: GPIO33
+    id: spk
 
 voice_assistant:
   id: va
   microphone: mic
-  media_player: mp
+  #media_player: mp
+  speaker: spk
   noise_suppression_level: 2
   auto_gain: 31dBFS
   volume_multiplier: 2.0

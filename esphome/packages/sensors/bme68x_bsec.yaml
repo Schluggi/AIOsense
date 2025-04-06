@@ -39,7 +39,7 @@ sensor:
         - offset: ${humidity_offset}
         - lambda: "return x + id(humidity_offset_ui).state;"
     iaq:
-      name: "IAQ"
+      name: "Air Quality Index"
       id: iaq
       device_class: aqi
       filters:

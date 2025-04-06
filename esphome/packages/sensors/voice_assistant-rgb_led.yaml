@@ -53,7 +53,7 @@ voice_assistant:
         effect: pulse
   on_end:
     - delay: 100ms
-    - script.execute: reset_led
+    - light.turn_off: led
   on_error:
     - light.turn_on:
         id: led
@@ -63,29 +63,11 @@ voice_assistant:
         brightness: 100%
         effect: none
     - delay: 1s
-    - script.execute: reset_led
-    - script.wait: reset_led
+    - light.turn_off: led
     - lambda: |-
         if (code == "wake-provider-missing" || code == "wake-engine-missing") {
           id(use_wake_word).turn_off();
         }
-
-script:
-  - id: reset_led
-    then:
-      - if:
-          condition:
-            - switch.is_on: use_wake_word
-          then:
-            - light.turn_on:
-                id: led
-                blue: 100%
-                red: 100%
-                green: 0%
-                brightness: 100%
-                effect: none
-          else:
-            - light.turn_off: led
 
 switch:
   - platform: template
@@ -102,11 +84,11 @@ switch:
               - voice_assistant.is_running
           then:
             - voice_assistant.start_continuous
-      - script.execute: reset_led
+      - light.turn_off: led
     on_turn_off:
       - voice_assistant.stop
       - lambda: id(va).set_use_wake_word(false);
-      - script.execute: reset_led
+      - light.turn_off: led
 
 esphome:
   min_version: 2023.10.0

@@ -37,25 +37,26 @@ packages:
       # - esphome/packages/config/esp32-d1-mini.yaml
       # - esphome/packages/config/esp32-s2-mini.yaml
       - esphome/packages/config/esp32-s3-mini.yaml
+      # - esphome/packages/config/idf-esp32-s3-mini.yaml # Experimental!
       # - esphome/packages/config/esp8266-d1-mini.yaml
 
       # ----- modules -----
       - esphome/packages/sensors/bh1750.yaml
       # - esphome/packages/sensors/bme280.yaml
-      - esphome/packages/sensors/bme680.yaml
-      # - esphome/packages/sensors/bme68x_bsec.yaml
+      # - esphome/packages/sensors/bme680.yaml # Experimental!
+      - esphome/packages/sensors/bme68x_bsec.yaml
       - esphome/packages/sensors/buzzer.yaml  # PCB >= v2.1.0
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are activated
       - esphome/packages/sensors/pir.yaml
 
       # ----- voice assistant -----
-      - esphome/packages/sensors/idf-voice_assistant-rgb_led.yaml
-      # - esphome/packages/sensors/voice_assistant-rgb_led.yaml
+      #- esphome/packages/sensors/idf-voice_assistant-rgb_led.yaml
+      - esphome/packages/sensors/voice_assistant-rgb_led.yaml
       # - esphome/packages/sensors/voice_assistant-led.yaml
 
       # ----- led modules -----
-      - esphome/packages/sensors/idf-rgb_led.yaml
-      # - esphome/packages/sensors/rgb_led.yaml
+      #- esphome/packages/sensors/idf-rgb_led.yaml
+      - esphome/packages/sensors/rgb_led.yaml
       # - esphome/packages/sensors/led.yaml
       # - esphome/packages/sensors/status_led.yaml
 

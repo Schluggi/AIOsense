@@ -24,8 +24,9 @@ microphone:
 speaker:
   - platform: i2s_audio
     dac_type: external
-    i2s_dout_pin: GPIO33
+    i2s_dout_pin: "${i2s_dout_pin}"
     id: spk
+    timeout: never
 
 voice_assistant:
   id: va

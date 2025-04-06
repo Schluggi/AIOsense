@@ -17,44 +17,52 @@ speaker:
     dac_type: external
     i2s_dout_pin: "${i2s_dout_pin}"
     id: spk
-    channel: mono
     timeout: never
-  - platform: mixer
-    id: spk_mixer
-    output_speaker: spk
-    source_speakers:
-      - id: announcement_spk_mixer_input
-      - id: media_spk_mixer_input
-  - platform: resampler
-    id: media_spk_resampling_input
-    output_speaker: media_spk_mixer_input
-  - platform: resampler
-    id: announcement_spk_resampling_input
-    output_speaker: announcement_spk_mixer_input
 
-media_player:
-  - platform: speaker
-    name: "Speaker Media Player"
-    id: mp
-    buffer_size: 2000000
-    media_pipeline:
-      speaker: media_spk_resampling_input
-      sample_rate: 48000
-      num_channels: 2
-      format: FLAC
-    announcement_pipeline:
-      speaker: announcement_spk_resampling_input
-      sample_rate: 48000
-      num_channels: 1
-      format: FLAC
+#speaker:
+#  - platform: i2s_audio
+#    dac_type: external
+#    i2s_dout_pin: "${i2s_dout_pin}"
+#    id: spk
+#    channel: mono
+#    timeout: never
+#  - platform: mixer
+#    id: spk_mixer
+#    output_speaker: spk
+#    source_speakers:
+#      - id: announcement_spk_mixer_input
+#      - id: media_spk_mixer_input
+#  - platform: resampler
+#    id: media_spk_resampling_input
+#    output_speaker: media_spk_mixer_input
+#  - platform: resampler
+#    id: announcement_spk_resampling_input
+#    output_speaker: announcement_spk_mixer_input
+#
+#media_player:
+#  - platform: speaker
+#    name: "Speaker Media Player"
+#    id: mp
+#    buffer_size: 2000000
+#    media_pipeline:
+#      speaker: media_spk_resampling_input
+#      sample_rate: 48000
+#      num_channels: 2
+#      format: FLAC
+#    announcement_pipeline:
+#      speaker: announcement_spk_resampling_input
+#      sample_rate: 48000
+#      num_channels: 1
+#      format: FLAC
 
 voice_assistant:
   id: va
   microphone: mic
-  media_player: mp
-  noise_suppression_level: 2
-  auto_gain: 31dBFS
-  volume_multiplier: 2.0
+  speaker: spk
+#  media_player: mp
+#  noise_suppression_level: 2
+#  auto_gain: 31dBFS
+#  volume_multiplier: 2.0
   on_listening:
     - light.turn_on:
         id: led

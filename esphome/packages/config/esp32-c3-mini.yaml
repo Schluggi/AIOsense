@@ -52,4 +52,4 @@ esp32_ble_tracker:
     active: false
 
 bluetooth_proxy:
-  active: true
+  active: false

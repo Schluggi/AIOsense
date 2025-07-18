@@ -15,6 +15,7 @@ substitutions:
 bme68x_bsec2_i2c:
   address: "${bme_address}"
   state_save_interval: 30min
+  model: bme680
 
 esphome:
   min_version: 2023.10.0

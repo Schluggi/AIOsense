@@ -4,7 +4,7 @@ substitutions:
   led_strobe_off: 100ms
 
 light:
-  - platform: neopixelbus
+  - platform: esp32_rmt_led_strip
     name: "LED"
     id: led
     type: "${rgb_led_type}"

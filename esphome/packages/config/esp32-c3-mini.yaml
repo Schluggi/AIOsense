@@ -11,14 +11,15 @@ substitutions:
   uart_tx_pin: GPIO21
 
 esphome:
-  platformio_options:
-    board_build.extra_flags:
-      - "-DARDUINO_USB_CDC_ON_BOOT=0"
-    board_build.flash_mode: dio
+
 
 esp32:
   board: lolin_c3_mini
-  variant: ESP32C3
+  framework:
+    type: esp-idf
+    sdkconfig_options:
+      CONFIG_BT_BLE_42_FEATURES_SUPPORTED: y
+      CONFIG_BT_BLE_50_FEATURES_SUPPORTED: n
 
 wifi:
   output_power: 8.5dBm

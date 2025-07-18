@@ -9,9 +9,10 @@ substitutions:
   sen0395_io_pin: A2
   uart_rx_pin: GPIO20
   uart_tx_pin: GPIO21
+  name: "esphome-mmwave-wohnzimmer"  # lowercase only, have to be unique
+  friendly_name: ${name}
 
 esphome:
-
 
 esp32:
   board: lolin_c3_mini

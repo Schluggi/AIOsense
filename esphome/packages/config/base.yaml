@@ -1,13 +1,19 @@
 substitutions:
-  version: "3.0.1"
+  version: "3.0.2"
 
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
 
   project:
-    name: "Schluggi.AIOsense"
+    name: "Mulatz.AIOsense"
     version: "${version}"
+
+web_server:
+  port: 80
+  auth:
+    username: !secret web_server_username
+    password: !secret web_server_password
 
 logger:
   baud_rate: 0  # disable logging via UART

@@ -5,16 +5,11 @@ substitutions:
   i2s_lrclk_pin: A5
   pir_pin: A4
   rgb_led_pin: GPIO7
-  rgb_led_type: GRB
+  rgb_led_order: GRB
   sen0395_io_pin: A2
   uart_rx_pin: GPIO20
   uart_tx_pin: GPIO21
-  name: "esphome-mmwave-wohnzimmer"  # lowercase only, have to be unique
-  friendly_name: ${name}
-  bme_address: "0x77"  # for some modules you have to change it to 0x77
-  pir_delayed_off: 5s
-  # pir_delayed_on: 0s
-
+  
 esphome:
 
 esp32:
@@ -26,7 +21,13 @@ esp32:
       CONFIG_BT_BLE_50_FEATURES_SUPPORTED: n
 
 wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  domain: !secret wifi_home_domain
   output_power: 8.5dBm
+  ap:
+    ssid: ${name}
+  fast_connect: false
 
 i2c:
   sda: GPIO8
@@ -35,3 +36,20 @@ i2c:
 sensor:
   - platform: internal_temperature
     name: "CPU Temperature"
+
+api:
+  encryption:
+    key: !secret encryption_key
+
+ota:
+  - platform: esphome
+    id: my_ota
+    password: !secret ota_password
+  - platform: web_server
+
+esp32_ble_tracker:
+  scan_parameters:
+    active: false
+
+bluetooth_proxy:
+  active: false

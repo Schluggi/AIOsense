@@ -11,6 +11,9 @@ substitutions:
   uart_tx_pin: GPIO21
   name: "esphome-mmwave-wohnzimmer"  # lowercase only, have to be unique
   friendly_name: ${name}
+  bme_address: "0x77"  # for some modules you have to change it to 0x77
+  pir_delayed_off: 5s
+  # pir_delayed_on: 0s
 
 esphome:
 

@@ -15,7 +15,9 @@ certifi==2025.8.3
 charset-normalizer==3.4.3
     # via requests
 click==8.2.1
-    # via mkdocs
+    # via
+    #   mkdocs
+    #   mkdocs-material
 colorama==0.4.6
     # via mkdocs-material
 ghp-import==2.1.0

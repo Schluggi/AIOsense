@@ -21,7 +21,7 @@ esp32:
   flash_size: 4MB
   framework:
     type: esp-idf
-    version: latest
+    version: recommended
 
 wifi:
   output_power: 8.5dBm

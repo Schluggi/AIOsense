@@ -14,6 +14,7 @@ light:
   - id: led
     platform: monochromatic
     name: "LED"
+    output: led_mono
     pin:
       number: "${led_pin}"
       inverted: "${led_invert}"

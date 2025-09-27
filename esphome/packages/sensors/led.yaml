@@ -14,7 +14,9 @@ light:
   - id: led
     platform: monochromatic
     name: "LED"
-    output: led_output
+    pin:
+      number: "${led_pin}"
+      inverted: "${led_invert}"
     icon: "mdi:led-outline"
     effects:
       - strobe:

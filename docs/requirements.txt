@@ -12,7 +12,7 @@ bracex==2.6
     # via wcmatch
 certifi==2025.10.5
     # via requests
-charset-normalizer==3.4.3
+charset-normalizer==3.4.4
     # via requests
 click==8.3.0
     # via

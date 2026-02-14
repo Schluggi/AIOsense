@@ -64,7 +64,7 @@ paginate==0.5.7
     # via mkdocs-material
 pathspec==0.12.1
     # via mkdocs
-platformdirs==4.8.0
+platformdirs==4.9.0
     # via mkdocs-get-deps
 pygments==2.19.2
     # via mkdocs-material

@@ -68,7 +68,7 @@ platformdirs==4.9.4
     # via mkdocs-get-deps
 pygments==2.19.2
     # via mkdocs-material
-pymdown-extensions==10.21
+pymdown-extensions==10.21.2
     # via mkdocs-material
 python-dateutil==2.9.0.post0
     # via ghp-import

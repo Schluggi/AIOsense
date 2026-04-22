@@ -10,7 +10,7 @@ backrefs==6.2
     # via mkdocs-material
 bracex==2.6
     # via wcmatch
-certifi==2026.2.25
+certifi==2026.4.22
     # via requests
 charset-normalizer==3.4.7
     # via requests

@@ -6,7 +6,7 @@
 #
 babel==2.18.0
     # via mkdocs-material
-backrefs==7.0
+backrefs==8.0
     # via mkdocs-material
 bracex==3.0.1
     # via wcmatch

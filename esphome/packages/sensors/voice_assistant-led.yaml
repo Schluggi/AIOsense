@@ -110,6 +110,3 @@ select:
             - voice_assistant.stop
             - delay: 500ms
             - script.execute: reset_led
-
-esphome:
-  min_version: 2023.10.0

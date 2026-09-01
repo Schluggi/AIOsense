@@ -1,0 +1,29 @@
+# CI fixture: ESP32-S2 mini using the status_led light instead of led/rgb_led,
+# with the speaker media player. Covers status_led.yaml, which no other fixture
+# reaches (it needs ${led_pin}, so it is S2/d1-mini only).
+substitutions:
+  name: "ci-s2-status-led"
+  friendly_name: "CI S2 Status LED"
+
+packages:
+  base: !include ../esphome/packages/config/base.yaml
+  board: !include ../esphome/packages/config/esp32-s2-mini.yaml
+  bh1750: !include ../esphome/packages/sensors/bh1750.yaml
+  bme280: !include ../esphome/packages/sensors/bme280.yaml
+  buzzer: !include ../esphome/packages/sensors/buzzer.yaml
+  occupancy: !include ../esphome/packages/sensors/occupancy.yaml
+  pir: !include ../esphome/packages/sensors/pir.yaml
+  media_player: !include ../esphome/packages/sensors/media_player-psram.yaml
+  status_led: !include ../esphome/packages/sensors/status_led.yaml
+  sen0395: !include ../esphome/packages/sensors/sen0395.yaml
+api:
+  encryption:
+    key: !secret apikey
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password

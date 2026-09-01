@@ -1,0 +1,32 @@
+# CI fixture: ESP32-C3 mini, no audio. Mirrors the "garage" device, which runs
+# a PCB 2.x board -- the C3 pin mapping is unchanged from v2.0.0 onward, so this
+# also covers the older hardware.
+substitutions:
+  name: "ci-c3-ld2410"
+  friendly_name: "CI C3 LD2410"
+  bh1750_update_interval: "30s"
+  ld2410_max_distance_move: "6m"
+  ld2410_max_distance_still: "6m"
+  ld2410_timeout: "5s"
+  pir_delayed_off: "30s"
+  pir_delayed_on: "0s"
+
+packages:
+  base: !include ../esphome/packages/config/base.yaml
+  board: !include ../esphome/packages/config/esp32-c3-mini.yaml
+  bh1750: !include ../esphome/packages/sensors/bh1750.yaml
+  occupancy: !include ../esphome/packages/sensors/occupancy.yaml
+  pir: !include ../esphome/packages/sensors/pir.yaml
+  rgb_led: !include ../esphome/packages/sensors/rgb_led.yaml
+  ld2410: !include ../esphome/packages/sensors/ld2410.yaml
+api:
+  encryption:
+    key: !secret apikey
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password

@@ -1,0 +1,32 @@
+# CI fixture: ESP32-S2 mini with the monochrome-LED voice assistant, plus the
+# non-BSEC BME680.
+#
+# KNOWN FAILING: voice_assistant-led.yaml hardcodes esp-idf 5.3.1, but current
+# ESPHome's i2c component requires >= 5.4.2. Deleting that framework block from
+# the package fixes it. This fixture exists to hold that bug visible until it is.
+substitutions:
+  name: "ci-s2-voice-assistant"
+  friendly_name: "CI S2 Voice Assistant"
+
+packages:
+  base: !include ../esphome/packages/config/base.yaml
+  board: !include ../esphome/packages/config/esp32-s2-mini.yaml
+  bh1750: !include ../esphome/packages/sensors/bh1750.yaml
+  bme680: !include ../esphome/packages/sensors/bme680.yaml
+  buzzer: !include ../esphome/packages/sensors/buzzer.yaml
+  occupancy: !include ../esphome/packages/sensors/occupancy.yaml
+  pir: !include ../esphome/packages/sensors/pir.yaml
+  voice_assistant: !include ../esphome/packages/sensors/voice_assistant-led.yaml
+  led: !include ../esphome/packages/sensors/led.yaml
+  ld2410: !include ../esphome/packages/sensors/ld2410.yaml
+api:
+  encryption:
+    key: !secret apikey
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password

@@ -46,7 +46,7 @@ packages:
       - esphome/packages/sensors/buzzer.yaml  # PCB >= v2.1.0
       - esphome/packages/sensors/occupancy.yaml  # only if pir & mmWave are activated
       - esphome/packages/sensors/pir.yaml
-      
+
       # ----- media player (use for esp32-s3 mini and esp32-s2 mini only) -----
       # ----- choose media player or voice assistant sensors, not both -----
       # - esphome/packages/sensors/media_player-psram.yaml  # ESP32-S2-mini

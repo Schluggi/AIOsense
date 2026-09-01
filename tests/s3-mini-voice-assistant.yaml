@@ -1,0 +1,29 @@
+# CI fixture: ESP32-S3 mini with the full voice assistant (micro_wake_word +
+# speaker media player) and BSEC air quality. This is the flagship VA path.
+substitutions:
+  name: "ci-s3-voice-assistant"
+  friendly_name: "CI S3 Voice Assistant"
+  temperature_offset: "-6"
+
+packages:
+  base: !include ../esphome/packages/config/base.yaml
+  board: !include ../esphome/packages/config/esp32-s3-mini.yaml
+  bh1750: !include ../esphome/packages/sensors/bh1750.yaml
+  bme68x_bsec: !include ../esphome/packages/sensors/bme68x_bsec.yaml
+  buzzer: !include ../esphome/packages/sensors/buzzer.yaml
+  occupancy: !include ../esphome/packages/sensors/occupancy.yaml
+  pir: !include ../esphome/packages/sensors/pir.yaml
+  voice_assistant: !include ../esphome/packages/sensors/voice_assistant-rgb_led.yaml
+  rgb_led: !include ../esphome/packages/sensors/rgb_led.yaml
+  sen0395: !include ../esphome/packages/sensors/sen0395.yaml
+api:
+  encryption:
+    key: !secret apikey
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password

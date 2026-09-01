@@ -24,6 +24,6 @@ media_player:
       - light.turn_on:
           id: led
           effect: "Fast Pulse"
-    on_idle: 
+    on_idle:
       - light.turn_off:
           id: led

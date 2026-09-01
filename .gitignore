@@ -12,5 +12,11 @@ kicad/AIOsense/*_sch-bak
 kicad/AIOsense/fp-info-cache
 kicad/AIOsense/manufactoring/
 
+# esphome build artefacts (source of the stray gitlink in packages/sensors)
+.esphome/
+
+# local working notes (see FORK-NOTES.md for the fork assessment/plan)
+FORK-NOTES.md
+
 # other
 venv/

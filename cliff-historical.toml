@@ -1,0 +1,121 @@
+# git-cliff — ONE-TIME historical changelog generation for the AIOsense fork.
+#
+# This config is NOT for ongoing use. release-please owns the changelog from the
+# first `aio-v*` tag onward. This exists solely to render everything BEFORE that
+# point, so the pre-Conventional-Commits history is preserved rather than lost.
+#
+# The key difference from a normal cliff.toml: filter_unconventional = false,
+# plus a set of parsers that map this repo's historical subject style
+# ("Added ...", "Corrected ...", "Removed ...") onto real groups, so the legacy
+# section reads as a changelog instead of an undifferentiated dump.
+#
+# NOTE ON TOML ORDERING: every `key = value` under [git] must appear BEFORE any
+# [[git.commit_preprocessors]] array-of-tables, or it silently binds to the last
+# table in that array instead of to [git].
+
+[changelog]
+header = """
+# Changelog
+
+## Historical
+
+Everything below predates this fork's own release tagging and the adoption of
+[Conventional Commits](https://www.conventionalcommits.org). It was generated
+once with [git-cliff](https://git-cliff.org) from the commit history, using the
+upstream release tags as version boundaries, and is preserved verbatim.
+
+Releases from `aio-v1.0.0` onward are managed by release-please and appear
+above this section. Do not hand-edit below this line.
+
+"""
+
+# NOTE: historical commits often have multi-paragraph bodies, and for
+# non-conventional commits git-cliff's `commit.message` carries the whole thing.
+# Taking only the first line is what keeps this readable — without it, bodies
+# leak into the list and long commits appear to be duplicated.
+body = """
+{% if version %}\
+## {{ version }}{% if timestamp %} ({{ timestamp | date(format="%Y-%m-%d") }}){% endif %}
+{% else %}\
+## Unreleased
+{% endif %}
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group | striptags | trim }}
+{% for commit in commits | filter(attribute="scope") | sort(attribute="scope") %}
+- **{{ commit.scope }}**: {{ commit.message | split(pat="\n") | first | trim | upper_first }}
+{%- endfor %}
+{%- for commit in commits %}{% if not commit.scope %}
+- {{ commit.message | split(pat="\n") | first | trim | upper_first }}
+{%- endif %}{% endfor %}
+{% endfor %}
+
+"""
+
+footer = ""
+trim = true
+
+[git]
+# THE point of this config: keep commits that are not Conventional Commits.
+conventional_commits = true
+filter_unconventional = false
+split_commits = false
+filter_commits = true
+topo_order = false
+sort_commits = "newest"
+protect_breaking_commits = true
+
+# Only real releases become version headings — drop release candidates.
+tag_pattern = "^(v[0-9]+\\.[0-9]+(\\.[0-9]+)?|esphome-v[0-9]+\\.[0-9]+\\.[0-9]+)$"
+
+commit_parsers = [
+  # --- Noise: never appears in the changelog. -------------------------------
+  { message = "^Merge branch", skip = true },
+  { message = "^Merge remote-tracking", skip = true },
+  { message = "^Merge pull request", skip = true },
+  { message = "^Merge tag", skip = true },
+  # 197 Renovate bumps would drown everything else.
+  { message = "^chore\\(deps\\)", skip = true },
+  { message = "(?i)^chore\\(deps\\)", skip = true },
+  { author = "renovate\\[bot\\]", skip = true },
+  { message = "(?i)^update dependency", skip = true },
+  { message = "^style", skip = true },
+  { message = "(?i)^typo$", skip = true },
+
+  # --- Conventional Commits (the recent tail). ------------------------------
+  { message = "^feat", group = "<!-- 0 -->Features" },
+  { message = "^fix", group = "<!-- 1 -->Fixes" },
+  { message = "^perf", group = "<!-- 2 -->Performance" },
+  { message = "^refactor", group = "<!-- 3 -->Refactoring" },
+  { message = "^docs", group = "<!-- 4 -->Documentation" },
+  { message = "^ci", group = "<!-- 5 -->CI" },
+  { message = "^chore", group = "<!-- 7 -->Maintenance" },
+
+  # --- Legacy subject styles, mapped onto the same groups. ------------------
+  # This repo's pre-convention history is overwhelmingly "Added X" / "Corrected
+  # Y" / "Removed Z", which maps cleanly enough to be worth doing.
+  { message = "(?i)^(added|add|create[ds]?|introduce[ds]?|implement)", group = "<!-- 0 -->Features" },
+  { message = "(?i)^(fixed|fix|corrected|correct|resolve[ds]?|repair)", group = "<!-- 1 -->Fixes" },
+  { message = "(?i)^(removed|remove|drop(ped)?|delete[ds]?|disable[ds]?)", group = "<!-- 6 -->Removals" },
+  { message = "(?i)^(renamed|rename|moved|move|switch(ed)?|replace[ds]?|refactor)", group = "<!-- 3 -->Refactoring" },
+  { message = "(?i)^(updated|update|bump(ed)?|upgrade[ds]?|enforce)", group = "<!-- 7 -->Maintenance" },
+  { message = "(?i)^(doc|readme|comment)", group = "<!-- 4 -->Documentation" },
+
+  # --- Catch-all: anything still unmatched is kept, not dropped. ------------
+  { message = ".*", group = "<!-- 8 -->Other" },
+]
+
+# Strip leading gitmoji shortcodes (":bug: ") from historical subjects.
+[[git.commit_preprocessors]]
+pattern = ':[a-z0-9_+-]+:[[:space:]]*'
+replace = ''
+
+# Strip raw emoji.
+[[git.commit_preprocessors]]
+pattern = '[\x{1F300}-\x{1FAFF}\x{2600}-\x{27BF}\x{2B00}-\x{2BFF}\x{FE0F}]+[[:space:]]*'
+replace = ''
+
+# Link bare issue references (#42) to the upstream GitHub repo, since that is
+# where every historical issue number points.
+[[git.commit_preprocessors]]
+pattern = '#([0-9]+)'
+replace = '[#${1}](https://github.com/Schluggi/AIOsense/issues/${1})'

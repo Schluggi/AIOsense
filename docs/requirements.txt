@@ -88,5 +88,5 @@ urllib3==2.8.0
     # via requests
 watchdog==6.0.0
     # via mkdocs
-wcmatch==11.0.1
+wcmatch==11.1
     # via mkdocs-awesome-pages-plugin

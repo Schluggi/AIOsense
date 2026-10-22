@@ -70,7 +70,7 @@ pygments==2.21.0
     # via mkdocs-material
 pymdown-extensions==12.3
     # via mkdocs-material
-python-dateutil==2.9.0.post0
+python-dateutil==3.0.0
     # via ghp-import
 pyyaml==6.0.3
     # via

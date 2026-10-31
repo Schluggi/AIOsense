@@ -86,7 +86,7 @@ six==1.17.0
     # via python-dateutil
 urllib3==2.8.0
     # via requests
-watchdog==6.0.0
+watchdog==7.0.0
     # via mkdocs
 wcmatch==11.2
     # via mkdocs-awesome-pages-plugin

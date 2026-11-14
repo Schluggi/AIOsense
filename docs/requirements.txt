@@ -8,7 +8,7 @@ babel==2.18.0
     # via mkdocs-material
 backrefs==8.3
     # via mkdocs-material
-bracex==3.2.2
+bracex==3.2.3
     # via wcmatch
 certifi==2026.10.23
     # via requests

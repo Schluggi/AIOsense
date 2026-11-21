@@ -72,7 +72,7 @@ pymdown-extensions==13.1.2
     # via mkdocs-material
 python-dateutil==4.0.0
     # via ghp-import
-pyyaml==6.0.3
+pyyaml==6.0.4
     # via
     #   mkdocs
     #   mkdocs-get-deps

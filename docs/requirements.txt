@@ -4,7 +4,7 @@
 #
 #    pip-compile --cert=None --client-cert=None --index-url=None --pip-args=None requirements.in
 #
-babel==2.18.0
+babel==2.19.0
     # via mkdocs-material
 backrefs==8.3.1
     # via mkdocs-material
